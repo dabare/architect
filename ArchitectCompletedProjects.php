@@ -43,7 +43,7 @@ session_start();
                     <?php
                     require_once './db/dbConnection.php';
 
-                    $sql = "SELECT CONCAT (customer.fname , '_', customer.lname ) AS det  , project.city AS city , project.progress/100 as prog , project.id as id FROM project INNER JOIN customer ON project.customer_id=customer.id WHERE project.category='Industrial' and project.progress=100 AND project.architect_id='" . $_SESSION["id"] . "' ORDER BY city ASC;";
+                    $sql = "SELECT CONCAT (customer.fname , '_', customer.lname ) AS det  , project.city AS city , project.progress/100 as prog , project.id as id FROM project INNER JOIN customer ON project.customer_id=customer.id WHERE project.category='Industrial' and project.progress=100 AND project.architect_id='" . $_SESSION["id"] . "' AND project.status='Active' ORDER BY city ASC;";
                     $result = $conn->query($sql);
 
                     echo '<td valign="top">';
@@ -63,7 +63,7 @@ session_start();
 
 
 
-                    $sql = "SELECT CONCAT (customer.fname , '_', customer.lname ) AS det  , project.city AS city , project.progress/100 as prog , project.id as id FROM project INNER JOIN customer ON project.customer_id=customer.id WHERE project.category='Residential' and project.progress=100 AND project.architect_id='" . $_SESSION["id"] . "' ORDER BY city ASC;";
+                    $sql = "SELECT CONCAT (customer.fname , '_', customer.lname ) AS det  , project.city AS city , project.progress/100 as prog , project.id as id FROM project INNER JOIN customer ON project.customer_id=customer.id WHERE project.category='Residential' and project.progress=100 AND project.architect_id='" . $_SESSION["id"] . "' AND project.status='Active' ORDER BY city ASC;";
                     $result = $conn->query($sql);
 
                     echo '<td valign="top">';
@@ -82,7 +82,7 @@ session_start();
                     echo '</td>';
 
 
-                    $sql = "SELECT CONCAT (customer.fname , '_', customer.lname ) AS det  , project.city AS city , project.progress/100 as prog , project.id as id FROM project INNER JOIN customer ON project.customer_id=customer.id WHERE project.category='Community' and project.progress=100 AND project.architect_id='" . $_SESSION["id"] . "' ORDER BY city ASC;";
+                    $sql = "SELECT CONCAT (customer.fname , '_', customer.lname ) AS det  , project.city AS city , project.progress/100 as prog , project.id as id FROM project INNER JOIN customer ON project.customer_id=customer.id WHERE project.category='Community' and project.progress=100 AND project.architect_id='" . $_SESSION["id"] . "' AND project.status='Active' ORDER BY city ASC;";
                     $result = $conn->query($sql);
 
                     echo '<td valign="top">';

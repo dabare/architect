@@ -32,7 +32,7 @@
             <?php
             require_once '../db/dbConnection.php';
 
-            $sql = "SELECT * FROM g_project WHERE category='Industrial';";
+            $sql = "SELECT * FROM g_project WHERE category='Industrial' AND status='Active'; ";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {

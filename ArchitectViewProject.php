@@ -695,11 +695,44 @@ if ($TotalPayment == "") {
                         return false;
                     }
                 }
+
+
+                function deleteProject() {
+                    if (confirm("Confirm delete Project ") == true) {
+
+
+                        var form = document.createElement("form");
+                        form.setAttribute("method", "post");
+                        form.setAttribute("action", "Projects/DeleteProject.php");
+
+
+
+
+                        var pid = document.createElement("input");
+                        pid.setAttribute("type", "hidden");
+                        pid.setAttribute("name", "prid");
+                        pid.setAttribute("value", <?php echo $id ?>);
+
+
+                        form.appendChild(pid);
+
+
+
+
+                        document.body.appendChild(form);
+                        form.submit();
+                    } else {
+
+                    }
+
+                }
             </script>
 
-
-
-
+            <br><br>
+            <center>
+                <button type="button"  style="color: red;width: 500px;height: 30px;" onclick="deleteProject()">Delete This Project</button>
+            </center>
+            <br><br>
         </div>
 
     </body>

@@ -27,14 +27,19 @@
 
         <div class="sidebar">
             <div style="text-align: center">
-                <h1>Gallery</h1><br>
+                <h1>Gallery</h1>
+
+                <div style="text-align: right;padding-right: 5%;">
+                    <a  href="Projects/NewGalleryProject.php"><button type="button"  style="width: 150px;height: 30px;">Add New</button></a>
+                </div>
+                <br><br>
                 <fieldset style="background-color: transparent;width: 200px;height: 400px;margin-left: 100px;">
                     <legend><h3>Industrial</h3></legend>
                     <ul style="list-style: outside">
                         <?php
                         require_once './db/dbConnection.php';
 
-                        $sql = "SELECT * FROM g_project WHERE category = 'Industrial' ORDER BY title ASC;";
+                        $sql = "SELECT * FROM g_project WHERE category = 'Industrial' AND status='Active' ORDER BY title ASC;";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
@@ -52,7 +57,7 @@
                         <legend><h3>Residential</h3></legend>
                         <ul style="list-style: outside">
                             <?php
-                            $sql = "SELECT * FROM g_project WHERE category = 'Residential' ORDER BY title ASC;";
+                            $sql = "SELECT * FROM g_project WHERE category = 'Residential' AND status='Active' ORDER BY title ASC;";
                             $result = $conn->query($sql);
 
                             if ($result->num_rows > 0) {
@@ -70,7 +75,7 @@
                         <legend><h3>Community</h3></legend>
                         <ul style="list-style: outside">
                             <?php
-                            $sql = "SELECT * FROM g_project WHERE category = 'Community' ORDER BY title ASC;";
+                            $sql = "SELECT * FROM g_project WHERE category = 'Community' AND status='Active' ORDER BY title ASC;";
                             $result = $conn->query($sql);
 
                             if ($result->num_rows > 0) {
@@ -83,9 +88,6 @@
                         </ul>
                     </fieldset><br><br><br>
                 </form>
-            </div>
-            <div style="text-align: left;margin-left: 100px;">
-                <a  href="ArchitectManageProjects1.php"><button type="button"  style="width: 100px;height: 30px;">Add New</button></a>
             </div>
         </div>
 

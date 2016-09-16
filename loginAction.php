@@ -120,7 +120,7 @@ if (isset($_POST['login'])) {
     } else {
 
         echo "<script>alert('Email or password is not correct, try again!')</script>";
-        echo "<script>window.open('index.php','_self')</script>";
+        echo "<script>window.open('index.php#login','_self')</script>";
     }
     
 }

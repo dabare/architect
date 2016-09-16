@@ -95,14 +95,14 @@
                 width: 100%;
             }
             /* ---------------------------------------------------------------------------awards*/
-    #l_content_area
+            #l_content_area
             {
                 height: 400px;
                 width: 45%;
                 background-color: transparent;
                 padding: 10px;
                 margin-top:-650px;
-                
+
             }
 
             #r_content_area
@@ -212,7 +212,7 @@
             }
 
             label{
-               color: white;
+                color: white;
             }
 
 
@@ -315,37 +315,37 @@
             <center style="color: white; font-size: 50px">Awards</center>
             <br>
             <div>
-    <div style="background-color: transparent;height: 100vh;">
-        <div id="r_content_area">
-            <h3><font style="color: white;font-size: 30px;">Awards</font></h3>
-            <p><font style="color: white;font-size: 20px;">Geoffery Bawa Award for Excellence in Architecture 2008 - Commendation Prize for the Estate Bungalow in Ginigathhena<br><br>
+                <div style="background-color: transparent;height: 100vh;">
+                    <div id="r_content_area">
+                        <h3><font style="color: white;font-size: 30px;">Awards</font></h3>
+                        <p><font style="color: white;font-size: 20px;">Geoffery Bawa Award for Excellence in Architecture 2008 - Commendation Prize for the Estate Bungalow in Ginigathhena<br><br>
 
-            Sri Lanka Institute of Architects Excellent Design Award 2009 for Rathnayake House at Makola<br><br>
+                            Sri Lanka Institute of Architects Excellent Design Award 2009 for Rathnayake House at Makola<br><br>
 
-            19th Architect of the Year Award - under the category of focused countries Commendation Award for Avissawella Bunglow at Thalduwa, Avissawella.<br><br>
+                            19th Architect of the Year Award - under the category of focused countries Commendation Award for Avissawella Bunglow at Thalduwa, Avissawella.<br><br>
 
-            SLIA Design Award 2010 - Award of Merit under the Commercial Category for Showroom for David Pieris Motor Company (Ltd) Ratnapura.<br><br>
+                            SLIA Design Award 2010 - Award of Merit under the Commercial Category for Showroom for David Pieris Motor Company (Ltd) Ratnapura.<br><br>
 
-            SLIA Design Award 2011 - Award of merit under the category of Personalized housing for Subasinghe house at Kiribathgoda.<br><br> 
-            </font></p>
-        </div>
+                            SLIA Design Award 2011 - Award of merit under the category of Personalized housing for Subasinghe house at Kiribathgoda.<br><br> 
+                            </font></p>
+                    </div>
+                </div>
+                <div id="l_content_area">
+                    <h3><font style="color: white;font-size: 30px;">Academic qualifications</font></h3>
+                    <p><font style="color: white;font-size: 20px;">B.Sc (Physical Science) University of Colombo - 1996<br><br>
+
+                        SLIA Part I<br>
+                        Sri Lanka Institute of Architects - 1998<br><br>
+
+                        SLIA Part II<br>
+                        Sri Lanka Institute of Architects - 2002<br><br>
+
+                        SLIA Part III<br>
+                        Sri Lanka Institute of Architects - 2004<br><br>
+                        </font></p>
+                </div>
+
             </div>
-            <div id="l_content_area">
-                <h3><font style="color: white;font-size: 30px;">Academic qualifications</font></h3>
-                <p><font style="color: white;font-size: 20px;">B.Sc (Physical Science) University of Colombo - 1996<br><br>
-
-                SLIA Part I<br>
-                Sri Lanka Institute of Architects - 1998<br><br>
-
-                SLIA Part II<br>
-                Sri Lanka Institute of Architects - 2002<br><br>
-
-                SLIA Part III<br>
-                Sri Lanka Institute of Architects - 2004<br><br>
-                </font></p>
-            </div>
-
-        </div>
             <br><br>
 
         </div>
@@ -379,21 +379,21 @@
             <center style="color: white; font-size: 50px">Regulations</center>
             <br><br><br><br>
             <center>
-            <p><font size="5" color="white">Housing and Town Improvement Ordinance – 1915<br>
-                Town and Country Planning Ordinance – 1945<br>
-                Urban Development Authority Act  - 1978<br>
-                UDA – Planning and Building Regulations<br>
-                Urban Development Authority (Special Provision) Act<br>
-                Draft Regulations for Low Income Settlements<br>
-                Community Building Guidelines by National Housing Development Authority (NHDA)<br></font>
-            </p>
+                <p><font size="5" color="white">Housing and Town Improvement Ordinance – 1915<br>
+                    Town and Country Planning Ordinance – 1945<br>
+                    Urban Development Authority Act  - 1978<br>
+                    UDA – Planning and Building Regulations<br>
+                    Urban Development Authority (Special Provision) Act<br>
+                    Draft Regulations for Low Income Settlements<br>
+                    Community Building Guidelines by National Housing Development Authority (NHDA)<br></font>
+                </p>
             </center>
         </div>
         <div class="scope" id="contact">
             <br><br><br><br>
             <center style="color: white; font-size: 50px">Contact Us</center>
             <div style="color: white; font-size: 200%;">
-            <p style="display:inline-block;">01122497787</p><p style="display:inline-block; width: 82%; text-align: right;">firezonne.loop@gmail.com</p>
+                <p style="display:inline-block;">01122497787</p><p style="display:inline-block; width: 82%; text-align: right;">firezonne.loop@gmail.com</p>
             </div>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.5643649597737!2d79.89346104990712!3d7.060361918623994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2f737b5b05a09%3A0xd4ef00d25a3b354a!2sK+Zone+Ja-Ela!5e0!3m2!1sen!2slk!4v1471279498706"  frameborder="0" style="border:0; height: 65%; width: 100%" allowfullscreen></iframe>
 
@@ -408,13 +408,8 @@
                         <img src="images/customer.jpg" style="height: 200px; width: 200px;border: 5px solid white;  border-radius:200px;" />
 
                         <h1 style="color: wheat; font-size: 20px;">As a customer</h1>
-                        <div style="color: wheat; text-align: left; margin-left: 0px; width: 250px;height: 250px;">dfcsfsf c 
-                            fg
-                            fg fg fhg gh
-                            gh
-                            nj
-                            gh
-                            nfghfdhfgh fdghfdgh sfg  cbn  cbn vcbn   vcbn f h rfghtrfhtrdgt fdgh fghfdghdfg dfg d sfg dsf gd fg sdf
+                        <div style="color: wheat; text-align: left; margin-left: 0px; width: 250px;height: 250px;">
+                            Take few seconds to click here you won't regret for it<br>
                             <br><br><b><a style="font-size: 18px; color: #4CAF50;"href="RegisterAsCustomer.php">Register now ></a></b>
                         </div>
 
@@ -422,17 +417,12 @@
                     <div style="width: 17%; display:inline-block;">
 
                     </div>
-                    <div style="display:inline-block;">
+                    <div style="display:inline-block; ">
                         <img src="images/consultant.jpg" style="height: 200px; width: 200px;border: 5px solid white;  border-radius:200px;" />
 
                         <h1 style="color: wheat; font-size: 20px;">As a consultant</h1>
-                        <div style="color: wheat; text-align: left; margin-left: 0px; width: 250px; height: 250px;">dfcsfsf c 
-                            fg
-                            fg fg fhg gh
-                            gh
-                            nj
-                            gh
-                            nfghfdhfgh fdghfdgh sfg  cbn  cbn vcbn   vcbn f h rfghtrfhtrdgt fdgh fghfdghdfg dfg d sfg dsf gd fg sdf
+                        <div style="color: wheat; text-align: left; margin-left: 0px; width: 250px; height: 250px;">
+                            If you are a specialist in construction field its your tchance to become a member of our family.
                             <br><br><b><a style="font-size: 18px; color: #4CAF50;"href="RegisterAsConsultant.php">Register now ></a></b>
                         </div>
 
