@@ -13,14 +13,14 @@
     <body>
         <div>
             <ul id="mainMenue">
-                <li><a id="mainMenueA" href="#" style="float:left;">Home</a></li>
+                <li><a id="mainMenueA" href="#" style="float:left;"></a></li>
 
-                <li id="mainMenueLi"><a id="mainMenueA" href="#">Login</a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="#">Contact Us</a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="#">Regulations</a></li>
-                <li id="mainMenueLi"><a class="active" id="mainMenueA" href="#">Projects</a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="#">Awards</a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="#">About</a></li>
+                <li id="mainMenueLi"><a id="mainMenueA" href="#"></a></li>
+                <li id="mainMenueLi"><a id="mainMenueA" href="#"></a></li>
+                <li id="mainMenueLi"><a id="mainMenueA" href="#"></a></li>
+                <li id="mainMenueLi"><a class="active" id="mainMenueA" href="#">Residential Projects</a></li>
+                <li id="mainMenueLi"><a id="mainMenueA" href="#"></a></li>
+                <li id="mainMenueLi"><a id="mainMenueA" href="#"></a></li>
 
             </ul>
         </div><br><br><br><br>

@@ -15,7 +15,7 @@
             }
 
             #container{
-                background-image:url(./images/home_1.jpg);
+                background-image:none;
                 background-size: 100% 100%; 
                 background-repeat: no-repeat;
                 background-attachment: fixed;
@@ -105,6 +105,7 @@
     <body id="container">
         <nav id="bdy">
             <ul id="navigationbarEdit">
+                <li><a id="editItem" href="ConsultantNotifications.php">Notification</a></li>
                 <li><a id="editItem" href="ConsultantAppointments.php">Appointments</a></li>
                 <li><a id="activeEdit" href="ConsultantEditProfile.php">Edit Profile</a></li>
                 <li><a id="editItem" href="index.php">Logout</a></li>

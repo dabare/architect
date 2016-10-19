@@ -11,12 +11,13 @@
     </head>
     <body id="bdy">
         <ul id="navigationbarEdit">
-            <li><a id="activeEdit" href="ArchitectEditProfile.php">Edit Profile</a></li>
-            <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
-            <li><a id="editItem" href="ArchitectManageProjects.php">Manage Projects</a></li>
-            <li><a id="editItem" href="ArchitectAppointments.php">Appointments</a></li>
+            <li><a id="editItem" href="ArchitectNotification.php">Notification</a></li>
             <li><a id="editItem" href="ArchitectOnGoingProjects.php">On Going Projects</a></li>
-             <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
+            <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
+            <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
+            <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
+            <li><a id="activeEdit" href="ArchitectEditProfile.php">Edit Profile</a></li>
+            <li><a id="editItem" href="ArchitectAppointments.php">Appointments</a></li>
             <li><a id="editItem" href="ArchitectCustomers.php">Customers</a></li>
             <li><a id="editItem" href="ArchitectConsultants.php">Consultants</a></li>
             <li><a id="editItem" href="ArchitectEmployees.php">Employees</a></li>
@@ -27,7 +28,7 @@
 
         <div id="boddy">
 
-            <br>
+            <br><br>
             <form>
                 <div style="text-align: left;">
                     <div style="display:inline-block;">
@@ -134,7 +135,7 @@
                 <br>
                 <div style="text-align: center;">
                     <button type="button"  style="width: 200px;height: 30px;">Reset All Fields</button>
-                    <button type="button"  style="width: 200px;height: 30px;">Save</button>.
+                    <button type="button"  style="width: 200px;height: 30px;">Save</button>
                 </div>
                 <br><br>
             </form>

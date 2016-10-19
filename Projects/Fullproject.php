@@ -44,7 +44,7 @@ $projectid = $_GET['prid'];
                         echo '<div class="mySlides fade">
                     
                             
-                    <img src="../uploads/' . $row["url"] . '" style="width:100%">
+                    <img src="../uploads/' . $row["url"] . '" style="width:50%; height:50vh">
                         <div class="text">' . $row["description"] . '</div>
                 </div>';
                     }

@@ -112,7 +112,7 @@
                 <br>
                 <div style="text-align: center;">
                     <button type="button"  style="width: 200px;height: 30px;">Reset All Fields</button>
-                    <button type="button"  style="width: 200px;height: 30px;">Save</button>.
+                    <button type="button"  style="width: 200px;height: 30px;">Save</button>
                 </div>
                 <br><br>
             </form>

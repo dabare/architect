@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
     </head>
     <body id="bdy">
         <ul id="navigationbarEdit">
-
+            <li><a id="editItem" href="ArchitectNotification.php">Notification</a></li>
             <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
             <li><a id="activeEdit" href="ArchitectManageProjects.php">Gallery</a></li>
             <li><a id="editItem" href="ArchitectAppointments.php">Appointments</a></li>

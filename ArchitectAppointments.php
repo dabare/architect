@@ -10,12 +10,13 @@
     </head>
     <body id="bdy">
         <ul id="navigationbarEdit">
-            <li><a id="editItem" href="ArchitectEditProfile.php">Edit Profile</a></li>
-            <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
-            <li><a id="editItem" href="ArchitectManageProjects.php">Manage Projects</a></li>
-            <li><a id="activeEdit" href="ArchitectAppointments.php">Appointments</a></li>
+            <li><a id="editItem" href="ArchitectNotification.php">Notification</a></li>
             <li><a id="editItem" href="ArchitectOnGoingProjects.php">On Going Projects</a></li>
-             <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
+            <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
+            <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
+            <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
+            <li><a id="editItem" href="ArchitectEditProfile.php">Edit Profile</a></li>
+            <li><a id="activeEdit" href="ArchitectAppointments.php">Appointments</a></li>
             <li><a id="editItem" href="ArchitectCustomers.php">Customers</a></li>
             <li><a id="editItem" href="ArchitectConsultants.php">Consultants</a></li>
             <li><a id="editItem" href="ArchitectEmployees.php">Employees</a></li>
@@ -25,17 +26,19 @@
         </ul>
 
         <div style="margin-left:25%;padding:1px 16px;height:1000px;">
-            <h2>Fixed Full-height Side Nav</h2>
-            <h3>Try to scroll this area, and see how the sidenav sticks to the page</h3>
-            <p>Notice that this div element has a left margin of 25%. This is because the side navigation is set to 25% width. If you remove the margin, the sidenav will overlay/sit on top of this div.</p>
-            <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>
-            <p>Some text..</p>
-            <p>Some text..</p>
-            <p>Some text..</p>
-            <p>Some text..</p>
-            <p>Some text..</p>
-            <p>Some text..</p>
-            <p>Some text..</p>
+            <h3>Appointments</h3>
+                <div id="saltbl" style="text-align: center ;  overflow: scroll ; height: 300px;width: 200px;">
+                    <ul style="list-style: none">
+                    <li>
+                        <a href="ArchitectAppointments1.php" style="text-decoration: none;">Appointment 1</a>
+                    </li><br><br>
+                    <li><a href="ArchitectAppointments1.php" style="text-decoration: none;">Appointment 2 </a></li><br><br>
+                    <li><a href="ArchitectAppointments1.php" style="text-decoration: none;">Appointment 3</a><li><br><br>
+                    <li><a href="ArchitectAppointments1.php" style="text-decoration: none;">Appointment 4</a><li><br><br>
+                    <li><a href="ArchitectAppointments1.php" style="text-decoration: none;">Appointment 5</a><li><br><br>
+                    
+                    </ul>                      
+                </div>
         </div>
 
     </body>

@@ -10,12 +10,13 @@
     </head>
     <body id="bdy">
         <ul id="navigationbarEdit">
-            <li><a id="editItem" href="ArchitectEditProfile.php">Edit Profile</a></li>
-            <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
-            <li><a id="editItem" href="ArchitectManageProjects.php">Manage Projects</a></li>
-            <li><a id="editItem" href="ArchitectAppointments.php">Appointments</a></li>
+            <li><a id="editItem" href="ArchitectNotification.php">Notification</a></li>
             <li><a id="editItem" href="ArchitectOnGoingProjects.php">On Going Projects</a></li>
-             <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
+            <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
+            <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
+            <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
+            <li><a id="editItem" href="ArchitectEditProfile.php">Edit Profile</a></li>
+            <li><a id="editItem" href="ArchitectAppointments.php">Appointments</a></li>
             <li><a id="editItem" href="ArchitectCustomers.php">Customers</a></li>
             <li><a id="editItem" href="ArchitectConsultants.php">Consultants</a></li>
             <li><a id="editItem" href="ArchitectEmployees.php">Employees</a></li>
@@ -24,18 +25,62 @@
             <li><a id="editItem" href="index.php">Logout</a></li>
         </ul>
 
-        <div style="margin-left:25%;padding:1px 16px;height:1000px;">
-            <h2>Fixed Full-height Side Nav</h2>
-            <h3>Try to scroll this area, and see how the sidenav sticks to the page</h3>
-            <p>Notice that this div element has a left margin of 25%. This is because the side navigation is set to 25% width. If you remove the margin, the sidenav will overlay/sit on top of this div.</p>
-            <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>
-            <p>Some text..</p>
-            <p>Some text..</p>
-            <p>Some text..</p>
-            <p>Some text..</p>
-            <p>Some text..</p>
-            <p>Some text..</p>
-            <p>Some text..</p>
+        <div style="margin-left:20%;padding:1px 16px;height:1000px;">
+            <h2><center>Reports</center></h2><br><br>
+            <div id="border">
+                <br><br>
+                <div style="margin-left: 60px;">
+                    <div style="display: inline-block">
+                      From:
+                      <input type="text" name="date" size="15"> 
+                    </div>
+                    <div style="display: inline-block">
+                      To:
+                      <input type="text" name="date" size="15"> 
+                    </div>
+                    <div style="display: inline-block">
+                      <button type="button"  style="width: 200px;height: 30px;">Get Income Report</button> 
+                    </div>
+                </div><br><br><br>
+                <div style="margin-left: 60px;">
+                    <div style="display: inline-block">
+                      From:
+                      <input type="text" name="date" size="15"> 
+                    </div>
+                    <div style="display: inline-block">
+                      To:
+                      <input type="text" name="date" size="15"> 
+                    </div>
+                    <div style="display: inline-block">
+                      <button type="button"  style="width: 200px;height: 30px;">Get Expense Report</button> 
+                    </div>
+                </div><br><br><br>
+                <div style="margin-left: 60px;">
+                    <div style="display: inline-block">
+                      From:
+                      <input type="text" name="date" size="15"> 
+                    </div>
+                    <div style="display: inline-block">
+                      To:
+                      <input type="text" name="date" size="15"> 
+                    </div>
+                    <div style="display: inline-block">
+                      <button type="button"  style="width: 200px;height: 30px;">Total Profit</button> 
+                    </div>
+                </div><br><br><br>
+                <div style="margin-left: 60px;">
+                    <div style="display: inline-block">
+                      Province:
+                      <input type="text" name="date" size="15"> 
+                    </div>
+                    <div style="display: inline-block">
+                      
+                    </div>
+                    <div style="display: inline-block">
+                      <button type="button"  style="width: 200px;height: 30px;">Get Income Report</button> 
+                    </div>
+                </div><br><br><br>
+            </div>
         </div>
 
     </body>

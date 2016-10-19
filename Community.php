@@ -12,15 +12,15 @@
     <body>
         <div>
             <ul id="mainMenue">
-                <li><a id="mainMenueA" href="index.php" style="float:left;">Home</a></li>
+                <li><a id="mainMenueA" href="#" style="float:left;"></a></li>
 
-                <li id="mainMenueLi"><a id="mainMenueA" href="Register.php">Register</a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="Login.php">Login</a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="ContactUs.php">Contact Us</a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="LegalIssues.php">Legal Issues</a></li>
-                <li id="mainMenueLi"><a class="active" id="mainMenueA" href="Projects.php">Projects</a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="Awards.php">Awards</a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="About.php">About</a></li>
+                <li id="mainMenueLi"><a id="mainMenueA" href="#"></a></li>
+                <li id="mainMenueLi"><a id="mainMenueA" href="#"></a></li>
+                <li id="mainMenueLi"><a id="mainMenueA" href="#"></a></li>
+                <li id="mainMenueLi"><a id="mainMenueA" href="#"></a></li>
+                <li id="mainMenueLi"><a class="active" id="mainMenueA" href="#">Projects</a></li>
+                <li id="mainMenueLi"><a id="mainMenueA" href="#"></a></li>
+                <li id="mainMenueLi"><a id="mainMenueA" href="#"></a></li>
 
             </ul>
         </div>

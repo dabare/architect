@@ -82,6 +82,7 @@ if ($TotalPayment == "") {
     </head>
     <body id="bdy">
         <ul id="navigationbarEdit">
+            <li><a id="editItem" href="CustomerNotification.php">Notification</a></li>
             <li><a id="editItem" href="CustomerEditProfile.php">Edit Profile</a></li>
             <li><a id="activeEdit" href="CustomerMyProject.php">My Projects</a></li>
             <li><a id="editItem" href="CustomerMakeAppointments.php">Make Appointment</a></li>

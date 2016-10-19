@@ -73,7 +73,7 @@ if (isset($_POST['login'])) {
         }
 
 
-        echo "<script>window.open('ArchitectEditProfile.php','_self')</script>";
+        echo "<script>window.open('ArchitectOnGoingProjects.php','_self')</script>";
     }
 
     //check consultant
