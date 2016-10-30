@@ -1,15 +1,38 @@
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>architect</title>
+<head>
+<title>Architect</title>
+<link rel="stylesheet" type="text/css" href="CSS/architectEdit.css">
+<link rel="stylesheet" type="text/css" href="profcss/style_theme.css">
+<link rel="stylesheet" type="text/css" href="profcss/style.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="profcss/opensans.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
-        <link rel="stylesheet" type="text/css" href="CSS/architectEdit.css">
-        <meta charset="utf-8">
+<body bgcolor="grey" class="theme-15">
 
-    </head>
-    <body id="bdy">
-        <ul id="navigationbarEdit">
+<!--Navbar-->
+<div class="top">
+	<ul class="navbar theme-d2 left-align large">
+
+		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Logo</a></li>
+		
+	</ul>
+</div>
+
+<!--Page Container-->
+<div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 0px">
+	<!--The Grid-->
+	<div class="row">
+
+		<!-- left panel -->
+                <ul id="navigationbarEdit">
             <li><a id="activeEdit" href="ArchitectNotification.php">Notification</a></li>
             <li><a id="editItem" href="ArchitectOnGoingProjects.php">On Going Projects</a></li>
             <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
@@ -23,8 +46,8 @@
             <li><a id="editItem" href="ArchitectReports.php">Reports</a></li>
             <li><a id="editItem" href="ArchitectSettings.php">Settings</a></li>
             <li><a id="editItem" href="index.php">Logout</a></li>
-        </ul>
 
+            </ul>
         <div style="margin-left:25%;padding:1px 16px;height:1000px;">
             <h1><b><center>Notification</center></b></h1>
 

@@ -1,16 +1,39 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>architect</title>
+<head>
+<title>Architect</title>
+<link rel="stylesheet" type="text/css" href="CSS/architectEdit.css">
+<link rel="stylesheet" type="text/css" href="profcss/style_theme.css">
+<link rel="stylesheet" type="text/css" href="profcss/style.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="profcss/opensans.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
-        <link rel="stylesheet" type="text/css" href="CSS/architectEdit.css">
-        <meta charset="utf-8">
+<body bgcolor="grey" class="theme-15">
 
-    </head>
-    <body id="bdy">
+<!--Navbar-->
+<div class="top">
+	<ul class="navbar theme-d2 left-align large">
 
-        <ul id="navigationbarEdit">
+		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Logo</a></li>
+		
+	</ul>
+</div>
+
+<!--Page Container-->
+<div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 0px">
+	<!--The Grid-->
+	<div class="row">
+
+		<!-- left panel -->
+                <ul id="navigationbarEdit">
             <li><a id="editItem" href="ArchitectNotification.php">Notification</a></li>
             <li><a id="editItem" href="ArchitectOnGoingProjects.php">On Going Projects</a></li>
             <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
@@ -25,88 +48,164 @@
             <li><a id="editItem" href="ArchitectSettings.php">Settings</a></li>
             <li><a id="editItem" href="index.php">Logout</a></li>
 
-        </ul>
-        <div class="sidebar">
+            </ul>
+                <div class="sidebar" style="margin-left:400px">
 
             <div style="text-align: center">
-                <h1>Awards</h1>
+                <h1>Awards</h1><br><br>
             </div>
             <div style="text-align: center">
                 <table>
                     <tr>
-                        <th>Award Name</th>
-                        <th>Description</th>
-                        <th>Image</th>
+                        <th>Award<br><br></th>
+                        <th>Academic Qualification<br><br></th>
+                        
 
                     </tr>
                     <tr>
-                        <td>Geoffery Bawa Award for Excellence in Architecture 2008</td>
-                        <td>Commendation Prize for the Estate Bungalow in Ginigathhena</td>
-                        <td><a><img src="images/images.jpg"  width="50" height="50">
-                                <div style="display:inline-block;">    
-                                    <button type="button">Remove</button>
-                                    <button type="button">Edit</button>
-                                </div>    
-                            </a>
+                        <td>Geoffery Bawa Award for Excellence in Architecture 2008
+                            <br><br>
+                            <div style="display:inline-block;">    
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Remove
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save
+                </button>
+                                </div>
+                            <br><br>
                         </td>
-
+                        <td>Commendation Prize for the Estate Bungalow in Ginigathhena
+                            <br><br>
+                            <div style="display:inline-block;">    
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Remove
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save
+                </button>
+                            </div>
+                            <br><br>
+                        </td>
+                        
                     </tr>
                     <tr>
-                        <td>Sri Lanka Institute of Architects Excellent Design Award 2009 for Rathnayake House at Makola</td>
+                        <td>Sri Lanka Institute of Architects Excellent Design Award 2009 for Rathnayake House at Makola
+                            <br><br>
+                            <div style="display:inline-block;">    
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Remove
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save
+                </button>
+                            </div>
+                            <br><br>
+                        </td>
                         <td></td>
-                        <td><a><img src="images/index.jpg"  width="50" height="50">
-                                <div style="display:inline-block;">    
-                                    <button type="button">Remove</button>
-                                    <button type="button">Edit</button>
-                                </div>    
-                            </a>
-                        </td>
+                        
                     </tr>
                     <tr>
-                        <td>19th Architect of the Year Award</td>
-                        <td>under the category of focused countries Commendation Award for Avissawella Bunglow at Thalduwa, Avissawella.</td>
-                        <td><a><img src="images/images.jpg"  width="50" height="50">
-                                <div style="display:inline-block;">    
-                                    <button type="button">Remove</button>
-                                    <button type="button">Edit</button>
-                                </div>
-                            </a>
+                        <td>19th Architect of the Year Award
+                            <br><br>
+                            <div style="display:inline-block;">    
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Remove
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save
+                </button>
+                            </div>
+                            <br><br>
                         </td>
+                        <td>under the category of focused countries Commendation Award for Avissawella Bunglow at Thalduwa, Avissawella.
+                            <br><br>
+                            <div style="display:inline-block;">    
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Remove
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save
+                </button>
+                                </div>
+                            <br><br>
+                        </td>
+                        
                     </tr>
                     <tr>
-                        <td>SLIA Design Award 2010</td>
-                        <td>Award of Merit under the Commercial Category for Showroom for David Pieris Motor Company (Ltd) Ratnapura.</td>
-                        <td><a><img src="images/index.jpg"  width="50" height="50">
-                                <div style="display:inline-block;">
-                                    <button type="button">Remove</button>
-                                    <button type="button">Edit</button>
+                        <td>SLIA Design Award 2010
+                            <br><br>
+                            <div style="display:inline-block;">    
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Remove
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save
+                </button>
                                 </div>
-                            </a>
+                            <br><br>
                         </td>
+                        <td>Award of Merit under the Commercial Category for Showroom for David Pieris Motor Company (Ltd) Ratnapura.
+                            <br><br>
+                            <div style="display:inline-block;">    
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Remove
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save
+                </button>
+                                </div>
+                            <br><br>
+                        </td>
+                        
                     </tr>
                     <tr>
-                        <td>SLIA Design Award 2011</td>
-                        <td>Award of merit under the category of Personalized housing for Subasinghe house at Kiribathgoda.</td>
-                        <td><a><img src="images/index.jpg"  width="50" height="50">
-                                <div style="display:inline-block;">    
-                                    <button type="button">Remove</button>
-                                    <button type="button">Edit</button>
+                        <td>SLIA Design Award 2011
+                            <br><br>
+                            <div style="display:inline-block;">    
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Remove
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save
+                </button>
                                 </div>
-                            </a>
+                            <br><br>
                         </td>
+                        <td>Award of merit under the category of Personalized housing for Subasinghe house at Kiribathgoda.
+                            <br><br>
+                            <div style="display:inline-block;">    
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Remove
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
+                </button>
+                                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save
+                </button>
+                                </div>
+                            <br><br>
+                        </td>
+                        
                     </tr>
                 </table>
             </div>
             <div><br><br><br><br>
                 <div style="text-align: center;">
+                    
                     <h3>Add New:</h3>
+                    Select:
+                    <select name="cars">
+                        <option value="Awards">Awards</option>
+                        <option value="Academic Qualification">Academic Qualification</option>
+                    </select>
+                    <br><br>
                     Name:
                     <input id="text" size="50"><br><br>
                     Description:
                     <textarea rows="4" cols="50" style="position: left"></textarea>
                     <br><br>
                     <div style="text-align: center;">
-                        <button type="button">Save</button>
+                        <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save
+                </button>
                     </div>
                 </div>
             </div>

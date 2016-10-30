@@ -1,15 +1,38 @@
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>architect</title>
+<head>
+<title>Architect</title>
+<link rel="stylesheet" type="text/css" href="CSS/architectEdit.css">
+<link rel="stylesheet" type="text/css" href="profcss/style_theme.css">
+<link rel="stylesheet" type="text/css" href="profcss/style.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="profcss/opensans.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
-        <link rel="stylesheet" type="text/css" href="CSS/architectEdit.css">
-        <meta charset="utf-8">
+<body bgcolor="grey" class="theme-15">
 
-    </head>
-    <body id="bdy">
-        <ul id="navigationbarEdit">
+<!--Navbar-->
+<div class="top">
+	<ul class="navbar theme-d2 left-align large">
+
+		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Logo</a></li>
+		
+	</ul>
+</div>
+
+<!--Page Container-->
+<div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 0px">
+	<!--The Grid-->
+	<div class="row">
+
+		<!-- left panel -->
+                <ul id="navigationbarEdit">
             <li><a id="editItem" href="ArchitectNotification.php">Notification</a></li>
             <li><a id="editItem" href="ArchitectOnGoingProjects.php">On Going Projects</a></li>
             <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
@@ -23,23 +46,23 @@
             <li><a id="editItem" href="ArchitectReports.php">Reports</a></li>
             <li><a id="editItem" href="ArchitectSettings.php">Settings</a></li>
             <li><a id="editItem" href="index.php">Logout</a></li>
-        </ul>
 
+            </ul>
+    <h2><center>Consultants</center></h2><br><br>
         <div style="padding-left: 300px">
 
             <ul id="navigationbarEdit" style="background-color: transparent" >
                 <h3>Registered</h3>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant1</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant2</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant3</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant4</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant5</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant7</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant8</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant9</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant10</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant11</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant12</a></li>
+                <div id="saltbl" style="text-align: center ;  overflow: scroll ; height: 300px;width: 200px;">
+                    <ul style="list-style: none">
+                    <li><a href="ArchitectConsultants1.php" style="text-decoration: none;">Consultant 1</a></li><br><br>
+                    <li><a href="ArchitectConsultants1.php" style="text-decoration: none;">Consultant 2 </a></li><br><br>
+                    <li><a href="ArchitectConsultants1.php" style="text-decoration: none;">Consultant 3</a><li><br><br>
+                    <li><a href="ArchitectConsultants1.php" style="text-decoration: none;">Consultant 4</a><li><br><br>
+                    <li><a href="ArchitectConsultants1.php" style="text-decoration: none;">Consultant 5</a><li><br><br>
+                    
+                    </ul>                      
+                </div>
             </ul>
         </div>
         
@@ -47,17 +70,16 @@
 
             <ul id="navigationbarEdit" style="background-color: transparent" >
                 <h3>Pending</h3>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant1</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant2</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant3</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant4</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant5</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant7</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant8</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant9</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant10</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant11</a></li>
-                <li><a id="editItem" href="ArchitectConsultants1.php">Consultant12</a></li>
+                <div id="saltbl" style="text-align: center ;  overflow: scroll ; height: 300px;width: 200px;">
+                    <ul style="list-style: none">
+                    <li><a href="ArchitectConsultants1.php" style="text-decoration: none;">Consultant 1</a></li><br><br>
+                    <li><a href="ArchitectConsultants1.php" style="text-decoration: none;">Consultant 2 </a></li><br><br>
+                    <li><a href="ArchitectConsultants1.php" style="text-decoration: none;">Consultant 3</a><li><br><br>
+                    <li><a href="ArchitectConsultants1.php" style="text-decoration: none;">Consultant 4</a><li><br><br>
+                    <li><a href="ArchitectConsultants1.php" style="text-decoration: none;">Consultant 5</a><li><br><br>
+                    
+                    </ul>                      
+                </div>
             </ul>
         </div>
 
