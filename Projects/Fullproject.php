@@ -2,16 +2,35 @@
 $projectid = $_GET['prid'];
 ?>
 
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Project</title>
+<head>
+<title>Gallery</title>
 
-        <link rel="stylesheet" type="text/css" href="../CSS/slide.css">
-        <meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../CSS/slide.css">
+<link rel="stylesheet" type="text/css" href="../profcss/style_theme.css">
+<link rel="stylesheet" type="text/css" href="../profcss/style.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
-    </head>
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+</head>
+
+<body bgcolor="grey" class="theme-15">
+
+<!--Navbar-->
+<div class="top">
+	<ul class="navbar theme-d2 left-align large">
+
+		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Project Details</a></li>
+		
+	</ul>
+</div>
+
+<br><br><br><br>
     <body>
         <div style="margin-left: 100px;"><h3>
                 <?php

@@ -21,7 +21,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 <div class="top">
 	<ul class="navbar theme-d2 left-align large">
 
-		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Logo</a></li>
+		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Architect</a></li>
 		
 	</ul>
 </div>
@@ -53,11 +53,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <div style="margin-left: -120px;margin-top: 10px;background-color: whitesmoke;width: 800px;height:1000px;">
                 <br>
                 <h3>General Account Settings</h3><br>
-                <div style="border-top: 5px solid black;">
+                <div style="border-top: 2px solid black;">
                     <div style="display: inline-block;margin-left: 10px;">
                         <h4>Name</h4>
                     </div>
-                    <div style="display: inline-block;margin-left:185px;">
+                    <div style="display: inline-block;margin-left: 200px;">
                         Priyantha Premathilake
                     </div>
                     <div style="display: inline-block;margin-left: 600px;">
@@ -69,8 +69,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                     <div style="display: inline-block;margin-left: 10px;">
                         <h4>Username</h4>
                     </div>
-                    <div style="display: inline-block;margin-left: 150px;">
-                        Architect
+                    <div style="display: inline-block;margin-left: 200px;">
+                        architect
                     </div>
                     <div style="display: inline-block;margin-left: 600px;">
                         <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
@@ -81,9 +81,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                     <div style="display: inline-block;margin-left: 10px;">
                         <h4>Contact</h4>
                     </div>
-                    <div style="display: inline-block;margin-left: 165px;">
-                        Email :premathilaka@gmail.com<br>
-						T.P NO:0114578958
+                    <div style="display: inline-block;margin-left: 200px;">
+                        Primary:premathilaka@gmail.com
                     </div>
                     <div style="display: inline-block;margin-left: 600px;">
                         <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
@@ -94,8 +93,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                     <div style="display: inline-block;margin-left: 10px;">
                         <h4>Password</h4>
                     </div>
-                    <div style="display: inline-block;margin-left: 145px;">
-                        .........
+                    <div style="display: inline-block;margin-left: 200px;">
+                        Updated 5 months ago
                     </div>
                     <div style="display: inline-block;margin-left: 600px;">
                         <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
@@ -104,10 +103,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                 </div><br>
                 <div style="border-top: 0.1px solid black;">
                     <div style="display: inline-block;margin-left: 10px;">
-                        <h4>Websites</h4>
+                        <h4>Networks</h4>
                     </div>
-                    <div style="display: inline-block;margin-left: 150px;">
-                        Empty
+                    <div style="display: inline-block;margin-left: 200px;">
+                        No networks
                     </div>
                     <div style="display: inline-block;margin-left: 600px;">
                         <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
@@ -118,13 +117,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                     <div style="display: inline-block;margin-left: 10px;">
                         <h4>Language</h4>
                     </div>
-                    <div style="display: inline-block;margin-left: 140px;">
+                    <div style="display: inline-block;margin-left: 200px;">
                         English
                     </div>
-                    <div style="display: inline-block;margin-left: 575px;">
-                        <span style="padding-left: 23px;" class="uiIconText fbSettingsListItemEdit"><i class="img sp_iM44Ir4PJL9 sx_b37e75" style="top: -2px;"></i></span>
-						<button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button" ><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit</span>
-                
+                    <div style="display: inline-block;margin-left: 600px;">
+                        <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
+                </button>
                     </div>
                 </div><br>
                 <div style="border-bottom: 2px solid black;">

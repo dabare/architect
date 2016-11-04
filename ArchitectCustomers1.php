@@ -1,3 +1,31 @@
+<?php
+require_once './db/dbConnection.php';
+
+$id = $_GET['id'];
+
+
+$sql = "SELECT * FROM customer WHERE id=" . $id . ";";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        $fname=$row["fname"];
+	$mname=$row["mname"];
+	$lname=$row["lname"];
+	$age=$row["age"];
+	$add_no=$row["add_no"];
+	$add_street=$row["add_street"];
+	$add_city=$row["add_city"];
+	$email=$row["email"];
+	$mobile_no=$row["mobile_no"];
+	$land_no=$row["land_no"];
+	$nic=$row["nic"];
+	$date=$row["date"];
+        
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +49,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 <div class="top">
 	<ul class="navbar theme-d2 left-align large">
 
-		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Logo</a></li>
+		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Architect</a></li>
 		
 	</ul>
 </div>
@@ -66,43 +94,59 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 					<p><i class="fa fa-home fa-fw margin-right text-theme"></i> Address </p>
 				</div>
 			</div>
-			<br>
+			<br><br>
+                        <!--Project-->
+			
+				<div class="accordion white">
+					<div class="dropdown">
+					
+						
+	   					<button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button" data-toggle="dropdown"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Projects
+	    				<span class="caret"></span></button>
+	    				<ul class="dropdown-menu">
+	      				<li><a href="ArchitectCustomers3.php">Project 1</a></li>
+	      				<li><a href="ArchitectCustomers3.php">Project 2</a></li>
+	      				<li><a href="ArchitectCustomers3.php">Project 3</a></li>
+	    				</ul>
+	  					</div>
+					</div>
+				<br><br>
                 <div style="text-align: left;">
                     <div style="display:inline-block;">
                         First name:<br>
-                        <input type="text" size="15" name="firstname" disabled>
+                        <input type="text" size="15" name="firstname" value="<?php echo $fname ?>" disabled>
                     </div>
                     <div style="display:inline-block;">
                         Middle name:<br>
-                        <input type="text" size="15" name="middlename" disabled>
+                        <input type="text" size="15" name="middlename" value="<?php echo $mname ?>" disabled>
                     </div>
                     <div style="display:inline-block;">
                         Last name:<br>
-                        <input type="text" size="15" name="lastname" disabled>
+                        <input type="text" size="15" name="lastname" value="<?php echo $lname ?>" disabled>
                     </div>
                 </div>  
                 <br>
                 
-                Age:<input type="text" name="age" size="4" disabled>
+                Age:<input type="text" name="age" size="4" value="<?php echo $age ?>" disabled>
                 <br><br>
                 Address:<br>
                 <div style=" padding-left: 2em;">
                     No:
                     <br>
-                    <input type="text" size="10" name="no" disabled>
+                    <input type="text" size="10" name="no" value="<?php echo $add_no ?>" disabled>
                     <br>
                     Street:
                     <br>
-                    <input type="text" name="street" disabled>
+                    <input type="text" name="street" value="<?php echo $add_street ?>" disabled>
                     <br>
                     City:
                     <br>
-                    <input type="text" name="city" disabled>
+                    <input type="text" name="city" value="<?php echo $add_city ?>" disabled>
                 </div>
                 <br>
                 Email:
                 <br>
-                <input type="text" name="email" size="35" disabled>
+                <input type="text" name="email" size="35" value="<?php echo $email ?>" disabled>
                 <br><br>
 
 
@@ -110,19 +154,19 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                     <div style="display:inline-block;">
                         Mobile No:
                         <br>
-                        <input type="text" name="mobile" size="10" disabled>
+                        <input type="text" name="mobile" size="10" value="<?php echo $mobile_no ?>" disabled>
                     </div>
                     <div style="display:inline-block;">
                         Land No:
                         <br>
-                        <input type="text" name="land" size="10" disabled>
+                        <input type="text" name="land" size="10" value="<?php echo $land_no ?>" disabled>
                     </div>
                 </div>  
 
                 <br>
                 NIC:
                 <br>
-                <input type="text" name="nic" size="15" disabled>
+                <input type="text" name="nic" size="15" value="<?php echo $nic ?> " disabled>
 
                 <br><br>
                 Reg. No.:
@@ -132,7 +176,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                 <br><br>
                 Account created date:
                 <br>
-                <input type="date" name="date" disabled>
+                <input type="date" name="date" value="<?php echo $date ?>" disabled>
 
                 <br><br>
                 User Name:
@@ -145,11 +189,50 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                     <option value="inactive">Inactive</option>
                 </select>
                 <br><br>
-                <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save
-                </button>
+                
                 
             </form><br><br><br>
         </div>
 
+			
+		</div>
+
+	</div>
+</div>
+</div>
+
+               
+        <!--Footer-->
+<div class="">
+	<ul class="navbar theme-d5 left-align medium">
+
+		<li><a class="padding-large theme-d4">You are Logged in as:</a></li>
+		
+	</ul>
+</div>
+<!-- <footer class="container theme-d3 padding-18">
+	<h5>You are logged in as:</h5>
+</footer>
+
+<footer class="container theme-d5 padding-17">
+	<p>Name</p>
+</footer> -->
+
+<script type="text/javascript">
+//My Projects
+function myFunction(id){
+	var x = document.getElementById('id');
+	if (x.className.indexOf("show") == -1) {
+		x.className += "show";
+		x.previousElementsSibling.className += "theme-d1";
+	} else {
+		x.className = x.className.replace("show","");
+		x.previousElementsSibling.className = 
+		x.previousElementsSibling.className.replace("theme-d1","");
+	}
+}
+</script>
+</div>
+<?php mysqli_close($conn); ?>
     </body>
 </html> 

@@ -67,12 +67,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                                 <?php
                                 require_once './db/dbConnection.php';
 
-                                $sql = "SELECT * FROM g_project WHERE category = 'Industrial' AND status='Active' ORDER BY title ASC;";
-                                $result = $conn->query($sql);
+                                $sql1 = "SELECT * FROM g_project WHERE category = 'Industrial' AND status='Active' ORDER BY title ASC;";
+                                $result1 = $conn->query($sql1);
 
-                                if ($result->num_rows > 0) {
+                                if ($result1->num_rows > 0) {
                                 // output data of each row
-                                    while ($row = $result->fetch_assoc()) {
+                                    while ($row = $result1->fetch_assoc()) {
                                         echo '<li><a id="editItem" href="ArchitectManageProjects1.php?id=' . $row["id"] . '">' . $row["title"] . '</a></li><br>';
                                     }
                                 }
@@ -87,19 +87,19 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                         <legend><h3>Residential</h3></legend><br>
                         <ul style="list-style: outside">
                             <?php
-                            $sql = "SELECT * FROM g_project WHERE category = 'Residential' AND status='Active' ORDER BY title ASC;";
-                            $result = $conn->query($sql);
+                            $sql2 = "SELECT * FROM g_project WHERE category = 'Residential' AND status='Active' ORDER BY title ASC;";
+                            $result2 = $conn->query($sql2);
 
-                            if ($result->num_rows > 0) {
+                            if ($result2->num_rows > 0) {
                                 // output data of each row
-                                while ($row = $result->fetch_assoc()) {
+                                while ($row = $result2->fetch_assoc()) {
                                     echo '<li><a id="editItem" href="ArchitectManageProjects1.php?id=' . $row["id"] . '">' . $row["title"] . '</a></li><br>';
                                 }
                             }
                             ?>
                         </ul>
                     </fieldset><br>
-                    </form>
+                    </form> 
                 </div>
                 
                 <div id="border">

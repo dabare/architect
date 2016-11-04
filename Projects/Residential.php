@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>architect</title>
+<head>
+<title>Gallery</title>
+<link rel="stylesheet" type="text/css" href="../CSS/projects.css">
 
-        <link rel="stylesheet" type="text/css" href="../CSS/projects.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/home.css">
-        <meta charset="utf-8">
-        <meta name="description" content="We love playing with light, material, and shapes and driven with passion in making the client’s dream a reality beyond their expectations.">
-        <meta name="keywords" content="architecture,landscaping,interior designing,urban designs, kasu media lab, kml ,In SriLanka, sri lanka,bunglows, SLIA, CSA, houses">
+<link rel="stylesheet" type="text/css" href="../profcss/style_theme.css">
+<link rel="stylesheet" type="text/css" href="../profcss/style.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="profcss/opensans.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
-    </head>
-    <body>
-        <div>
-            <ul id="mainMenue">
-                <li><a id="mainMenueA" href="#" style="float:left;"></a></li>
+<body bgcolor="grey" class="theme-15">
 
-                <li id="mainMenueLi"><a id="mainMenueA" href="#"></a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="#"></a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="#"></a></li>
-                <li id="mainMenueLi"><a class="active" id="mainMenueA" href="#">Residential Projects</a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="#"></a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="#"></a></li>
+<!--Navbar-->
+<div class="top">
+	<ul class="navbar theme-d2 left-align large">
 
-            </ul>
-        </div><br><br><br><br>
+		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Residential Projects</a></li>
+		
+	</ul>
+</div>
+    <br><br><br><br>
         <div style="height: 750px;margin-left: 50px;">
             <?php
             require_once '../db/dbConnection.php';

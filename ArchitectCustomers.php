@@ -1,4 +1,6 @@
-
+<?php
+require_once './db/dbConnection.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +24,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 <div class="top">
 	<ul class="navbar theme-d2 left-align large">
 
-		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Logo</a></li>
+		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Architect</a></li>
 		
 	</ul>
 </div>
@@ -55,15 +57,22 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <h2><center>Customers</center></h2><br><br>
                 <div id="saltbl" style="text-align: center ;  overflow: scroll ; height: 300px;width: 200px;">
                     <ul style="list-style: none">
-                    <li><a href="ArchitectCustomers1.php" style="text-decoration: none;">Customer 1</a></li><br><br>
-                    <li><a href="ArchitectCustomers1.php" style="text-decoration: none;">Customer 2 </a></li><br><br>
-                    <li><a href="ArchitectCustomers1.php" style="text-decoration: none;">Customer 3</a><li><br><br>
-                    <li><a href="ArchitectCustomers1.php" style="text-decoration: none;">Customer 4</a><li><br><br>
-                    <li><a href="ArchitectCustomers1.php" style="text-decoration: none;">Customer 5</a><li><br><br>
+                    
+                            <?php
+                                $sql = "SELECT * FROM customer;";
+                                $result = $conn->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                // output data of each row
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo '<li><a id="editItem" href="ArchitectCustomers1.php?id=' . $row["id"] . '">' . $row["fname"] . '</a></li><br>';
+                                    }
+                                }
+                            ?>
                     
                     </ul>                      
                 </div>
         </div>
-
+    <?php mysqli_close($conn); ?>
     </body>
 </html> 

@@ -73,7 +73,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 <div class="top">
 	<ul class="navbar theme-d2 left-align large">
 
-		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Logo</a></li>
+		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Architect</a></li>
 		
 	</ul>
 </div>
@@ -100,10 +100,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <li><a id="editItem" href="index.php">Logout</a></li>
 
             </ul>
+</div>
+        <div style="margin-left:200px">
 
-                <div style="margin-left:300px">
-
-            <div class="l_sidebar">
+            <div class="l_sidebar" style="width:300px;">
 
                 <form action="Projects/SaveProjectTitle.php"  method="POST">
                     <h1>Title:</h1>
@@ -129,7 +129,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                 <p><font size="3">Payment Done: RS <?php echo $TotalPayment ?> /=</font></p>
                 <p><font size="3">Remaining Payment: RS <?php echo $estcost - $TotalPayment ?> /=</font></p>
                 <a href="FullProjectDetails.php?id=<?php echo $id; ?>">More Details></a>
-                <div>
+             
 
                     <div id="paymentform">
                         <br><br>
@@ -316,20 +316,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                         }
                     }
                     ?>
-
-
-
-
-
-
                 </div>
-
-            </div>
-        </div>
-
-
-        <div class="margin">
-            <div style="background-color: whitesmoke;margin-left: 300px">
+            
+        <div class="margin" style="width:1100px;">
+            <div style="background-color: whitesmoke;margin-left: 300px;margin-top: -1200px;">
                 <div style="align-content: center;text-align: left;padding: 2em;">
                     <center><h2>Project Progress</h2></center>
                     <?php
@@ -732,13 +722,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
                 }
             </script>
-
-            <br><br>
-            <center>
-                <button type="button"  style="color: red;width: 500px;height: 30px;" onclick="deleteProject()">Delete This Project</button>
-            </center>
-            <br><br>
         </div>
+    </div>
+            <br><br>
+            
+    <div>
+         <center>
+            <button type="button"  style="color: red;width: 500px;height: 30px;" onclick="deleteProject()">Delete This Project</button>
+         </center>
+    </div>
+       
 
     </body>
 </html> 

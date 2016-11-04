@@ -88,7 +88,7 @@ if (isset($_POST['login'])) {
             }
         }
 
-        echo "<script>window.open('ConsultantAppointments.php','_self')</script>";
+        echo "<script>window.open('ConsultantEditProfile1.php','_self')</script>";
     }
 
     //check employee
