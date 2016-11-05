@@ -256,6 +256,6 @@ function myFunction(id){
 }
 </script>
 </div>
-<?php mysqli_close($conn); ?>
+<?php $conn->close(); ?>
     </body>
 </html> 

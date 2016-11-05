@@ -365,7 +365,7 @@ require_once './db/dbConnection.php';
                                             echo '<br><br>';
                                         }
                                     }
-                                    $conn->close();
+                                    
                                     ?>
                                 </p>
 
@@ -397,7 +397,7 @@ require_once './db/dbConnection.php';
                     </div>
 
                     <div class="sec-sub-title text-center">
-                        <p>Gallery contains photos of the completed photo gallery under Industrial,Community and </p>
+                        <p>Gallery contains photos of the completed photo gallery under Industrial,Community and Residential </p>
                     </div>
 
                     <div class="work-filter wow fadeInRight animated" data-wow-duration="500ms">
@@ -414,75 +414,90 @@ require_once './db/dbConnection.php';
             </div>
 
             <div class="project-wrapper">
+                    <?php
+                    $sql = "SELECT * FROM g_project WHERE category='Residential' AND status='Active';";
+                    $result = $conn->query($sql);
+                    
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<figure class="mix work-item residential">';
+                    $sql2 = 'SELECT url FROM g_image WHERE id = ( SELECT MIN(id) FROM g_image WHERE g_project_id=' . $row["id"] . ');';
+                    $result2 = $conn->query($sql2);
 
-                <figure class="mix work-item residential">
+                        if ($result2->num_rows > 0) {
+                            // output data of each row
+                            while ($row2 = $result2->fetch_assoc()) {
+                                echo '<img src="./uploads/' . $row2["url"] . '"  alt="" style="width:600px;height:200px">';
+                                echo '<figcaption class="overlay">';
+                                echo '<a class="fancybox" rel="works" title="Write Your Image Caption Here" href="./Projects/Fullproject.php?prid=' . $row["id"] . '"><i class="fa fa-eye fa-lg"></i></a>';
+                                echo '<h4>'  .$row["title"].  '</h4>';
+                                echo '</figcaption>';
+                            }
+                        }
+                        echo '</figure>';
+                        }
+                    }
+                
+                    ?> 
+                
 
-                    <img src="img/res/pro3.jpg" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="./Projects/Residential.php"><i class="fa fa-eye fa-lg"></i></a>
-                        <h4>Residential Projects</h4>
+                <?php
+                    $sql = "SELECT * FROM g_project WHERE category='Community' AND status='Active';";
+                    $result = $conn->query($sql);
+                    
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<figure class="mix work-item community">';
+                    $sql2 = 'SELECT url FROM g_image WHERE id = ( SELECT MIN(id) FROM g_image WHERE g_project_id=' . $row["id"] . ');';
+                    $result2 = $conn->query($sql2);
 
-                    </figcaption>
-                </figure>
+                        if ($result2->num_rows > 0) {
+                            // output data of each row
+                            while ($row2 = $result2->fetch_assoc()) {
+                                echo '<img src="./uploads/' . $row2["url"] . '"  alt="" style="width:600px;height:200px">';
+                                echo '<figcaption class="overlay">';
+                                echo '<a class="fancybox" rel="works" title="Write Your Image Caption Here" href="./Projects/Fullproject.php?prid=' . $row["id"] . '"><i class="fa fa-eye fa-lg"></i></a>';
+                                echo '<h4>' .$row["title"]. '</h4>';
+                                echo '</figcaption>';
+                            }
+                        }
+                        echo '</figure>';
+                        }
+                    }
+                
+                    ?> 
 
-                <figure class="mix work-item community">
+                <?php
+                    $sql = "SELECT * FROM g_project WHERE category='Industrial' AND status='Active';";
+                    $result = $conn->query($sql);
+                    
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<figure class="mix work-item indusrial">';
+                    $sql2 = 'SELECT url FROM g_image WHERE id = ( SELECT MIN(id) FROM g_image WHERE g_project_id=' . $row["id"] . ');';
+                    $result2 = $conn->query($sql2);
 
-                    <img src="img/com/comm2.jpg" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="./Projects/Community.php"><i class="fa fa-eye fa-lg"></i></a>
-                        <h4>Community Projects</h4>
-                    </figcaption>
-                </figure>
+                        if ($result2->num_rows > 0) {
+                            // output data of each row
+                            while ($row2 = $result2->fetch_assoc()) {
+                                echo '<img src="./uploads/' . $row2["url"] . '"  alt="" style="width:600px;height:200px">';
+                                echo '<figcaption class="overlay">';
+                                echo '<a class="fancybox" rel="works" title="Write Your Image Caption Here" href="./Projects/Fullproject.php?prid=' . $row["id"] . '"><i class="fa fa-eye fa-lg"></i></a>';
+                                echo '<h4>' .$row["title"]. '</h4>';
+                                echo '</figcaption>';
+                            }
+                        }
+                        echo '</figure>';
+                        }
+                    }
+                
+                    ?> 
 
-                <figure class="mix work-item industrial">
 
-                    <img src="img/indus/indus3.jpg" alt="" >
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="./Projects/Industrial.php"><i class="fa fa-eye fa-lg"></i></a>
-                        <h4>Industrial Projects</h4>
-                    </figcaption>
-                </figure>
-
-                <figure class="mix work-item residential">
-                    <img src="img/res/pro6.jpg" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="./Projects/Residential.php"><i class="fa fa-eye fa-lg"></i></a>
-                        <h4>Residential Projects</h4>
-                    </figcaption>
-                </figure>
-
-                <figure class="mix work-item community">
-                    <img src="img/com/comm3.jpg" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="./Projects/Community.php"><i class="fa fa-eye fa-lg"></i></a>
-                        <h4>Community Projects</h4>
-                    </figcaption>
-                </figure>
-
-                <figure class="mix work-item industrial">
-                    <img src="img/indus/indus7.jpg" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="./Projects/Industrial.php"><i class="fa fa-eye fa-lg"></i></a>
-                        <h4>Industrial Projects</h4>
-                    </figcaption>
-                </figure>
-
-                <figure class="mix work-item residential">
-                    <img src="img/res/pro9.jpg" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="./Projects/Residential.php"><i class="fa fa-eye fa-lg"></i></a>
-                        <h4>Residential Projects</h4>
-                    </figcaption>
-                </figure>
-
-                <figure class="mix work-item community">
-                    <img src="img/com/comm4.jpg" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="./Projects/Community.php"><i class="fa fa-eye fa-lg"></i></a>
-                        <h4>Community Projects</h4>
-                    </figcaption>
-                </figure>
-
+                
             </div>
 
 
@@ -887,5 +902,6 @@ Contact Us
                             });
                         });
                     </script>
-                    </body>
+        <?php $conn->close();?>
+</body>
                     </html>
