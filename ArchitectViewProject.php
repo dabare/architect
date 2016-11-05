@@ -1,12 +1,9 @@
-
-
-
 <?php
 require_once './db/dbConnection.php';
 
 $id = $_GET['id'];
 
-echo $by;
+
 $sql = "SELECT * FROM project WHERE id=" . $id . ";";
 $result = $conn->query($sql);
 
@@ -84,7 +81,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 	<div class="row">
 
 		<!-- left panel -->
-                <ul id="navigationbarEdit" style="margin-top:-115px">
+                <ul id="navigationbarEdit" style="margin-top:0px">
             <li><a id="editItem" href="ArchitectNotification.php">Notification</a></li>
             <li><a id="activeEdit" href="ArchitectOnGoingProjects.php">On Going Projects</a></li>
             <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
@@ -319,7 +316,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                 </div>
             
         <div class="margin" style="width:1100px;">
-            <div style="background-color: whitesmoke;margin-left: 300px;margin-top: -1200px;">
+            <div style="background-color: whitesmoke;margin-left: 300px;margin-top: -1150px;">
                 <div style="align-content: center;text-align: left;padding: 2em;">
                     <center><h2>Project Progress</h2></center>
                     <?php

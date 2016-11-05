@@ -1,27 +1,64 @@
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Customer</title>
+<head>
+<title>Customer</title>
+<link rel="stylesheet" type="text/css" href="CSS/architectEdit.css">
+<link rel="stylesheet" type="text/css" href="profcss/style_theme.css">
+<link rel="stylesheet" type="text/css" href="profcss/style.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="profcss/opensans.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
-        <link rel="stylesheet" type="text/css" href="CSS/architectEdit.css">
-        <meta charset="utf-8">
+<body bgcolor="grey" class="theme-15">
 
+<!--Navbar-->
+<div class="top">
+	<ul class="navbar theme-d2 left-align large">
 
-    </head>
-    <body id="bdy">
-        <ul id="navigationbarEdit">
+		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Customer Profile</a></li>
+		
+	</ul>
+</div>
+
+<!--Page Container-->
+<div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 0px">
+	<!--The Grid-->
+	<div class="row">
+
+		<!-- left panel -->
+                <ul id="navigationbarEdit">
             <li><a id="editItem" href="CustomerNotification.php">Notification</a></li>
             <li><a id="activeEdit" href="CustomerEditProfile.php">Edit Profile</a></li>
             <li><a id="editItem" href="CustomerMyProject.php">My Projects</a></li>
             <li><a id="editItem" href="CustomerMakeAppointments.php">Make Appointment</a></li>
             <li><a id="editItem" href="index.php">Logout</a></li>
-        </ul>
+            </ul>
+        <div style="margin-left:300px">
 
-        <div id="boddy">
+            <br><br>
+             <form>
+               <!--Right Column-->
+		<div class="col m9">
+			<!--Profile-->
+			<div class="card-2 round white">
+				<div class="container">
+					<h4>Profile</h4>
+					<p><img src="profcss/prof.jpg" class="circle" style="height:106px;width:106px" alt="Profile"></p>
+					
+					<p><i class="fa fa-pencil fa-fw margin-right text-theme"></i> Name </p>
+					<p><i class="fa fa-home fa-fw margin-right text-theme"></i> Address </p>
+				</div>
+			</div>
+			<br>
 
-            <br>
-            <form>
+                
+           
                 <div style="text-align: left;">
                     <div style="display:inline-block;">
                         First name:<br>
@@ -37,10 +74,7 @@
                     </div>
                 </div>  
                 <br>
-                Select Photo:
-                <input id="files" type="file" name="pic" accept="image/*" onchange="readURL(this)">
-                <img  src="images/customer.jpeg" alt="your image"  height="200" width="180" style="position: absolute"/>
-                <br><br>
+                <br>
                 Age:<input type="text" name="age" size="4">
                 <br><br>
                 Address:<br>
@@ -112,6 +146,7 @@
                 <br><br>
             </form>
         </div>
-
+         </div>
+        </div>
     </body>
 </html> 

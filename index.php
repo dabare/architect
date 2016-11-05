@@ -476,7 +476,7 @@ require_once './db/dbConnection.php';
                     if ($result->num_rows > 0) {
                         // output data of each row
                     while ($row = $result->fetch_assoc()) {
-                        echo '<figure class="mix work-item indusrial">';
+                        echo '<figure class="mix work-item industrial">';
                     $sql2 = 'SELECT url FROM g_image WHERE id = ( SELECT MIN(id) FROM g_image WHERE g_project_id=' . $row["id"] . ');';
                     $result2 = $conn->query($sql2);
 
@@ -497,7 +497,7 @@ require_once './db/dbConnection.php';
                     ?> 
 
 
-                
+               
             </div>
 
 

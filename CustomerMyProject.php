@@ -1,13 +1,10 @@
-
-
-
 <?php
 require_once './db/dbConnection.php';
 
 $id = $_GET['id'];
 $id = 1;
 
-echo $by;
+
 $sql = "SELECT * FROM project WHERE id=" . $id . ";";
 $result = $conn->query($sql);
 
@@ -343,7 +340,7 @@ if ($TotalPayment == "") {
 
 
         </div>
-
+<?php $conn->close(); ?>
     </body>
 </html> 
 
