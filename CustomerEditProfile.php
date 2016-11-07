@@ -1,3 +1,31 @@
+<?php
+require_once './db/dbConnection.php';
+
+
+$id = 2;
+
+$sql = "SELECT * FROM customer WHERE id=" . $id . ";";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        $fname=$row["fname"];
+	$mname=$row["mname"];
+	$lname=$row["lname"];
+	$age=$row["age"];
+	$add_no=$row["add_no"];
+	$add_street=$row["add_street"];
+	$add_city=$row["add_city"];
+	$email=$row["email"];
+	$mobile_no=$row["mobile_no"];
+	$land_no=$row["land_no"];
+	$nic=$row["nic"];
+	$date=$row["date"];
+        
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,10 +67,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <li><a id="editItem" href="CustomerMakeAppointments.php">Make Appointment</a></li>
             <li><a id="editItem" href="index.php">Logout</a></li>
             </ul>
-        <div style="margin-left:300px">
-
-            <br><br>
-             <form>
+        <div style="margin-left: 300px">
+            <h3>Customer Profile</h3><br><br>
+            
+            <form>
                <!--Right Column-->
 		<div class="col m9">
 			<!--Profile-->
@@ -55,46 +83,44 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 					<p><i class="fa fa-home fa-fw margin-right text-theme"></i> Address </p>
 				</div>
 			</div>
-			<br>
-
-                
-           
+			<br><br>
+                        
                 <div style="text-align: left;">
                     <div style="display:inline-block;">
                         First name:<br>
-                        <input type="text" size="15" name="firstname">
+                        <input type="text" size="15" name="firstname" value="<?php echo $fname ?>" disabled>
                     </div>
                     <div style="display:inline-block;">
                         Middle name:<br>
-                        <input type="text" size="15" name="middlename">
+                        <input type="text" size="15" name="middlename" value="<?php echo $mname ?>" disabled>
                     </div>
                     <div style="display:inline-block;">
                         Last name:<br>
-                        <input type="text" size="15" name="lastname">
+                        <input type="text" size="15" name="lastname" value="<?php echo $lname ?>" disabled>
                     </div>
                 </div>  
                 <br>
-                <br>
-                Age:<input type="text" name="age" size="4">
+                
+                Age:<input type="text" name="age" size="4" value="<?php echo $age ?>" disabled>
                 <br><br>
                 Address:<br>
                 <div style=" padding-left: 2em;">
                     No:
                     <br>
-                    <input type="text" size="10" name="no">
+                    <input type="text" size="10" name="no" value="<?php echo $add_no ?>" disabled>
                     <br>
                     Street:
                     <br>
-                    <input type="text" name="street">
+                    <input type="text" name="street" value="<?php echo $add_street ?>" disabled>
                     <br>
                     City:
                     <br>
-                    <input type="text" name="city">
+                    <input type="text" name="city" value="<?php echo $add_city ?>" disabled>
                 </div>
                 <br>
                 Email:
                 <br>
-                <input type="text" name="email" size="35">
+                <input type="text" name="email" size="35" value="<?php echo $email ?>" disabled>
                 <br><br>
 
 
@@ -102,51 +128,36 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                     <div style="display:inline-block;">
                         Mobile No:
                         <br>
-                        <input type="text" name="mobile" size="10">
+                        <input type="text" name="mobile" size="10" value="<?php echo $mobile_no ?>" disabled>
                     </div>
                     <div style="display:inline-block;">
                         Land No:
                         <br>
-                        <input type="text" name="land" size="10">
+                        <input type="text" name="land" size="10" value="<?php echo $land_no ?>" disabled>
                     </div>
                 </div>  
 
                 <br>
                 NIC:
                 <br>
-                <input type="text" name="nic" size="15">
+                <input type="text" name="nic" size="15" value="<?php echo $nic ?> " disabled>
 
                 <br><br>
                 Account created date:
                 <br>
-                <input type="date" name="date" disabled>
+                <input type="date" name="date" value="<?php echo $date ?> " disabled>
 
-                <br><br>
-                User Name:
-                <br>
-                <input type="text" name="uname" size="15">
-                <br><br>
-                <div style="text-align: left;">
-                    <div style="display:inline-block;">
-                        New Password:
-                        <br>
-                        <input type="password" name="pass" size="25">
-                    </div>
-                    <div style="display:inline-block;">
-                        Retype New Password:
-                        <br>
-                        <input type="password" name="retypepass" size="25">
-                    </div>
-                </div>  
-                <br>
+                
                 <div style="text-align: center;">
-                    <button type="button"  style="width: 200px;height: 30px;">Reset All Fields</button>
-                    <button type="button"  style="width: 200px;height: 30px;">Save</button>.
+                    <a href="./CustomerEditProfile1.php"><button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Reset All Fields
+                    </button></a>
+                    
                 </div>
                 <br><br>
             </form>
         </div>
          </div>
         </div>
+        <?php $conn->close(); ?>
     </body>
 </html> 

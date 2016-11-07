@@ -1,7 +1,7 @@
 <?php
 require_once './db/dbConnection.php';
 
-$id = $_GET['id'];
+
 $id = 1;
 
 
