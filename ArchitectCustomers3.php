@@ -42,11 +42,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
             <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
             <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
-            <li><a id="editItem" href="ArchitectEditProfile.php">Edit Profile</a></li>
+            
             <li><a id="editItem" href="ArchitectAppointments.php">Appointments</a></li>
             <li><a id="activeEdit" href="ArchitectCustomers.php">Customers</a></li>
             <li><a id="editItem" href="ArchitectConsultants.php">Consultants</a></li>
-            <li><a id="editItem" href="ArchitectEmployees.php">Employees</a></li>
+            
             <li><a id="editItem" href="ArchitectReports.php">Reports</a></li>
             <li><a id="editItem" href="ArchitectSettings.php">Settings</a></li>
             <li><a id="editItem" href="index.php">Logout</a></li>
@@ -59,18 +59,20 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             
             
                <!--Right Column-->
-		<div class="col m9">
-			<!--Profile-->
-			<div class="card-2 round white">
-				<div class="container">
-					<h4>Profile</h4>
-					<p><img src="profcss/prof.jpg" class="circle" style="height:106px;width:106px" alt="Profile"></p>
-					
-					<p><i class="fa fa-pencil fa-fw margin-right text-theme"></i> Name </p>
-					<p><i class="fa fa-home fa-fw margin-right text-theme"></i> Address </p>
-				</div>
-			</div>
-			<br><br>
+		<form>
+               <!--Right Column-->
+            <div class="row">
+                <div class="col m12">
+			     <!--Profile-->
+			        <div class="card-2 round white">
+                        <div class="col m4">
+				            <div class="container">
+					           <h4>Profile</h4>
+					           <p><img src="profcss/prof.jpg" class="circle" style="height:106px;width:106px" alt="Profile"></p>
+					        </div>
+				        </div>
+			        </div>
+			        <br><br>
 			<div class="accordion white"><br>
 				<form>
                             <div style="text-align: left;">
@@ -140,7 +142,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                                                         </select>
                                 </div>
                                 
-                            </div>
+                            </div><br><br>
+                            
                             <div style="text-align: left;">
                                 <div style="display:inline-block;">
 								
@@ -219,6 +222,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                             </div>
                         </form>
 			</div>
+                            
 		</div>
 	</div>
 </div>

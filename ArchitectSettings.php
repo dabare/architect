@@ -38,11 +38,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
             <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
             <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
-            <li><a id="editItem" href="ArchitectEditProfile.php">Edit Profile</a></li>
+            
             <li><a id="editItem" href="ArchitectAppointments.php">Appointments</a></li>
             <li><a id="editItem" href="ArchitectCustomers.php">Customers</a></li>
             <li><a id="editItem" href="ArchitectConsultants.php">Consultants</a></li>
-            <li><a id="editItem" href="ArchitectEmployees.php">Employees</a></li>
+            
             <li><a id="editItem" href="ArchitectReports.php">Reports</a></li>
             <li><a id="activeEdit" href="ArchitectSettings.php">Settings</a></li>
             <li><a id="editItem" href="index.php">Logout</a></li>
@@ -55,53 +55,17 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                 <h3>General Account Settings</h3><br>
                 <div style="border-top: 5px solid black;">
                     <div style="display: inline-block;margin-left: 10px;">
-                        <h4>Name</h4>
+                        <h4>Edit Profile</h4>
                     </div>
-                    <div style="display: inline-block;margin-left:185px;">
-                        Priyantha Premathilake
-                    </div>
-                    <div style="display: inline-block;margin-left: 600px;">
-                        <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
-                </button>
-                    </div>
-                </div><br>
-                <div style="border-top: 0.1px solid black;">
-                    <div style="display: inline-block;margin-left: 10px;">
-                        <h4>Username</h4>
-                    </div>
-                    <div style="display: inline-block;margin-left: 150px;">
-                        Architect
+                    <div >
+                        
                     </div>
                     <div style="display: inline-block;margin-left: 600px;">
-                        <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
-                </button>
+                        <a href="./ArchitectEditProfile.php"><button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
+                        </button></a>
                     </div>
                 </div><br>
-                <div style="border-top: 0.1px solid black;">
-                    <div style="display: inline-block;margin-left: 10px;">
-                        <h4>Contact</h4>
-                    </div>
-                    <div style="display: inline-block;margin-left: 165px;">
-                        Email :premathilaka@gmail.com<br>
-						T.P NO:0114578958
-                    </div>
-                    <div style="display: inline-block;margin-left: 600px;">
-                        <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
-                </button>
-                    </div>
-                </div><br>
-                <div style="border-top: 0.1px solid black;">
-                    <div style="display: inline-block;margin-left: 10px;">
-                        <h4>Password</h4>
-                    </div>
-                    <div style="display: inline-block;margin-left: 145px;">
-                        .........
-                    </div>
-                    <div style="display: inline-block;margin-left: 600px;">
-                        <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
-                </button>
-                    </div>
-                </div><br>
+                
                 <div style="border-top: 0.1px solid black;">
                     <div style="display: inline-block;margin-left: 10px;">
                         <h4>Websites</h4>

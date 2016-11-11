@@ -33,7 +33,7 @@ if (isset($_POST['login'])) {
 
     //search consultant
 
-    $sel_consult = "select * from consultant where uname='$username' AND passwd='$password'";
+    $sel_consult = "select * from consultants where uname='$username' AND psswd='$password'";
 
     $run_consult = mysqli_query($conn, $sel_consult);
 
@@ -116,7 +116,7 @@ if (isset($_POST['login'])) {
                 $_SESSION['id'] = $row["id"];
             }
         }
-        echo "<script>window.open('CustomerEditProfile.php','_self')</script>";
+        echo "<script>window.open('CustomerEditProfile1.php','_self')</script>";
     } else {
 
         echo "<script>alert('Email or password is not correct, try again!')</script>";

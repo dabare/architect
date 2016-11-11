@@ -38,11 +38,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
             <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
             <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
-            <li><a id="activeEdit" href="ArchitectEditProfile.php">Edit Profile</a></li>
+            
             <li><a id="editItem" href="ArchitectAppointments.php">Appointments</a></li>
             <li><a id="editItem" href="ArchitectCustomers.php">Customers</a></li>
             <li><a id="editItem" href="ArchitectConsultants.php">Consultants</a></li>
-            <li><a id="editItem" href="ArchitectEmployees.php">Employees</a></li>
+            
             <li><a id="editItem" href="ArchitectReports.php">Reports</a></li>
             <li><a id="editItem" href="ArchitectSettings.php">Settings</a></li>
             <li><a id="editItem" href="index.php">Logout</a></li>
@@ -54,95 +54,97 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <br><br>
             <form>
                <!--Right Column-->
-		<div class="col m9">
+               <div class="row">
+		<div class="col m12">
 			<!--Profile-->
 			<div class="card-2 round white">
+                <div class="col m4">
 				<div class="container">
 					<h4>Profile</h4>
 					<p><img src="profcss/prof.jpg" class="circle" style="height:106px;width:106px" alt="Profile"></p>
-					
-					<p><i class="fa fa-pencil fa-fw margin-right text-theme"></i> Name </p>
-					<p><i class="fa fa-home fa-fw margin-right text-theme"></i> Address </p>
+					</div>
 				</div>
 			</div>
-			<br>
-                <div style="text-align: left;">
-                    <div style="display:inline-block;">
-                        First name:<br>
-                        <input type="text" size="15" name="firstname">
-                    </div>
-                    <div style="display:inline-block;">
-                        Middle name:<br>
-                        <input type="text" size="15" name="middlename">
-                    </div>
-                    <div style="display:inline-block;">
-                        Last name:<br>
-                        <input type="text" size="15" name="lastname">
-                    </div>
-                </div>  
-                <br>
-                
-                <br><br>
-                Age:<input type="text" name="age" size="4">
-                <br><br>
-                Address:<br>
-                <div style=" padding-left: 2em;">
-                    No:
-                    <br>
-                    <input type="text" size="10" name="no">
-                    <br>
-                    Street:
-                    <br>
-                    <input type="text" name="street">
-                    <br>
-                    City:
-                    <br>
-                    <input type="text" name="city">
-                </div>
-                <br>
-                Google Location:
-                <br>
-                <input type="text" name="location" size="50">
-                <br><br>
-                <div >
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.5643649597737!2d79.89346104990712!3d7.060361918623994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2f737b5b05a09%3A0xd4ef00d25a3b354a!2sK+Zone+Ja-Ela!5e0!3m2!1sen!2slk!4v1471279498706" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-                </div>
-                <br>
-                Email:
-                <br>
-                <input type="text" name="email" size="35">
-                <br><br>
-
-
-                <div style="text-align: left;">
-                    <div style="display:inline-block;">
-                        Mobile No:
+			<br><br>
+                <div class="col m8">        
+                        <div style="text-align: left;">
+                            <div style="display:inline-block;">
+                                First name:<br>
+                                <input type="text" size="15" name="firstname" value="" disabled>
+                            </div>
+                            <div style="display:inline-block;">
+                                Middle name:<br>
+                                <input type="text" size="15" name="middlename" value="" disabled>
+                            </div>
+                            <div style="display:inline-block;">
+                                Last name:<br>
+                                <input type="text" size="15" name="lastname" value="" disabled>
+                            </div>
+                        </div>  
                         <br>
-                        <input type="text" name="mobile" size="10">
+                        <div style="text-align: left;">
+                            <div style="display:inline-block;">
+                                Age:<br><input type="text" name="age" size="4" value="" disabled>
+                            </div>
+                            <div style="display:inline-block;">
+                                NIC:<br><input type="text" name="nic" size="15" value="" disabled>
+                            </div>
+                        </div>
+                        
                     </div>
-                    <div style="display:inline-block;">
-                        Land No:
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m12">
+                    <div class="col m4">
+                        <br><br><br>
+                        Address:<br>
+                        <div style=" padding-left: 2em;">
+                        No:
                         <br>
-                        <input type="text" name="land" size="10">
+                        <input type="text" size="10" name="no" value="" disabled>
+                        <br>
+                        Street:
+                        <br>
+                        <input type="text" name="street" value="" disabled>
+                        <br>
+                        City:
+                        <br>
+                        <input type="text" name="city" value="" disabled>
+                        </div>
                     </div>
-                </div>  
+                    Google Location:
+                        <br>
+                        <input type="text" name="location" size="50">
+                        <br><br>
+                        <div >
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.5643649597737!2d79.89346104990712!3d7.060361918623994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2f737b5b05a09%3A0xd4ef00d25a3b354a!2sK+Zone+Ja-Ela!5e0!3m2!1sen!2slk!4v1471279498706" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-                <br>
-                NIC:
-                <br>
-                <input type="text" name="nic" size="15">
-
-                <br><br>
-                Reg. No.:
-                <br>
-                <input type="text" name="reg" size="15">
-
-                <br><br>
-                Account created date:
-                <br>
-                <input type="date" name="date" disabled>
-
+                        </div>
+                    <div class="col m8">
+                            <br><br><br>
+                            Email:<br>
+                            <div style="text-align: left;">
+                                <input type="text" name="email" size="35" value="" disabled>
+                                <br><br>
+                            </div>
+                            <div style="text-align: left;">
+                                <div style="display:inline-block;">
+                                    Mobile No:
+                                    <br>
+                                    <input type="text" name="mobile" size="10" value="" disabled>
+                                </div>
+                                <div style="display:inline-block;">
+                                    Land No:
+                                    <br>
+                                    <input type="text" name="land" size="10" value="" disabled>
+                                </div>
+                            </div>
+                            Account created date:<br>
+                            <div style="text-align: left;">
+                                <input type="date" name="created" value="" disabled>
+                            </div>
+                            <br><br>
                 <br><br>
                 Status:
                 <select name="cars">
@@ -167,6 +169,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                     </div>
                 </div>  
                 <br>
+                        
+                        
+                    </div>
+                </div>
+                </div>
+                
+            </form>
+
+
+                
                 <div style="text-align: center;">
                     <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Reset all Fields
                 </button>

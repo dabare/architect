@@ -1,0 +1,1 @@
+$('#body').css('min-height', screen.height);

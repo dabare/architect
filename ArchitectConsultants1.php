@@ -1,3 +1,31 @@
+<?php
+require_once './db/dbConnection.php';
+
+$id = $_GET['id'];
+
+
+$sql = "SELECT * FROM consultants WHERE id=" . $id . ";";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        $fname=$row["fname"];
+	$mname=$row["mname"];
+	$lname=$row["lname"];
+	$age=$row["age"];
+	$add_no=$row["add_no"];
+	$add_street=$row["add_street"];
+	$add_city=$row["add_city"];
+	$email=$row["email"];
+	$mobile_no=$row["mobile_no"];
+	$land_no=$row["land_no"];
+	$nic=$row["nic"];
+	$date=$row["created"];
+        $payment = $row["payment"];
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,11 +66,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
             <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
             <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
-            <li><a id="editItem" href="ArchitectEditProfile.php">Edit Profile</a></li>
+            
             <li><a id="editItem" href="ArchitectAppointments.php">Appointments</a></li>
             <li><a id="editItem" href="ArchitectCustomers.php">Customers</a></li>
             <li><a id="activeEdit" href="ArchitectConsultants.php">Consultants</a></li>
-            <li><a id="editItem" href="ArchitectEmployees.php">Employees</a></li>
+            
             <li><a id="editItem" href="ArchitectReports.php">Reports</a></li>
             <li><a id="editItem" href="ArchitectSettings.php">Settings</a></li>
             <li><a id="editItem" href="index.php">Logout</a></li>
@@ -52,105 +80,104 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <h3>Consultant Profile</h3>
             <br>
             <form>
-                <div class="col m9">
-			<!--Profile-->
-			<div class="card-2 round white">
-				<div class="container">
-					<h4>Profile</h4>
-					<p><img src="profcss/prof.jpg" class="circle" style="height:106px;width:106px" alt="Profile"></p>
-					
-					<p><i class="fa fa-pencil fa-fw margin-right text-theme"></i> Name </p>
-					<p><i class="fa fa-home fa-fw margin-right text-theme"></i> Address </p>
-				</div>
-			</div>
-			<br>
-                <div style="text-align: left;">
-                    <div style="display:inline-block;">
-                        First name:<br>
-                        <input type="text" size="15" name="firstname" disabled>
+               <!--Right Column-->
+            <div class="row">
+                <div class="col m12">
+			     <!--Profile-->
+			        <div class="card-2 round white">
+                        <div class="col m4">
+				            <div class="container">
+					           <h4>Profile</h4>
+					           <p><img src="profcss/prof.jpg" class="circle" style="height:106px;width:106px" alt="Profile"></p>
+					        </div>
+				        </div>
+			        </div>
+			        <br><br>
+                <div class="col m8">        
+                        <div style="text-align: left;">
+                            <div style="display:inline-block;">
+                                First name:<br>
+                                <input type="text" size="15" name="firstname" value="<?php echo $fname ?>" disabled>
+                            </div>
+                            <div style="display:inline-block;">
+                                Middle name:<br>
+                                <input type="text" size="15" name="middlename" value="<?php echo $lname ?>" disabled>
+                            </div>
+                            <div style="display:inline-block;">
+                                Last name:<br>
+                                <input type="text" size="15" name="lastname" value="<?php echo $mname ?>" disabled>
+                            </div>
+                        </div>  
+                        <br>
+                        <div style="text-align: left;">
+                            <div style="display:inline-block;">
+                                Age:<br><input type="text" name="age" size="4" value="<?php echo $age ?>" disabled>
+                            </div>
+                            <div style="display:inline-block;">
+                                NIC:<br><input type="text" name="nic" size="15" value="<?php echo $nic ?>" disabled>
+                            </div>
+                        </div>
                     </div>
-                    <div style="display:inline-block;">
-                        Middle name:<br>
-                        <input type="text" size="15" name="middlename" disabled>
-                    </div>
-                    <div style="display:inline-block;">
-                        Last name:<br>
-                        <input type="text" size="15" name="lastname" disabled>
-                    </div>
-                </div>  
-                <br>
-                
-                Age:<input type="text" name="age" size="4" disabled>
-                <br><br>
-                Address:<br>
-                <div style=" padding-left: 2em;">
-                    No:
-                    <br>
-                    <input type="text" size="10" name="no" disabled>
-                    <br>
-                    Street:
-                    <br>
-                    <input type="text" name="street" disabled>
-                    <br>
-                    City:
-                    <br>
-                    <input type="text" name="city" disabled>
                 </div>
-                <br>
-                Email:
-                <br>
-                <input type="text" name="email" size="35" disabled>
-                <br><br>
-
-
-                <div style="text-align: left;">
-                    <div style="display:inline-block;">
-                        Mobile No:
+            </div>
+            <div class="row">
+                <div class="col m12">
+                    <div class="col m4">
+                        <br><br><br>
+                        Address:<br>
+                        <div style=" padding-left: 2em;">
+                        No:
                         <br>
-                        <input type="text" name="mobile" size="10" disabled>
-                    </div>
-                    <div style="display:inline-block;">
-                        Land No:
+                        <input type="text" size="10" name="no" value="<?php echo $add_no ?>" disabled>
                         <br>
-                        <input type="text" name="land" size="10" disabled>
+                        Street:
+                        <br>
+                        <input type="text" name="street" value="<?php echo $add_street ?>" disabled>
+                        <br>
+                        City:
+                        <br>
+                        <input type="text" name="city" value="<?php echo $add_city ?>" disabled>
+                        </div><br><br>
+                        Payment:<br>
+                            <input type="text" name="pymnt" size="15" value="<?php echo $payment ?>" disabled>
+                            <br><br>
                     </div>
-                </div>  
-
-                <br>
-                NIC:
-                <br>
-                <input type="text" name="nic" size="15" disabled>
-
-                <br><br>
-                Reg. No.:
-                <br>
-                <input type="text" name="reg" size="15" disabled>
-
-                <br><br>
-                Account created date:
-                <br>
-                <input type="date" name="date" disabled>
-
-                <br><br>
-                User Name:
-                <br>
-                <input type="text" name="uname" size="15" disabled>
-                <br><br>
-                Status:
-                <select name="cars">
-                    <option value="active">Active</option>
-                    <option value="inactive">Inactive</option>
-                </select>
-                <br><br>
-                Payment:
-                <input type="text" name="pymnt" size="15">
-                <br><br>
-                <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save
-                </button>
+                    <div class="col m8">
+                            <br>
+                            Email:<br>
+                            <div style="text-align: left;">
+                                <input type="text" name="email" size="35" value="<?php echo $email ?>" disabled>
+                                <br><br>
+                            </div>
+                            <div style="text-align: left;">
+                                <div style="display:inline-block;">
+                                    Mobile No:
+                                    <br>
+                                    <input type="text" name="mobile" size="10" value="<?php echo $mobile_no ?>" disabled>
+                                </div>
+                                <div style="display:inline-block;">
+                                    Land No:
+                                    <br>
+                                    <input type="text" name="land" size="10" value="<?php echo $land_no ?>" disabled>
+                                </div>
+                            </div><br>
+                            
+                            Reg. No.:<br>
+                           
+                            <input type="text" name="reg" size="15" disabled><br><br>
+                            Account created date:<br>
+                            <div style="text-align: left;">
+                                <input type="date" name="created" value="<?php echo $date ?> " disabled>
+                            </div>
+                            <br><br>
+                            
+                    </div>
+                </div>
+            </div>
                 
             </form>
         </div>
 
-
+<?php mysqli_close($conn); ?>
     </body>
 </html> 

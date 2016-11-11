@@ -1,15 +1,16 @@
 <?php
 require_once './db/dbConnection.php';
 
+$id = $_GET['id'];
 
-$id = 2;
 
-$sql = "SELECT * FROM customer WHERE id=" . $id . ";";
+$sql = "SELECT * FROM consultants WHERE id=" . $id . ";";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
+        $id=$row["id"];
         $fname=$row["fname"];
 	$mname=$row["mname"];
 	$lname=$row["lname"];
@@ -21,15 +22,16 @@ if ($result->num_rows > 0) {
 	$mobile_no=$row["mobile_no"];
 	$land_no=$row["land_no"];
 	$nic=$row["nic"];
-	$date=$row["date"];
-        
+	$date=$row["created"];
+        $payment = $row["payment"];
+        $status = $row["status"];
     }
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Customer</title>
+<title>Architect</title>
 <link rel="stylesheet" type="text/css" href="CSS/architectEdit.css">
 <link rel="stylesheet" type="text/css" href="profcss/style_theme.css">
 <link rel="stylesheet" type="text/css" href="profcss/style.css">
@@ -49,7 +51,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 <div class="top">
 	<ul class="navbar theme-d2 left-align large">
 
-		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Customer Profile</a></li>
+		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Architect</a></li>
 		
 	</ul>
 </div>
@@ -58,21 +60,27 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 <div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 0px">
 	<!--The Grid-->
 	<div class="row">
-        <div class="col m1">
 
 		<!-- left panel -->
-        <ul id="navigationbarEdit">
-            <li><a id="editItem" href="CustomerNotification.php">Notification</a></li>
-            <li><a id="activeEdit" href="CustomerEditProfile.php">Edit Profile</a></li>
-            <li><a id="editItem" href="CustomerMyProject.php">My Projects</a></li>
-            <li><a id="editItem" href="CustomerMakeAppointments.php">Make Appointment</a></li>
-            <li><a id="editItem" href="index.php">Logout</a></li>
-        </ul>
-        </div>
-        <div class="col m10">
-        <div style="margin-left: 300px">
-            <h3>Customer Profile</h3><br><br>
+                <ul id="navigationbarEdit">
+            <li><a id="editItem" href="ArchitectNotification.php">Notification</a></li>
+            <li><a id="editItem" href="ArchitectOnGoingProjects.php">On Going Projects</a></li>
+            <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
+            <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
+            <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
             
+            <li><a id="editItem" href="ArchitectAppointments.php">Appointments</a></li>
+            <li><a id="editItem" href="ArchitectCustomers.php">Customers</a></li>
+            <li><a id="activeEdit" href="ArchitectConsultants.php">Consultants</a></li>
+            
+            <li><a id="editItem" href="ArchitectReports.php">Reports</a></li>
+            <li><a id="editItem" href="ArchitectSettings.php">Settings</a></li>
+            <li><a id="editItem" href="index.php">Logout</a></li>
+
+            </ul>
+        <div style="margin-left:300px">
+            <h3>Consultant Profile</h3>
+            <br>
             <form>
                <!--Right Column-->
             <div class="row">
@@ -87,7 +95,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 				        </div>
 			        </div>
 			        <br><br>
-                    <div class="col m8">        
+                <div class="col m8">        
                         <div style="text-align: left;">
                             <div style="display:inline-block;">
                                 First name:<br>
@@ -108,7 +116,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                                 Age:<br><input type="text" name="age" size="4" value="<?php echo $age ?>" disabled>
                             </div>
                             <div style="display:inline-block;">
-                                NIC:<br><input type="text" name="nic" size="15" value="<?php echo $nic ?> " disabled>
+                                NIC:<br><input type="text" name="nic" size="15" value="<?php echo $nic ?>" disabled>
                             </div>
                         </div>
                     </div>
@@ -131,10 +139,30 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                         City:
                         <br>
                         <input type="text" name="city" value="<?php echo $add_city ?>" disabled>
-                        </div>
+                        </div><br>
+                        Payment:<br>
+                            <input type="text" name="pymnt" size="15" value="<?php echo $payment ?>" disabled>
+                            <br><br>
+                        Status:
+                            <select id="status" name="state">
+                                
+                                <option<?php
+                                if ($status == "active") {
+                                    echo ' selected';
+                                }
+                                ?> value="active">Active</option>
+                                <option<?php
+                                if ($status == "inactive") {
+                                    echo ' selected';
+                                }
+                                ?> value="inactive">Inactive</option>
+                            </select>
+                            <br><br>
+                            
+                            
                     </div>
                     <div class="col m8">
-                            <br><br><br>
+                            <br>
                             Email:<br>
                             <div style="text-align: left;">
                                 <input type="text" name="email" size="35" value="<?php echo $email ?>" disabled>
@@ -151,113 +179,55 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                                     <br>
                                     <input type="text" name="land" size="10" value="<?php echo $land_no ?>" disabled>
                                 </div>
-                            </div>
+                            </div><br>
+                            
+                            Reg. No.:<br>
+                           
+                            <input type="text" name="reg" size="15" disabled><br><br>
                             Account created date:<br>
                             <div style="text-align: left;">
-                                <input type="date" name="created" value="<?php echo $created ?> " disabled>
+                                <input type="date" name="created" value="<?php echo $date ?>" disabled>
                             </div>
+                            <br><br><br>
+                            <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button" onclick="saveConsultant()"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save
+                            </button>
+                            <script>
+                            function saveConsultant() {
+
+
+                                var form = document.createElement("form");
+                                form.setAttribute("method", "post");
+                                form.setAttribute("hidden", "true");
+                                form.setAttribute("action", "Projects/SaveConsultants.php");
+
+
+
+
+                                var conid = document.createElement("input");
+                                conid.setAttribute("type", "hidden");
+                                conid.setAttribute("name", "consulid");
+                                conid.setAttribute("value", <?php echo $id ?>);
+
+
+                                form.appendChild(conid);
+
+
+
+                                form.appendChild(document.getElementById("status"));
+                                
+                                document.body.appendChild(form);
+                                form.submit();
+                            }
+
+                            
+                        </script>
                     </div>
                 </div>
             </div>
                 
             </form>
-            <div class="row">
-                <div class="col m6">
-                    <div style="text-align: center;">
-                        <br>
-                        <br>
-                        <a  href="CustomerEditProfile.php"><button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit Details</button>
-                    </div>
-                    
-                    <script>
-                            // function saveCustomer() {
-
-
-                            //     var form = document.createElement("form");
-                            //     form.setAttribute("method", "post");
-                            //     form.setAttribute("hidden", "true");
-                            //     form.setAttribute("action", "Projects/SaveCustomers.php");
-
-
-
-
-                                // var cid = document.createElement("input");
-                                // cid.setAttribute("type", "hidden");
-                                // cid.setAttribute("name", "awid");
-                                // cid.setAttribute("value", <?php echo $id ?>);
-
-
-                                // form.appendChild(cid);
-
-
-
-                                // form.appendChild(document.getElementById("cuscat"));
-                                // form.appendChild(document.getElementById("custitle"));
-                                // form.appendChild(document.getElementById("cusdesc"));
-
-
-
-                            //     document.body.appendChild(form);
-                            //     form.submit();
-                            // }
-
-                            // function deleteAward() {
-                            //     if (confirm("Confirm delete Award ") == true) {
-
-
-                            //         var form = document.createElement("form");
-                            //         form.setAttribute("method", "post");
-                            //         form.setAttribute("action", "Projects/DeleteAwards.php");
-
-
-
-
-                            //         var aid = document.createElement("input");
-                            //         aid.setAttribute("type", "hidden");
-                            //         aid.setAttribute("name", "awid");
-                            //         aid.setAttribute("value", <?php echo $id ?>);
-
-
-                            //         form.appendChild(aid);
-
-
-
-
-                            //         document.body.appendChild(form);
-                            //         form.submit();
-                            //     } else {
-
-                            //     }
-
-                            // }
-                    </script>
-                        <!-- <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button" onclick="deleteAward()"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Remove</button> -->
-                </div>
-            </div>
         </div>
-        </div>
-        <br><br>
-        <div class="col m1">
-            <div style="align:center">
-            <button class="btn btn-primary medium theme-l1 left-align" style="width:300px" type="button"><!-- <i class="fa fa-circle-o-notch fa-fw margin-right"></i> --><a href="ArchitectCustomers2.php">
-                <?php 
-                 require_once '../db/dbconnection.php';
-                 $query="SELECT description from project WHERE id='2'";
-                 $res=mysqli_query($conn,$query);
-                 
-                 while($record=mysqli_fetch_array($res)){
-                     echo"<li><a id='editItem' href='projects.php'>".$record["id"]."</a></li>";
-                     echo"</br>";
-                    
-                    
-                 }
-                
-                ?></a>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-    <?php $conn->close(); ?>
-</body>
+
+<?php mysqli_close($conn); ?>
+    </body>
 </html> 
