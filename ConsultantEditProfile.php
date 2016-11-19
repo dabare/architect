@@ -1,235 +1,220 @@
+<?php
+
+session_start();
+
+require_once './db/dbConnection.php';
+
+$sql = "SELECT * FROM consultants WHERE id='" . $_SESSION['id'] . "';";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        $conid = $row["id"];
+        $fname=$row["fname"];
+	$mname=$row["mname"];
+	$lname=$row["lname"];
+	$age=$row["age"];
+	$add_no=$row["add_no"];
+	$add_street=$row["add_street"];
+	$add_city=$row["add_city"];
+	$email=$row["email"];
+	$mobile_no=$row["mobile_no"];
+	$land_no=$row["land_no"];
+	$nic=$row["nic"];
+	$des=$row["description"];
+        
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            body{
-                    margin:0;
-                    font-family: lucida grande ,tahoma,verdana,arial,sans_serif;
-                    background-color: #e9e9e9;
-                }
+<head>
+<title>Customer</title>
+<link rel="stylesheet" type="text/css" href="CSS/architectEdit.css">
+<link rel="stylesheet" type="text/css" href="profcss/style_theme.css">
+<link rel="stylesheet" type="text/css" href="profcss/style.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="profcss/opensans.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
-            body p
-            {
-                    font-size: 0.8em;
-                    line-height: 1.28;
-            }
+<body bgcolor="grey" class="theme-15">
 
-            #container{
-                background-image:none;
-                background-size: 100% 100%; 
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-            }  
-            .sidebar{
-                width: 500px;
-                height: 1000px;
-                margin: 0px 0px 80px 400px;
-                background-color: window;
-                padding: 6px;
-            }
+<!--Navbar-->
+<div class="top">
+	<ul class="navbar theme-d2 left-align large">
 
-            .margin{
-                width: 300px;
-                height: 400px;
-                margin: -1100px 0px 80px 1000px;
-                background-color: window;
-                padding: 6px;
-            }
-            #bdy {
-                margin: 0;
-            }
-            #navigationbarEdit {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                width: 15%;
-                background-color: #cccccc;
-                position: fixed;
-                height: 100%;
-                overflow: auto;
-            }
-            #activeEdit{
-                background-color: #3399ff;
-                color: white;
-                display: block;
-                color: #000;
-                padding: 8px 16px;
-                text-decoration: none;
-            }
+		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Consultant Profile</a></li>
+		
+	</ul>
+</div>
 
-            #editItem{
-                display: block;
-                color: #000;
-                padding: 8px 16px;
-                text-decoration: none;
-            }
+<!--Page Container-->
+<div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 10px">
+	<!--The Grid-->
+	<div class="row">
 
-            #nav
-            {
-                list-style: none;
-            }
-
-            #nav ul
-            {
-                margin: 0;
-                padding: 0;
-                width: auto;
-                display: none;
-            }
-
-            #nav li
-            {
-                font-size: 24px;
-                float: right;
-                position: relative;
-                width: 180px;
-                height: 50px;
-            }
-
-            #nav a:link, nav a:active, nav a:visited
-            {
-                display: block;
-                color: #fff;
-                text-decoration: none;
-            }
-
-            #nav a:hover
-            {
-                color: lightblue;
-            }
-
-        </style>
-        <meta charset="UTF-8">
-        <title>Consultant</title>
-    </head>
-    <body id="container">
-        <nav id="bdy">
-            <ul id="navigationbarEdit">
-                <li><a id="editItem" href="ConsultantNotifications.php">Notification</a></li>
-                <li><a id="editItem" href="ConsultantAppointments.php">Appointments</a></li>
-                <li><a id="activeEdit" href="ConsultantEditProfile.php">Edit Profile</a></li>
+		<!-- left panel -->
+                <ul id="navigationbarEdit">
+            <li><a id="activeEdit" href="ConsultantEditProfile1.php">Edit Profile</a></li>
                 <li><a id="editItem" href="index.php">Logout</a></li>
-
             </ul>
-        </nav>
-        <div class="sidebar">
-            <br>
+        <div style="margin-left: 300px">
+            
+            
             <form>
-                <br><br><br>
+               <!--Right Column-->
+               <div class="row">
+		<div class="col m12">
+			<!--Profile-->
+			<div class="card-2 round white">
+                <div class="col m4">
+				<div class="container">
+					<h4>Profile</h4>
+					<p><img src="profcss/prof.jpg" class="circle" style="height:106px;width:106px" alt="Profile"></p>
+					</div>
+				</div>
+			</div>
+			<br><br>
+                <div class="col m8">        
                 <div style="text-align: left;">
                     <div style="display:inline-block;">
                         First name:<br>
-                        <input type="text" size="15" name="firstname">
+                        <textarea id="cfname" rows="1" cols="10" name="firstname" ><?php echo $fname ?></textarea>
                     </div>
                     <div style="display:inline-block;">
                         Middle name:<br>
-                        <input type="text" size="15" name="middlename">
+                        <textarea id="cmname" rows="1" cols="10" name="middlename" ><?php echo $mname ?></textarea>
                     </div>
                     <div style="display:inline-block;">
                         Last name:<br>
-                        <input type="text" size="15" name="lastname">
+                        <textarea id="clname" rows="1" cols="10" name="lastname" ><?php echo $lname ?></textarea>
                     </div>
                 </div>  
                 <br>
-                Select Photo:
-                <input id="files" type="file" name="pic" accept="image/*" onchange="readURL(this)">
-                <img  src="../images/blur.jpg" alt="your image"  height="200" width="180" style="position: absolute"/>
-                <br><br>
-                Age:<input type="text" name="age" size="4">
-                <br><br>
-                Address:<br>
-                <div style=" padding-left: 2em;">
-                    No:
-                    <br>
-                    <input type="text" size="10" name="no">
-                    <br>
-                    Street:
-                    <br>
-                    <input type="text" name="street">
-                    <br>
-                    City:
-                    <br>
-                    <input type="text" name="city">
-                </div>
-                <br>
-
-                <br>
-                Email:
-                <br>
-                <input type="text" name="email" size="35">
-                <br><br>
-
-
                 <div style="text-align: left;">
                     <div style="display:inline-block;">
+                    Age:<br><textarea id="cage" rows="1" cols="10" name="age" ><?php echo $age ?></textarea>
+                    </div>
+                    <div style="display:inline-block;">
+                     NIC:<br><textarea id="cnic" rows="1" cols="10" name="nic" ><?php echo $nic ?></textarea>
+                     </div>
+                 </div>
+                </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col m12">
+                        <div class="col m4">
+                        <br><br><br>
+                        Address:<br>
+                        <div style=" padding-left: 2em;">
+                        No:
+                        <br>
+                        <textarea id="cno" rows="1" cols="5" name="no" ><?php echo $add_no ?></textarea>
+                        <br>
+                        Street:
+                        <br>
+                        <textarea id="cstreet" rows="1" cols="15" name="street" ><?php echo $add_street ?></textarea>
+                        <br>
+                        City:
+                        <br>
+                        <textarea id="ccity" rows="1" cols="15" name="city" ><?php echo $add_city ?></textarea>
+                        </div>
+                        </div>
+                        <div class="col m8">
+                        <br>
+                        Email:<br>
+                        <div style="text-align: left;">
+                        <textarea id="cemail" rows="1" cols="20" name="email"><?php echo $email ?></textarea>
+                        <br><br>
+                        </div>
+                        <div style="text-align: left;">
+                        <div style="display:inline-block;">
                         Mobile No:
                         <br>
-                        <input type="text" name="mobile" size="10">
-                    </div>
-                    <div style="display:inline-block;">
+                        <textarea id="cmobile" rows="1" cols="10" name="mobile"><?php echo $mobile_no?></textarea>
+                        </div>
+                        <div style="display:inline-block;">
                         Land No:
                         <br>
-                        <input type="text" name="land" size="10">
-                    </div>
-                </div>  
-
-                <br>
-                NIC:
-                <br>
-                <input type="text" name="nic" size="15">
-
-                <br><br>
-                Reg. No.:
-                <br>
-                <input type="text" name="reg" size="15">
-
-                <br><br>
-                Account created date:
-                <br>
-                <input type="date" name="date" disabled>
-
-                <br><br>
-                User Name:
-                <br>
-                <input type="text" name="uname" size="15">
-                <br><br>
-                <div style="text-align: left;">
-                    <div style="display:inline-block;">
-                        New Password:
+                        <textarea id="cland" rows="1" cols="10" name="land"><?php echo $land_no?></textarea>
+                        </div>
+                        </div>
                         <br>
-                        <input type="password" name="pass" size="25">
+                        <div>
+                            Description :
+                            <br>
+                            <textarea id="cdes" rows="10" cols="50" name="cdes"><?php echo $des?></textarea>
+                        </div>
                     </div>
-                    <div style="display:inline-block;">
-                        Retype New Password:
-                        <br>
-                        <input type="password" name="retypepass" size="25">
-                    </div>
-                </div>  
-                <br>
+                </div>
+                </div>
+                
+            </form>
+            <div class="row">
+                <div class="col m6">
                 <div style="text-align: center;">
-                    <button type="button"  >Reset All Fields</button>
-                    <button type="button"  >Save</button>.
+                    <br>
+                    <br>
+                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button" onclick="saveConsultant()" name="sav"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save</button>
+                    
+                    <script>
+                            function saveConsultant(){
+
+                                var form = document.createElement("form");
+                                form.setAttribute("method", "post");
+                                form.setAttribute("hidden", "true");
+                                form.setAttribute("action", "Projects/SaveConsultant.php");
+
+
+
+
+                                 var cid = document.createElement("input");
+                                 cid.setAttribute("type", "hidden");
+                                 cid.setAttribute("name", "conid");
+                                 cid.setAttribute("value", <?php echo $conid ?>);
+
+
+                                 form.appendChild(cid);
+
+
+
+                                 form.appendChild(document.getElementById("cfname"));
+                                 form.appendChild(document.getElementById("cmname"));
+                                 form.appendChild(document.getElementById("clname"));
+                                 form.appendChild(document.getElementById("cage"));
+                                 form.appendChild(document.getElementById("cnic"));
+                                 form.appendChild(document.getElementById("cno"));
+                                 form.appendChild(document.getElementById("cstreet"));
+                                 form.appendChild(document.getElementById("ccity"));
+                                 form.appendChild(document.getElementById("cemail"));
+                                 form.appendChild(document.getElementById("cmobile"));
+                                 form.appendChild(document.getElementById("cland"));
+                                 form.appendChild(document.getElementById("cdes"));
+                                 
+                                 
+                                document.body.appendChild(form);
+                                form.submit();
+                            }
+
+                           
+                        </script>
+                        <!-- <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button" onclick="deleteAward()"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Remove</button> -->
+                    </div>
+                </div>
                 </div>
                 <br><br>
-            </form>
         </div>
-        <br><br><br><br><br>
-        <div class="margin">
-            <br>
-            <form>
-                Appointment name:
-                <br>
-                <input type="text" name="appointment name" size="35">
-                <br><br>
-
-                Add a Description:
-                <br>
-                <input type="text" name="add a description" size="35">
-                <br><br>
-                <div style="text-align: center;">
-                    <button type="button"  >Save</button>
-                </div>
-            </form>
+         </div>
         </div>
+    </div>
+        <?php $conn->close(); ?>
     </body>
-</html>
+</html> 

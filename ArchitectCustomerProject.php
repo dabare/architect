@@ -19,7 +19,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
 
 <!--Page Container-->
-<div class="container content" style="max-width:1400px;margin-top:80px">
+<div class="container content" style="max-width:1400px;margin-top:80px;margin-left: 10px">
 	<!--The Grid-->
 	<div class="row">
 		<!--Left Column-->

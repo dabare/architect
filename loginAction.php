@@ -78,7 +78,7 @@ if (isset($_POST['login'])) {
 
     //check consultant
     elseif ($check_consult > 0) {
-        $sql = "SELECT id from consultant WHERE uname='" . $username . "';";
+        $sql = "SELECT id from consultants WHERE uname='" . $username . "';";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {

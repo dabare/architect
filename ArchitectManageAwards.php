@@ -30,7 +30,7 @@ require_once './db/dbConnection.php';
         </div>
 
         <!--Page Container-->
-        <div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 0px">
+        <div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 10px">
             <!--The Grid-->
             <div class="row">
 

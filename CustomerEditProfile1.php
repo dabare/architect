@@ -1,10 +1,10 @@
 <?php
+
+session_start();
 require_once './db/dbConnection.php';
 
 
-$id = 2;
-
-$sql = "SELECT * FROM customer WHERE id=" . $id . ";";
+$sql = "SELECT * FROM customer WHERE id='" . $_SESSION['id'] . "';";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
 	$mobile_no=$row["mobile_no"];
 	$land_no=$row["land_no"];
 	$nic=$row["nic"];
-	$date=$row["date"];
+	$date=$row["create"];
         
     }
 }
@@ -55,7 +55,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </div>
 
 <!--Page Container-->
-<div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 0px">
+<div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 10px">
 	<!--The Grid-->
 	<div class="row">
         <div class="col m1">
@@ -154,7 +154,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                             </div>
                             Account created date:<br>
                             <div style="text-align: left;">
-                                <input type="date" name="created" value="<?php echo $created ?> " disabled>
+                                <input type="date" name="created" value="<?php echo $date ?> " disabled>
                             </div>
                     </div>
                 </div>

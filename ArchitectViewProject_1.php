@@ -78,7 +78,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </div>
 
 <!--Page Container-->
-<div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 0px">
+<div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 10px">
 	<!--The Grid-->
 	<div class="row">
 
