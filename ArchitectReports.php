@@ -38,14 +38,14 @@
                     <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
                     <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
                     <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
-                    <li><a id="editItem" href="ArchitectEditProfile.php">Edit Profile</a></li>
+                    
                     
                     <li><a id="editItem" href="ArchitectCustomers.php">Customers</a></li>
                     <li><a id="editItem" href="ArchitectConsultants.php">Consultants</a></li>
                     
                     <li><a id="activeEdit" href="ArchitectReports.php">Reports</a></li>
                     <li><a id="editItem" href="ArchitectSettings.php">Settings</a></li>
-                    <li><a id="editItem" href="index.php">Logout</a></li>
+                    <li><a id="editItem" href="logout.php">Logout</a></li>
 
                 </ul>
 

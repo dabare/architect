@@ -83,7 +83,7 @@ if ($TotalPayment == "") {
             <li><a id="editItem" href="CustomerEditProfile.php">Edit Profile</a></li>
             <li><a id="activeEdit" href="CustomerMyProject.php">My Projects</a></li>
             <li><a id="editItem" href="CustomerMakeAppointments.php">Make Appointment</a></li>
-            <li><a id="editItem" href="index.php">Logout</a></li>
+            <li><a id="editItem" href="logout.php">Logout</a></li>
         </ul>
         <div style="padding: 1px 16px; margin-left: 12%;"><center><h1><?php echo $title ?></h1></center></div>
 

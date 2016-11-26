@@ -10,6 +10,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
+        $cusid=$row["id"];
         $fname=$row["fname"];
 	$mname=$row["mname"];
 	$lname=$row["lname"];
@@ -66,7 +67,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <li><a id="activeEdit" href="CustomerEditProfile.php">Edit Profile</a></li>
             <li><a id="editItem" href="CustomerMyProject.php">My Projects</a></li>
             <li><a id="editItem" href="CustomerMakeAppointments.php">Make Appointment</a></li>
-            <li><a id="editItem" href="index.php">Logout</a></li>
+            <li><a id="editItem" href="logout.php">Logout</a></li>
         </ul>
         </div>
         <div class="col m10">
@@ -166,70 +167,39 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                     <div style="text-align: center;">
                         <br>
                         <br>
-                        <a  href="CustomerEditProfile.php"><button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit Details</button>
+                        <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button" onclick="editCustomer()" name="sav"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit Profile</button>
                     </div>
                     
                     <script>
-                            // function saveCustomer() {
+                            function editCustomer() {
 
 
-                            //     var form = document.createElement("form");
-                            //     form.setAttribute("method", "post");
-                            //     form.setAttribute("hidden", "true");
-                            //     form.setAttribute("action", "Projects/SaveCustomers.php");
-
-
-
-
-                                // var cid = document.createElement("input");
-                                // cid.setAttribute("type", "hidden");
-                                // cid.setAttribute("name", "awid");
-                                // cid.setAttribute("value", <?php echo $id ?>);
-
-
-                                // form.appendChild(cid);
-
-
-
-                                // form.appendChild(document.getElementById("cuscat"));
-                                // form.appendChild(document.getElementById("custitle"));
-                                // form.appendChild(document.getElementById("cusdesc"));
-
-
-
-                            //     document.body.appendChild(form);
-                            //     form.submit();
-                            // }
-
-                            // function deleteAward() {
-                            //     if (confirm("Confirm delete Award ") == true) {
-
-
-                            //         var form = document.createElement("form");
-                            //         form.setAttribute("method", "post");
-                            //         form.setAttribute("action", "Projects/DeleteAwards.php");
+                                var form = document.createElement("form");
+                                form.setAttribute("method", "post");
+                                form.setAttribute("hidden", "true");
+                                form.setAttribute("action", "CustomerEditProfile.php");
 
 
 
 
-                            //         var aid = document.createElement("input");
-                            //         aid.setAttribute("type", "hidden");
-                            //         aid.setAttribute("name", "awid");
-                            //         aid.setAttribute("value", <?php echo $id ?>);
+                                var cid = document.createElement("input");
+                                cid.setAttribute("type", "hidden");
+                                cid.setAttribute("name", "cid");
+                                cid.setAttribute("value", <?php echo $cusid ?>);
 
 
-                            //         form.appendChild(aid);
+                                form.appendChild(cid);
 
 
 
+                                
 
-                            //         document.body.appendChild(form);
-                            //         form.submit();
-                            //     } else {
 
-                            //     }
+                                document.body.appendChild(form);
+                                form.submit();
+                             }
 
-                            // }
+                            
                     </script>
                         <!-- <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button" onclick="deleteAward()"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Remove</button> -->
                 </div>

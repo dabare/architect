@@ -40,7 +40,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <li><a id="editItem" href="CustomerEditProfile.php">Edit Profile</a></li>
             <li><a id="editItem" href="CustomerMyProject.php">My Projects</a></li>
             <li><a id="activeEdit" href="CustomerMakeAppointments.php">Make Appointment</a></li>
-            <li><a id="editItem" href="index.php">Logout</a></li>
+            <li><a id="editItem" href="logout.php">Logout</a></li>
             </ul>
                 
            <div style="margin-left:25%;padding:1px 16px;height:1000px;">

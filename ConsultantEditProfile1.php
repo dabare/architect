@@ -10,6 +10,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
+        
         $fname=$row["fname"];
 	$mname=$row["mname"];
 	$lname=$row["lname"];
@@ -62,7 +63,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 		<!-- left panel -->
                 <ul id="navigationbarEdit">
                 <li><a id="activeEdit" href="ConsultantEditProfile1.php">Edit Profile</a></li>
-                <li><a id="editItem" href="index.php">Logout</a></li>
+                <li><a id="editItem" href="logout.php">Logout</a></li>
 
             </ul>
         </div>

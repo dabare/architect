@@ -21,7 +21,7 @@
             
             <li><a id="editItem" href="ArchitectReports.php">Reports</a></li>
             <li><a id="editItem" href="ArchitectSettings.php">Settings</a></li>
-            <li><a id="editItem" href="index.php">Logout</a></li>
+            <li><a id="editItem" href="logout.php">Logout</a></li>
         </ul>
 
 

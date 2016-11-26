@@ -133,7 +133,7 @@
                 <li><a id="editItem" href="ConsultantNotifications.php">Notification</a></li>
                 <li><a id="activeEdit" href="ConsultantAppointments.php">Appointments</a></li>
                 <li><a id="editItem" href="ConsultantEditProfile.php">Edit Profile</a></li>
-                <li><a id="editItem" href="index.php">Logout</a></li>
+                <li><a id="editItem" href="logout.php">Logout</a></li>
 
             </ul>
         </nav>
