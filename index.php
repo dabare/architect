@@ -263,7 +263,7 @@ require_once './db/dbConnection.php';
                     <!-- end single slide -->
 
                     <!-- single slide -->
-                    <div class="item" style="background-image: url(img/01.jpg);">
+                    <div class="item" style="background-image: url(img/banner.jpg);">
                         <div class="carousel-caption">
                             <!--
                                     <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">Meet<span> Team</span>!</h2>
@@ -723,9 +723,14 @@ Contact Us
                     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 wow fadeInLeft animated" data-wow-duration="500ms">
                         <div class="contact-address">
                             <h3>Our Address </h3>
-                            <p>45, Koswaththa</p>
-                            <p>Baththaramulla</p>
-                            <p>01122497787</p>
+                            <p>No.240/17E<br>
+                            Mahawatte,<br>
+                            Kadawala Road,<br>
+                            Battaramulla
+                            </p>
+                            
+                            <p>Phone:0112868652,0718223366</p>
+                            
                         </div>
                     </div>
                     <!-- end contact address -->
@@ -734,8 +739,8 @@ Contact Us
                     <!-- footer social links -->
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 wow fadeInRight animated" data-wow-duration="500ms" data-wow-delay="600ms">
                         <ul class="footer-social">
-                            <li>email: google@gmail.com</li>
-                            <li>phone 2312312332</li>
+                            <li>email: priyantha@sltnet.lk</li>
+                            <li>email: ppremathilake@gmail.com</li>
                             <li></li>
                             <li></li>
                         </ul>

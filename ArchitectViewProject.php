@@ -49,84 +49,84 @@ if ($TotalPayment == "") {
 
 <!DOCTYPE html>
 <html>
-<head>
-<title>Architect</title>
-<link rel="stylesheet" type="text/css" href="CSS/architectEdit.css">
-<link rel="stylesheet" type="text/css" href="profcss/style_theme.css">
-<link rel="stylesheet" type="text/css" href="profcss/style.css">
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="profcss/opensans.css">
-<style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
-</style>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+    <head>
+        <title>Architect</title>
+        <link rel="stylesheet" type="text/css" href="CSS/architectEdit.css">
+        <link rel="stylesheet" type="text/css" href="profcss/style_theme.css">
+        <link rel="stylesheet" type="text/css" href="profcss/style.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="profcss/opensans.css">
+        <style>
+            html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
 
-<body bgcolor="grey" class="theme-15">
+    <body bgcolor="grey" class="theme-15">
 
-<!--Navbar-->
-<div class="top">
-	<ul class="navbar theme-d2 left-align large">
+        <!--Navbar-->
+        <div class="top">
+            <ul class="navbar theme-d2 left-align large">
 
-		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Architect</a></li>
-		
-	</ul>
-</div>
-
-<!--Page Container-->
-<div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 10px">
-	<!--The Grid-->
-	<div class="row">
-
-		<!-- left panel -->
-                <ul id="navigationbarEdit" style="margin-top:0px">
-            <li><a id="editItem" href="ArchitectNotification.php">Notification</a></li>
-            <li><a id="activeEdit" href="ArchitectOnGoingProjects.php">On Going Projects</a></li>
-            <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
-            <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
-            <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
-            
-            <li><a id="editItem" href="ArchitectAppointments.php">Appointments</a></li>
-            <li><a id="editItem" href="ArchitectCustomers.php">Customers</a></li>
-            <li><a id="editItem" href="ArchitectConsultants.php">Consultants</a></li>
-            
-            <li><a id="editItem" href="ArchitectReports.php">Reports</a></li>
-            <li><a id="editItem" href="ArchitectSettings.php">Settings</a></li>
-            <li><a id="editItem" href="index.php">Logout</a></li>
+                <li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Architect</a></li>
 
             </ul>
-</div>
-        <div style="margin-left:200px">
+        </div>
 
-            <div class="l_sidebar" style="width:300px;">
+        <!--Page Container-->
+        <div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 10px">
+            <!--The Grid-->
+            <div class="row">
 
-                <form action="Projects/SaveProjectTitle.php"  method="POST">
-                    <h1>Title:</h1>
-                    <input type="text" style="width: 90%;"name="title" value="<?php echo $title ?>"><br><br>
-                    <input type="text" style="visibility:hidden;"name="id" value="<?php echo $id; ?>">
+                <!-- left panel -->
+                <ul id="navigationbarEdit" style="margin-top:0px">
+                    <li><a id="editItem" href="ArchitectNotification.php">Notification</a></li>
+                    <li><a id="activeEdit" href="ArchitectOnGoingProjects.php">On Going Projects</a></li>
+                    <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
+                    <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
+                    <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
 
-                    <input style="width: 40%;"type="submit" value="Save"><br>
+                    <li><a id="editItem" href="ArchitectAppointments.php">Appointments</a></li>
+                    <li><a id="editItem" href="ArchitectCustomers.php">Customers</a></li>
+                    <li><a id="editItem" href="ArchitectConsultants.php">Consultants</a></li>
 
-                </form>
+                    <li><a id="editItem" href="ArchitectReports.php">Reports</a></li>
+                    <li><a id="editItem" href="ArchitectSettings.php">Settings</a></li>
+                    <li><a id="editItem" href="index.php">Logout</a></li>
+
+                </ul>
+            </div>
+            <div style="margin-left:200px">
+
+                <div class="l_sidebar" style="width:300px;">
+
+                    <form action="Projects/SaveProjectTitle.php"  method="POST">
+                        <h1>Title:</h1>
+                        <input type="text" style="width: 90%;"name="title" value="<?php echo $title ?>"><br><br>
+                        <input type="text" style="visibility:hidden;"name="id" value="<?php echo $id; ?>">
+
+                        <input style="width: 40%;"type="submit" value="Save"><br>
+
+                    </form>
 
 
 
-                <div style="text-align: center;">
-                    <a href="ArchitectCustomers1.php"  target="_blank" ><h4 >Profile</h4></a>
+                    <div style="text-align: center;">
+                        <a href="ArchitectCustomers1.php"  target="_blank" ><h4 >Profile</h4></a>
 
-                </div>
-                <div style="text-align: center;">
-                    <div ><img  src="uploads/customer/<?php echo $cusID; ?>.jpeg"  style="height:106px;width:106px" alt="Profile"></div>
-                </div><br>
-                <p><font size="3">Name:  <?php echo $cusName ?>`</font></p>
-                <p><font size="3">City:  <?php echo $city ?></font></p>
-                <p><font size="3">Estimated Cost: RS <?php echo $estcost ?> /=</font></p>
-                <p><font size="3">Payment Done: RS <?php echo $TotalPayment ?> /=</font></p>
-                <p><font size="3">Remaining Payment: RS <?php echo $estcost - $TotalPayment ?> /=</font></p>
-                <a href="FullProjectDetails.php?id=<?php echo $id; ?>">More Details></a>
-             
+                    </div>
+                    <div style="text-align: center;">
+                        <div ><img  src="uploads/customer/<?php echo $cusID; ?>.jpeg"  style="height:106px;width:106px" alt="Profile"></div>
+                    </div><br>
+                    <p><font size="3">Name:  <?php echo $cusName ?>`</font></p>
+                    <p><font size="3">City:  <?php echo $city ?></font></p>
+                    <p><font size="3">Estimated Cost: RS <?php echo $estcost ?> /=</font></p>
+                    <p><font size="3">Payment Done: RS <?php echo $TotalPayment ?> /=</font></p>
+                    <p><font size="3">Remaining Payment: RS <?php echo $estcost - $TotalPayment ?> /=</font></p>
+                    <a href="FullProjectDetails.php?id=<?php echo $id; ?>">More Details></a>
+
 
                     <div id="paymentform">
                         <br><br>
@@ -314,422 +314,421 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                     }
                     ?>
                 </div>
-            
-        <div class="margin" style="width:1100px;">
-            <div style="background-color: whitesmoke;margin-left: 300px;margin-top: -1150px;">
-                <div style="align-content: center;text-align: left;padding: 2em;">
-                    <center><h2>Project Progress</h2></center>
-                    <?php
-                    $v = $progress / 100;
 
-                    if ($v == 0.02) {
-                        echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" unchecked>Interview and initial discussions <br>';
-                        echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" unchecked disabled>Information gathering<br>';
-                        echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" unchecked disabled>Schematic Design and Feasibility<br>';
-                        echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" unchecked disabled>Design Development and Permit Documents<br>';
-                        echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" unchecked disabled>Construction Documents and Permit Acquisition<br>';
-                        echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" unchecked disabled>Selection of a General Contractor<br>';
-                        echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" unchecked disabled>Construction Administration<br>';
-                        echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" unchecked disabled>Finish<br>';
-                    } elseif ($v == 0.15) {
-                        echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" checked >Interview and initial discussions <br>';
-                        echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" unchecked >Information gathering<br>';
-                        echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" unchecked disabled>Schematic Design and Feasibility<br>';
-                        echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" unchecked disabled>Design Development and Permit Documents<br>';
-                        echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" unchecked disabled>Construction Documents and Permit Acquisition<br>';
-                        echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" unchecked disabled>Selection of a General Contractor<br>';
-                        echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" unchecked disabled>Construction Administration<br>';
-                        echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" unchecked disabled>Finish<br>';
-                    } elseif ($v == 0.3) {
-                        echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" checked disabled>Interview and initial discussions <br>';
-                        echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" checked >Information gathering<br>';
-                        echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" unchecked >Schematic Design and Feasibility<br>';
-                        echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" unchecked disabled>Design Development and Permit Documents<br>';
-                        echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" unchecked disabled>Construction Documents and Permit Acquisition<br>';
-                        echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" unchecked disabled>Selection of a General Contractor<br>';
-                        echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" unchecked disabled>Construction Administration<br>';
-                        echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" unchecked disabled>Finish<br>';
-                    } elseif ($v == 0.4) {
-                        echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" checked disabled>Interview and initial discussions <br>';
-                        echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" checked disabled>Information gathering<br>';
-                        echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" checked >Schematic Design and Feasibility<br>';
-                        echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" unchecked >Design Development and Permit Documents<br>';
-                        echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" unchecked disabled>Construction Documents and Permit Acquisition<br>';
-                        echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" unchecked disabled>Selection of a General Contractor<br>';
-                        echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" unchecked disabled>Construction Administration<br>';
-                        echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" unchecked disabled>Finish<br>';
-                    } elseif ($v == 0.5) {
-                        echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" checked disabled>Interview and initial discussions <br>';
-                        echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" checked disabled>Information gathering<br>';
-                        echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" checked disabled>Schematic Design and Feasibility<br>';
-                        echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" checked >Design Development and Permit Documents<br>';
-                        echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" unchecked >Construction Documents and Permit Acquisition<br>';
-                        echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" unchecked disabled>Selection of a General Contractor<br>';
-                        echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" unchecked disabled>Construction Administration<br>';
-                        echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" unchecked disabled>Finish<br>';
-                    } elseif ($v == 0.6) {
-                        echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" checked disabled>Interview and initial discussions <br>';
-                        echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" checked disabled>Information gathering<br>';
-                        echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" checked disabled>Schematic Design and Feasibility<br>';
-                        echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" checked disabled>Design Development and Permit Documents<br>';
-                        echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" checked >Construction Documents and Permit Acquisition<br>';
-                        echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" unchecked >Selection of a General Contractor<br>';
-                        echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" unchecked disabled>Construction Administration<br>';
-                        echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" unchecked disabled>Finish<br>';
-                    } elseif ($v == 0.8) {
-                        echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" checked disabled>Interview and initial discussions <br>';
-                        echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" checked disabled>Information gathering<br>';
-                        echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" checked disabled>Schematic Design and Feasibility<br>';
-                        echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" checked disabled>Design Development and Permit Documents<br>';
-                        echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" checked disabled>Construction Documents and Permit Acquisition<br>';
-                        echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" checked >Selection of a General Contractor<br>';
-                        echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" unchecked >Construction Administration<br>';
-                        echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" unchecked disabled>Finish<br>';
-                    } elseif ($v == 0.9) {
-                        echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" checked disabled>Interview and initial discussions <br>';
-                        echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" checked disabled>Information gathering<br>';
-                        echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" checked disabled>Schematic Design and Feasibility<br>';
-                        echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" checked disabled>Design Development and Permit Documents<br>';
-                        echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" checked disabled>Construction Documents and Permit Acquisition<br>';
-                        echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" checked disabled>Selection of a General Contractor<br>';
-                        echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" checked >Construction Administration<br>';
-                        echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" unchecked >Finish<br>';
-                    } elseif ($v == 1.0) {
-                        echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" checked disabled>Interview and initial discussions <br>';
-                        echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" checked disabled>Information gathering<br>';
-                        echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" checked disabled>Schematic Design and Feasibility<br>';
-                        echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" checked disabled>Design Development and Permit Documents<br>';
-                        echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" checked disabled>Construction Documents and Permit Acquisition<br>';
-                        echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" checked disabled>Selection of a General Contractor<br>';
-                        echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" checked disabled>Construction Administration<br>';
-                        echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" checked >Finish<br>';
-                    }
-                    ?>
+                <div class="margin" style="width:1100px;">
+                    <div style="background-color: whitesmoke;margin-left: 300px;margin-top: -1150px;">
+                        <div style="align-content: center;text-align: left;padding: 2em;">
+                            <center><h2>Project Progress</h2></center>
+                            <?php
+                            $v = $progress / 100;
 
-                    <script>
-                        function toggleCheckbox1(element)
-                        {
-                            if (element.checked) {
-                                document.getElementById("myMeter").value = "0.15";
-                                document.getElementById("c2").disabled = false;
-                            } else {
-                                document.getElementById("myMeter").value = "0.02";
-                                document.getElementById("c2").disabled = true;
+                            if ($v == 0.02) {
+                                echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" unchecked>Interview and initial discussions <br>';
+                                echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" unchecked disabled>Information gathering<br>';
+                                echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" unchecked disabled>Schematic Design and Feasibility<br>';
+                                echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" unchecked disabled>Design Development and Permit Documents<br>';
+                                echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" unchecked disabled>Construction Documents and Permit Acquisition<br>';
+                                echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" unchecked disabled>Selection of a General Contractor<br>';
+                                echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" unchecked disabled>Construction Administration<br>';
+                                echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" unchecked disabled>Finish<br>';
+                            } elseif ($v == 0.15) {
+                                echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" checked >Interview and initial discussions <br>';
+                                echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" unchecked >Information gathering<br>';
+                                echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" unchecked disabled>Schematic Design and Feasibility<br>';
+                                echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" unchecked disabled>Design Development and Permit Documents<br>';
+                                echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" unchecked disabled>Construction Documents and Permit Acquisition<br>';
+                                echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" unchecked disabled>Selection of a General Contractor<br>';
+                                echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" unchecked disabled>Construction Administration<br>';
+                                echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" unchecked disabled>Finish<br>';
+                            } elseif ($v == 0.3) {
+                                echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" checked disabled>Interview and initial discussions <br>';
+                                echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" checked >Information gathering<br>';
+                                echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" unchecked >Schematic Design and Feasibility<br>';
+                                echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" unchecked disabled>Design Development and Permit Documents<br>';
+                                echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" unchecked disabled>Construction Documents and Permit Acquisition<br>';
+                                echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" unchecked disabled>Selection of a General Contractor<br>';
+                                echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" unchecked disabled>Construction Administration<br>';
+                                echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" unchecked disabled>Finish<br>';
+                            } elseif ($v == 0.4) {
+                                echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" checked disabled>Interview and initial discussions <br>';
+                                echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" checked disabled>Information gathering<br>';
+                                echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" checked >Schematic Design and Feasibility<br>';
+                                echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" unchecked >Design Development and Permit Documents<br>';
+                                echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" unchecked disabled>Construction Documents and Permit Acquisition<br>';
+                                echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" unchecked disabled>Selection of a General Contractor<br>';
+                                echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" unchecked disabled>Construction Administration<br>';
+                                echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" unchecked disabled>Finish<br>';
+                            } elseif ($v == 0.5) {
+                                echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" checked disabled>Interview and initial discussions <br>';
+                                echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" checked disabled>Information gathering<br>';
+                                echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" checked disabled>Schematic Design and Feasibility<br>';
+                                echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" checked >Design Development and Permit Documents<br>';
+                                echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" unchecked >Construction Documents and Permit Acquisition<br>';
+                                echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" unchecked disabled>Selection of a General Contractor<br>';
+                                echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" unchecked disabled>Construction Administration<br>';
+                                echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" unchecked disabled>Finish<br>';
+                            } elseif ($v == 0.6) {
+                                echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" checked disabled>Interview and initial discussions <br>';
+                                echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" checked disabled>Information gathering<br>';
+                                echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" checked disabled>Schematic Design and Feasibility<br>';
+                                echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" checked disabled>Design Development and Permit Documents<br>';
+                                echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" checked >Construction Documents and Permit Acquisition<br>';
+                                echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" unchecked >Selection of a General Contractor<br>';
+                                echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" unchecked disabled>Construction Administration<br>';
+                                echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" unchecked disabled>Finish<br>';
+                            } elseif ($v == 0.8) {
+                                echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" checked disabled>Interview and initial discussions <br>';
+                                echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" checked disabled>Information gathering<br>';
+                                echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" checked disabled>Schematic Design and Feasibility<br>';
+                                echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" checked disabled>Design Development and Permit Documents<br>';
+                                echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" checked disabled>Construction Documents and Permit Acquisition<br>';
+                                echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" checked >Selection of a General Contractor<br>';
+                                echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" unchecked >Construction Administration<br>';
+                                echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" unchecked disabled>Finish<br>';
+                            } elseif ($v == 0.9) {
+                                echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" checked disabled>Interview and initial discussions <br>';
+                                echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" checked disabled>Information gathering<br>';
+                                echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" checked disabled>Schematic Design and Feasibility<br>';
+                                echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" checked disabled>Design Development and Permit Documents<br>';
+                                echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" checked disabled>Construction Documents and Permit Acquisition<br>';
+                                echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" checked disabled>Selection of a General Contractor<br>';
+                                echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" checked >Construction Administration<br>';
+                                echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" unchecked >Finish<br>';
+                            } elseif ($v == 1.0) {
+                                echo '<input type = "checkbox" id = "c1" onchange = "toggleCheckbox1(this)" checked disabled>Interview and initial discussions <br>';
+                                echo '<input type = "checkbox" id = "c2" onchange = "toggleCheckbox2(this)" checked disabled>Information gathering<br>';
+                                echo '<input type = "checkbox" id = "c3" onchange = "toggleCheckbox3(this)" checked disabled>Schematic Design and Feasibility<br>';
+                                echo '<input type = "checkbox" id = "c4" onchange = "toggleCheckbox4(this)" checked disabled>Design Development and Permit Documents<br>';
+                                echo '<input type = "checkbox" id = "c5" onchange = "toggleCheckbox5(this)" checked disabled>Construction Documents and Permit Acquisition<br>';
+                                echo '<input type = "checkbox" id = "c6" onchange = "toggleCheckbox6(this)" checked disabled>Selection of a General Contractor<br>';
+                                echo '<input type = "checkbox" id = "c7" onchange = "toggleCheckbox7(this)" checked disabled>Construction Administration<br>';
+                                echo '<input type = "checkbox" id = "c8" onchange = "toggleCheckbox8(this)" checked >Finish<br>';
                             }
-                        }
+                            ?>
 
-                        function toggleCheckbox2(element)
-                        {
-                            if (element.checked) {
-                                document.getElementById("myMeter").value = "0.3";
-                                document.getElementById("c1").disabled = true;
-                                document.getElementById("c3").disabled = false;
-                            } else {
-                                document.getElementById("myMeter").value = "0.15";
-                                document.getElementById("c1").disabled = false;
-                                document.getElementById("c3").disabled = true;
-                            }
-                        }
-                        function toggleCheckbox3(element)
-                        {
-                            if (element.checked) {
-                                document.getElementById("myMeter").value = "0.4";
-                                document.getElementById("c2").disabled = true;
-                                document.getElementById("c4").disabled = false;
-                            } else {
-                                document.getElementById("myMeter").value = "0.3";
-                                document.getElementById("c2").disabled = false;
-                                document.getElementById("c4").disabled = true;
-                            }
-                        }
-                        function toggleCheckbox4(element)
-                        {
-                            if (element.checked) {
-                                document.getElementById("myMeter").value = "0.5";
-                                document.getElementById("c3").disabled = true;
-                                document.getElementById("c5").disabled = false;
-                            } else {
-                                document.getElementById("myMeter").value = "0.4";
-                                document.getElementById("c3").disabled = false;
-                                document.getElementById("c5").disabled = true;
-                            }
-                        }
-                        function toggleCheckbox5(element)
-                        {
-                            if (element.checked) {
-                                document.getElementById("myMeter").value = "0.6";
-                                document.getElementById("c4").disabled = true;
-                                document.getElementById("c6").disabled = false;
-                            } else {
-                                document.getElementById("myMeter").value = "0.5";
-                                document.getElementById("c4").disabled = false;
-                                document.getElementById("c6").disabled = true;
-                            }
-                        }
-                        function toggleCheckbox6(element)
-                        {
-                            if (element.checked) {
-                                document.getElementById("myMeter").value = "0.8";
-                                document.getElementById("c5").disabled = true;
-                                document.getElementById("c7").disabled = false;
-                            } else {
-                                document.getElementById("myMeter").value = "0.6";
-                                document.getElementById("c5").disabled = false;
-                                document.getElementById("c7").disabled = true;
-                            }
-                        }
-                        function toggleCheckbox7(element)
-                        {
-                            if (element.checked) {
-                                document.getElementById("myMeter").value = "0.9";
-                                document.getElementById("c6").disabled = true;
-                                document.getElementById("c8").disabled = false;
-                            } else {
-                                document.getElementById("myMeter").value = "0.8";
-                                document.getElementById("c6").disabled = false;
-                                document.getElementById("c8").disabled = true;
-                            }
-                        }
-                        function toggleCheckbox8(element)
-                        {
-                            if (element.checked) {
-                                document.getElementById("myMeter").value = "1.0";
-                                document.getElementById("c7").disabled = true;
-                            } else {
-                                document.getElementById("myMeter").value = "0.9";
-                                document.getElementById("c7").disabled = false;
-                            }
-                        }
-                    </script>
-                    <h5>Completed: </h5>
-                    <meter id="myMeter" style="width: 85%;" value="<?php echo $v; ?>"></meter> 
-                    <button type="button" onclick="saveProg()">Save</button> <br><br>
+                            <script>
+                                function toggleCheckbox1(element)
+                                {
+                                    if (element.checked) {
+                                        document.getElementById("myMeter").value = "0.15";
+                                        document.getElementById("c2").disabled = false;
+                                    } else {
+                                        document.getElementById("myMeter").value = "0.02";
+                                        document.getElementById("c2").disabled = true;
+                                    }
+                                }
 
-                    <script>
-                        function saveProg() {
+                                function toggleCheckbox2(element)
+                                {
+                                    if (element.checked) {
+                                        document.getElementById("myMeter").value = "0.3";
+                                        document.getElementById("c1").disabled = true;
+                                        document.getElementById("c3").disabled = false;
+                                    } else {
+                                        document.getElementById("myMeter").value = "0.15";
+                                        document.getElementById("c1").disabled = false;
+                                        document.getElementById("c3").disabled = true;
+                                    }
+                                }
+                                function toggleCheckbox3(element)
+                                {
+                                    if (element.checked) {
+                                        document.getElementById("myMeter").value = "0.4";
+                                        document.getElementById("c2").disabled = true;
+                                        document.getElementById("c4").disabled = false;
+                                    } else {
+                                        document.getElementById("myMeter").value = "0.3";
+                                        document.getElementById("c2").disabled = false;
+                                        document.getElementById("c4").disabled = true;
+                                    }
+                                }
+                                function toggleCheckbox4(element)
+                                {
+                                    if (element.checked) {
+                                        document.getElementById("myMeter").value = "0.5";
+                                        document.getElementById("c3").disabled = true;
+                                        document.getElementById("c5").disabled = false;
+                                    } else {
+                                        document.getElementById("myMeter").value = "0.4";
+                                        document.getElementById("c3").disabled = false;
+                                        document.getElementById("c5").disabled = true;
+                                    }
+                                }
+                                function toggleCheckbox5(element)
+                                {
+                                    if (element.checked) {
+                                        document.getElementById("myMeter").value = "0.6";
+                                        document.getElementById("c4").disabled = true;
+                                        document.getElementById("c6").disabled = false;
+                                    } else {
+                                        document.getElementById("myMeter").value = "0.5";
+                                        document.getElementById("c4").disabled = false;
+                                        document.getElementById("c6").disabled = true;
+                                    }
+                                }
+                                function toggleCheckbox6(element)
+                                {
+                                    if (element.checked) {
+                                        document.getElementById("myMeter").value = "0.8";
+                                        document.getElementById("c5").disabled = true;
+                                        document.getElementById("c7").disabled = false;
+                                    } else {
+                                        document.getElementById("myMeter").value = "0.6";
+                                        document.getElementById("c5").disabled = false;
+                                        document.getElementById("c7").disabled = true;
+                                    }
+                                }
+                                function toggleCheckbox7(element)
+                                {
+                                    if (element.checked) {
+                                        document.getElementById("myMeter").value = "0.9";
+                                        document.getElementById("c6").disabled = true;
+                                        document.getElementById("c8").disabled = false;
+                                    } else {
+                                        document.getElementById("myMeter").value = "0.8";
+                                        document.getElementById("c6").disabled = false;
+                                        document.getElementById("c8").disabled = true;
+                                    }
+                                }
+                                function toggleCheckbox8(element)
+                                {
+                                    if (element.checked) {
+                                        document.getElementById("myMeter").value = "1.0";
+                                        document.getElementById("c7").disabled = true;
+                                    } else {
+                                        document.getElementById("myMeter").value = "0.9";
+                                        document.getElementById("c7").disabled = false;
+                                    }
+                                }
+                            </script>
+                            <h5>Completed: </h5>
+                            <meter id="myMeter" style="width: 85%;" value="<?php echo $v; ?>"></meter> 
+                            <button type="button" onclick="saveProg()">Save</button> <br><br>
 
-                            var val = document.getElementById("myMeter").value;
-                            var form = document.createElement("form");
-                            form.setAttribute("method", "post");
-                            form.setAttribute("action", "Projects/SaveProjectProgress.php");
+                            <script>
+                                function saveProg() {
 
-
-
-                            var id = document.createElement("input");
-                            id.setAttribute("type", "hidden");
-                            id.setAttribute("name", "id");
-                            id.setAttribute("value", <?php echo $id; ?>);
-
-
-                            form.appendChild(id);
-
-
-                            var value = document.createElement("input");
-                            value.setAttribute("type", "hidden");
-                            value.setAttribute("name", "value");
-                            value.setAttribute("value", val);
-
-
-                            form.appendChild(value);
-
-
-                            document.body.appendChild(form);
-                            form.submit();
-
-                        }
-
-                    </script>
-                </div>
-            </div>
-
-            <div style="height: 20px;"></div>
+                                    var val = document.getElementById("myMeter").value;
+                                    var form = document.createElement("form");
+                                    form.setAttribute("method", "post");
+                                    form.setAttribute("action", "Projects/SaveProjectProgress.php");
 
 
 
+                                    var id = document.createElement("input");
+                                    id.setAttribute("type", "hidden");
+                                    id.setAttribute("name", "id");
+                                    id.setAttribute("value", <?php echo $id; ?>);
 
-            <div style="background-color: whitesmoke; margin-left: 300px">
-                <form onsubmit="return PostValidateForm()" action="Projects/SaveProjectPost.php" method="post"  enctype="multipart/form-data">
-                    <div style="text-align: left;padding: 2em;">
-                        <input  name="prid"  hidden="true" value="<?php echo $id ?>">
-                        <input  name="by"  hidden="true" value="Architect">
-                        <h3>Add Post:</h3>
-                        <select id="posttype" name="type" onchange="changePoost(this)">
-                            <option value="Post">Post</option>
-                            <option value="Image">Image</option>
-                            <option value="Document">Document</option>
-                        </select> 
-                        <input id="postfile" type="file" name="fileToUpload"  ><br><br>
-                        <br>
-                        Description:<br>
 
-                        <textarea id="postdescription" rows="4" name="desc" style="position: center; width: 100%"></textarea><br><br>
-                        <input style="float: right;width: 40%;"type="submit" name="submit" value="Post"><br>
+                                    form.appendChild(id);
+
+
+                                    var value = document.createElement("input");
+                                    value.setAttribute("type", "hidden");
+                                    value.setAttribute("name", "value");
+                                    value.setAttribute("value", val);
+
+
+                                    form.appendChild(value);
+
+
+                                    document.body.appendChild(form);
+                                    form.submit();
+
+                                }
+
+                            </script>
+                        </div>
                     </div>
-                </form>
-            </div>
-            <script>
 
-                document.getElementById("postfile").hidden = true;
-                document.getElementById("postdescription").required = true;
-                function changePoost(element)
-                {
-                    if (element.value == "Post") {
-                        document.getElementById("postfile").value = "";
+                    <div style="height: 20px;"></div>
+
+
+
+
+                    <div style="background-color: whitesmoke; margin-left: 300px">
+                        <form onsubmit="return PostValidateForm()" action="Projects/SaveProjectPost.php" method="post"  enctype="multipart/form-data">
+                            <div style="text-align: left;padding: 2em;">
+                                <input  name="prid"  hidden="true" value="<?php echo $id ?>">
+                                <input  name="by"  hidden="true" value="Architect">
+                                <h3>Add Post:</h3>
+                                <select id="posttype" name="type" onchange="changePoost(this)">
+                                    <option value="Post">Post</option>
+                                    <option value="Image">Image</option>
+                                    <option value="Document">Document</option>
+                                </select> <br><br>
+                                <input id="postfile" type="file" name="fileToUpload"  ><br>
+                                Description:<br>
+
+                                <textarea id="postdescription" rows="4" name="desc" style="position: center; width: 100%"></textarea><br><br>
+                                <input style="width: 40%;"type="submit" name="submit" value="Post"><br>
+                            </div>
+                        </form>
+                    </div>
+                    <script>
+
                         document.getElementById("postfile").hidden = true;
                         document.getElementById("postdescription").required = true;
+                        function changePoost(element)
+                        {
+                            if (element.value == "Post") {
+                                document.getElementById("postfile").value = "";
+                                document.getElementById("postfile").hidden = true;
+                                document.getElementById("postdescription").required = true;
 
-                    } else {
-                        document.getElementById("postfile").value = "";
-                        document.getElementById("postfile").hidden = false;
-                        document.getElementById("postdescription").required = false;
-                    }
+                            } else {
+                                document.getElementById("postfile").value = "";
+                                document.getElementById("postfile").hidden = false;
+                                document.getElementById("postdescription").required = false;
+                            }
 
-                    if (element.value == "Image") {
-                        document.getElementById("postfile").accept = "image/*";
-                    }
+                            if (element.value == "Image") {
+                                document.getElementById("postfile").accept = "image/*";
+                            }
 
-                    if (element.value == "Document") {
-                        document.getElementById("postfile").accept = ".pdf";
-                    }
+                            if (element.value == "Document") {
+                                document.getElementById("postfile").accept = ".pdf";
+                            }
 
-                }
-
-                function PostValidateForm() {
-                    if (document.getElementById("posttype").value != "Post") {
-                        if (document.getElementById("postfile").value == "") {
-                            alert("Select an attachmen");
-                            return false;
                         }
 
-                    }
-                    return true;
-                }
-            </script>
-            <div style="height: 20px;"></div>
+                        function PostValidateForm() {
+                            if (document.getElementById("posttype").value != "Post") {
+                                if (document.getElementById("postfile").value == "") {
+                                    alert("Select an attachmen");
+                                    return false;
+                                }
+
+                            }
+                            return true;
+                        }
+                    </script>
+                    <div style="height: 20px;"></div>
 
 
 
 
-            <?php
-            $sql = "SELECT * FROM post WHERE project_id=" . $id . " ORDER BY date DESC;";
-            $result = $conn->query($sql);
+                    <?php
+                    $sql = "SELECT * FROM post WHERE project_id=" . $id . " ORDER BY date DESC;";
+                    $result = $conn->query($sql);
 
-            if ($result->num_rows > 0) {
-                // output data of each row
-                while ($row = $result->fetch_assoc()) {
-                    $postid = $row["id"];
-                    $postdescription = $row["description"];
-                    $postdate = $row["date"];
-                    $posttype = $row["type"];
-                    $postby = $row["byy"];
-                    $path = $row["format"];
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                        while ($row = $result->fetch_assoc()) {
+                            $postid = $row["id"];
+                            $postdescription = $row["description"];
+                            $postdate = $row["date"];
+                            $posttype = $row["type"];
+                            $postby = $row["byy"];
+                            $path = $row["format"];
 
 
-                    if ($postby == "Architect") {
-                        echo '<div style="background-color: lightblue;margin-left:300px ">
+                            if ($postby == "Architect") {
+                                echo '<div style="background-color: lightblue;margin-left:300px ">
                 <form onsubmit="return PostDeleteConfirmeForm()" action="Projects/DeleteProjectPost.php" method="post">
                     <div style="text-align: left;padding: 2em;">
                         <input type="text" hidden="true" name="postid" value="' . $postid . '">
                         <input type="text" hidden="true" name="proid" value="' . $id . '">
-                        <h3>ID:' . $postid . '</h3><h3>By:Me</h3>';
-                    } else {
+                        <h3>By:Me</h3>';
+                            } else {
 
-                        echo '<div style="background-color: lightgreen;margin-left:300px ">
+                                echo '<div style="background-color: lightgreen;margin-left:300px ">
                 <form onsubmit="return PostDeleteConfirmeForm()" action="Projects/DeleteProjectPost.php" method="post">
                     <div style="text-align: left;padding: 2em;">
                         <input type="text" hidden="true" name="postid" value="' . $postid . '">
                         <input type="text" hidden="true" name="proid" value="' . $id . '">
-                        <h3>ID:' . $postid . '</h3><h3>By:Client</h3>';
-                    }
+                        <h3>By:Client</h3>';
+                            }
 
 
 
-                    if ($posttype == "Image") {
-                        echo '<a href="uploads/' . $path . '"  target="_blank" ><img src="uploads/' . $path . '" style="width:  20%;"></a>';
-                    } elseif ($posttype == "Document") {
-                        echo '<a href="uploads/' . $path . '"  target="_blank">PDF:></a><br>';
-                    }
+                            if ($posttype == "Image") {
+                                echo '<a href="uploads/' . $path . '"  target="_blank" ><img src="uploads/' . $path . '" style="width:  20%;"></a>';
+                            } elseif ($posttype == "Document") {
+                                echo '<a href="uploads/' . $path . '"  target="_blank">PDF:></a><br>';
+                            }
 
-                    echo '<br>
+                            echo '<br>
 
-                        <textarea id="description" rows="4" style="font-size: 20px;position: center; width: 100%" disabled="true">' . $postdescription . '</textarea><br><br>
-                        <font size="2" color="blue">' . $postdate . '</font>';
+                        <textarea id="description" rows="4" style="font-size: 20px;position: center; width: 100%" disabled="true">' . $postdescription . '</textarea><br><br>'
+                        .'ID:'.$postid.' <font style="margin-left:5em;" size="2" color="blue">Data:' . $postdate . '</font>';
 
-                    if ($row["seen"] == 1 && $postby == "Architect") {
+                            if ($row["seen"] == 1 && $postby == "Architect") {
 
-                        echo '<font style="float: right;" size="2" color="red">Seen</font><br>';
-                    }
-                    echo '<input style="float: right;width: 40%;"type="submit" value="Remove"><br>
+                                echo '<font style="float: right;" size="2" color="red">Seen</font><br>';
+                            }
+                            echo '<input style="float: right;width: 40%;"type="submit" value="Remove"><br>
                     </div>
                 </form>
 
             </div>
             <div style="height: 20px;"></div>';
-                }
-            }
-
-
-
-
-
-
-
-            $sql = "UPDATE post SET seen=1 WHERE project_id='" . $id . "' AND byy = 'Client'";
-            mysqli_query($conn, $sql);
-            ?>
-
-            <script>
-                function PostDeleteConfirmeForm() {
-                    if (confirm("Confirm delete post") == true) {
-                        return true;
-
-                    } else {
-                        return false;
-                    }
-                }
-
-
-                function deleteProject() {
-                    if (confirm("Confirm delete Project ") == true) {
-
-
-                        var form = document.createElement("form");
-                        form.setAttribute("method", "post");
-                        form.setAttribute("action", "Projects/DeleteProject.php");
-
-
-
-
-                        var pid = document.createElement("input");
-                        pid.setAttribute("type", "hidden");
-                        pid.setAttribute("name", "prid");
-                        pid.setAttribute("value", <?php echo $id ?>);
-
-
-                        form.appendChild(pid);
-
-
-
-
-                        document.body.appendChild(form);
-                        form.submit();
-                    } else {
-
+                        }
                     }
 
-                }
-            </script>
-        </div>
-    </div>
-            <br><br>
-            
-    <div>
-         <center>
-            <button type="button"  style="color: red;width: 500px;height: 30px;" onclick="deleteProject()">Delete This Project</button>
-         </center>
-    </div>
-       
-<?php $conn->close();?>
+
+
+
+
+
+
+                    $sql = "UPDATE post SET seen=1 WHERE project_id='" . $id . "' AND byy = 'Client'";
+                    mysqli_query($conn, $sql);
+                    ?>
+
+                    <script>
+                        function PostDeleteConfirmeForm() {
+                            if (confirm("Confirm delete post") == true) {
+                                return true;
+
+                            } else {
+                                return false;
+                            }
+                        }
+
+
+                        function deleteProject() {
+                            if (confirm("Confirm delete Project ") == true) {
+
+
+                                var form = document.createElement("form");
+                                form.setAttribute("method", "post");
+                                form.setAttribute("action", "Projects/DeleteProject.php");
+
+
+
+
+                                var pid = document.createElement("input");
+                                pid.setAttribute("type", "hidden");
+                                pid.setAttribute("name", "prid");
+                                pid.setAttribute("value", <?php echo $id ?>);
+
+
+                                form.appendChild(pid);
+
+
+
+
+                                document.body.appendChild(form);
+                                form.submit();
+                            } else {
+
+                            }
+
+                        }
+                    </script>
+
+                    <div style="background-color: whitesmoke; margin-left: 300px">
+                        <center>
+                            <br><br>
+                            <button type="button"  style="color: red;width: 500px;height: 30px;" onclick="deleteProject()">Delete This Project</button>
+                        </center>
+                    </div>
+                </div>
+
+            </div>
+            <?php $conn->close(); ?>
     </body>
 </html> 
 

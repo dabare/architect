@@ -57,7 +57,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                                 if ($result->num_rows > 0) {
                                 // output data of each row
                                     while ($row = $result->fetch_assoc()) {
-                                        echo '<li><a id="editItem" href="CustomerMakeAppointments1.php?id=' . $row["id"] . '">' . $row["fname"] . '' . $row["lname"] . '</a></li><br>';
+                                        echo '<li><a id="editItem" href="CustomerMakeAppointments1.php?id=' . $row["id"] . '">' . $row["fname"] . ''." ".'' . $row["lname"] . '</a></li><br>';
                                     }
                                 }
                             ?>

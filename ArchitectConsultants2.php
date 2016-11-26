@@ -196,7 +196,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
 
                                 var form = document.createElement("form");
-                                form.setAttribute("method", "post");
+                                form.setAttribute("method", "POST");
                                 form.setAttribute("hidden", "true");
                                 form.setAttribute("action", "Projects/SaveConsultants.php");
 
@@ -206,7 +206,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                                 var conid = document.createElement("input");
                                 conid.setAttribute("type", "hidden");
                                 conid.setAttribute("name", "consulid");
-                                conid.setAttribute("value", <?php echo $id ?>);
+                                conid.setAttribute("value", "<?php echo $id ?>");
 
 
                                 form.appendChild(conid);

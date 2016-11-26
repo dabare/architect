@@ -77,7 +77,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                                 if ($result->num_rows > 0) {
                                 // output data of each row
                                     while ($row = $result->fetch_assoc()) {
-                                        echo '<li><a id="editItem" href="CustomerMakeAppointments1.php?id=' . $row["id"] . '">' . $row["fname"] . '' . $row["lname"] . '</a></li><br>';
+                                        echo '<li><a id="editItem" href="CustomerMakeAppointments1.php?id=' . $row["id"] . '">' . $row["fname"] . ''." ".'' . $row["lname"] . '</a></li><br>';
                                     }
                                 }
                             ?>
@@ -98,7 +98,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                                 <input type="text" name="date" size="20" value="<?php echo $email ?>" >
                             <div><br>
                                 Address:<br>
-                                <textarea required="true" name="desc" rows="4" cols="50" style="position: left"><?php echo $add_no?> <?php echo $add_street ?><?php echo $add_city?>
+                                <textarea required="true" name="desc" rows="4" cols="50" style="position: left"><?php echo $add_no?> <?php echo $add_street ?> <?php echo $add_city?>
                                 </textarea>
                             </div><br>
                             <div>
