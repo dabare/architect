@@ -263,7 +263,7 @@ require_once './db/dbConnection.php';
                     <!-- end single slide -->
 
                     <!-- single slide -->
-                    <div class="item" style="background-image: url(img/banner.jpg);">
+                    <div class="item" style="background-image: url(img/01.jpg);">
                         <div class="carousel-caption">
                             <!--
                                     <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">Meet<span> Team</span>!</h2>
@@ -327,10 +327,10 @@ require_once './db/dbConnection.php';
                             </div>
 
                             <div class="service-desc">
-                                <h3>Biography</h3>
-                                <p>Mr.P.H.K.P.L.Prematilaka was born in Colombo,Sri Lanka in 1970.
-                                    he entered the University of Colombo and graduated Bachelor of Science (BSc) in Physics in the year 1996.
-                                    His primary calling, however, was elsewhere.</p>
+                                <h3>History</h3>
+                                <p>Archt.Priyantha premathilake established his own practice in year 2005, having serving as a Consultant Architect at Design Consortium (DCL),over period of 15 years. Although the practice has a short 
+                                short history, it has completed many projects in various diciplines. The Company ispresetly involving in vast 
+                                range of projects in apartments, housing projects, commercial buildings, offices, interior designs and many personalized housing.</p>
                             </div>
                         </div>
                     </div>
@@ -345,14 +345,9 @@ require_once './db/dbConnection.php';
 
                             <div class="service-desc">
                                 <h3>Philosophy</h3>
-                                <p>We are an architectural firm in the business of recreating the space.
-                                    We value our clients' dreams and the life style which we align with our vision,
-                                    To be the region best valued partner in materializing the dreams of recreating the space.
-                                    In realizing the vision we truly believe and committed to our mission that,
-                                    To create beyond the expectations of the client s sensibility with the combined effort of professionalism and creativity in balancing the art, comfort and security.
-                                    We see the beauty of silence against the noise, emptiness against the congestion, 
-                                    simplicity against complexity and we love to share the experience with our clients.
-                                    We enjoy the climate but do not let it torture us.</p>
+                                <p>Our intension is to achieve the excellence in all aspects related to the architectural practice 
+                                by producing unique designs, through creativity and cost effectiveness. We list to our clients needs, analyze them systematically and would it suit social, cultural environment. 
+                                We believe in customer satisfaction as a mode of advertisement.</p>
                             </div>
                         </div>
                     </div>
