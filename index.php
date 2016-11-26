@@ -822,7 +822,7 @@ Register
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>Middle Name:</b></td>
-                                                                                <td><input type='text' name='mname' required/></td>
+                                                                                <td><input type='text' name='mname' /></td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>Last Name:</b></td>
@@ -924,7 +924,7 @@ Register
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>Middle Name:</b></td>
-                                                                                <td><input type='text' name='mname' required/></td>
+                                                                                <td><input type='text' name='mname' /></td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>Last Name:</b></td>

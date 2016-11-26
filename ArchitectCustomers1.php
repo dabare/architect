@@ -168,10 +168,10 @@ if ($result->num_rows > 0) {
                         	</div>
             			</div>
                     
-                        <div class="col-m2">
+                    <div class="col-m2">
 
-                        <div id="saltbl" style="text-align: center ; margin-left:850px; margin-top:-475px; overflow: scroll ; height: 90vh;width: 200px;">
-                            <h4>Projects</h4>
+                        <div id="saltbl" style="text-align: center ; margin-left:850px; margin-top:-460px; overflow: scroll ; height: 90vh;width: 200px;">
+                            <h4>Projects</h4><br><br>
                             <ul style="list-style: none">
                                 <?php
                                 $sql = "SELECT * FROM project;";
@@ -185,7 +185,12 @@ if ($result->num_rows > 0) {
                                     }
                                 ?>
                             </ul>
-                        </div>                      
+                            
+                            <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button" onclick="addNewProject()"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Add New Project
+                            </button>
+                            
+                        </div> 
+                            
                     </div>
             			
             	</div>

@@ -85,7 +85,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 					</div>
 				</div>
 			</div>
-			<br><br>
+			
                 <div class="col m8">        
                 <div style="text-align: left;">
                     <div style="display:inline-block;">

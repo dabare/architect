@@ -50,10 +50,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             </ul>
         <h2><center>Consultants</center></h2>
         
-        <div style="margin-left:25%;padding:1px 16px;height:800px;width:300px;">
+        <div style="margin-left:25%;padding:1px 16px;height:800px;width:400px;">
                 <h3>Registered</h3>
                 <div id="border"><br><br>
-                <div id="saltbl" style="text-align: center ;  overflow: scroll ; height: 60vh;width: 200px;">
+                <div id="saltbl" style="text-align: center ;  overflow: scroll ; height: 60vh;width: 300px;">
                     <ul style="list-style: none">
                     
                             <?php
@@ -63,7 +63,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                                 if ($result->num_rows > 0) {
                                 // output data of each row
                                     while ($row = $result->fetch_assoc()) {
-                                        echo '<li><a id="editItem" href="ArchitectConsultants1.php?id=' . $row["id"] . '">' . $row["fname"] . '</a></li><br>';
+                                        echo '<li><a id="editItem" href="ArchitectConsultants1.php?id=' . $row["id"] . '">' . $row["fname"] . ''. " " .'' . $row["lname"] . '</a></li><br>';
                                     }
                                 }
                             ?>
@@ -72,10 +72,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                 </div><br>
             </div>
             </div>
-        <div style="margin-left:60%;margin-top:-800px;padding:1px 16px;height:800px;width:300px;">
+        <div style="margin-left:75%;margin-top:-800px;padding:1px 16px;height:800px;width:400px;">
                 <h3>Pending</h3>
                 <div id="border"><br><br>
-                <div id="saltbl" style="text-align: center ;  overflow: scroll ; height: 60vh;width: 200px;">
+                <div id="saltbl" style="text-align: center ;  overflow: scroll ; height: 60vh;width: 300px;">
                     <ul style="list-style: none">
                     
                             <?php
@@ -85,7 +85,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                                 if ($result->num_rows > 0) {
                                 // output data of each row
                                     while ($row = $result->fetch_assoc()) {
-                                        echo '<li><a id="editItem" href="ArchitectConsultants2.php?id=' . $row["id"] . '">' . $row["fname"] . '</a></li><br>';
+                                        echo '<li><a id="editItem" href="ArchitectConsultants2.php?id=' . $row["id"] . '">' . $row["fname"] . ''." ".'' . $row["lname"] . '</a></li><br>';
                                     }
                                 }
                             ?>

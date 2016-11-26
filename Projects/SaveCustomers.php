@@ -14,10 +14,9 @@ $email = $_POST['email'];
 $mobile = $_POST['mobile'];
 $land = $_POST['land'];
 $nic = $_POST['nic'];
-$username = $_POST['username'];
-$password = $_POST['password'];
 
-$sql = "UPDATE customer SET fname='" . $firstname . "' , mname = '" . $middlename . "' , lname = '" . $lastname . "', age = '" . $age . "', add_no = '" . $no . "', add_street ='" . $street . "', add_city ='" . $city . "', email='" . $email . "', mobile_no = '" . $mobile . "', land_no = '" . $land . "', nic = '" . $nic . "', uname = '" . $username . "', passwd = '" . $password . "'  WHERE id='" . $customerid . "'";
+
+$sql = "UPDATE customer SET fname='" . $firstname . "' , mname = '" . $middlename . "' , lname = '" . $lastname . "', age = '" . $age . "', add_no = '" . $no . "', add_street ='" . $street . "', add_city ='" . $city . "', email='" . $email . "', mobile_no = '" . $mobile . "', land_no = '" . $land . "', nic = '" . $nic . "' WHERE id='" . $customerid . "'";
 if (mysqli_query($conn, $sql)) {
 
     echo '<script>

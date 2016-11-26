@@ -23,6 +23,7 @@ if ($result->num_rows > 0) {
 	$nic=$row["nic"];
 	$date=$row["created"];
         $payment = $row["payment"];
+        $status = $row["status"];
     }
 }
 ?>
@@ -138,6 +139,21 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                         Payment:<br>
                             <input type="text" name="pymnt" size="15" value="<?php echo $payment ?>" disabled>
                             <br><br>
+                        Status:
+                            <select id="status" name="state">
+                                
+                                <option<?php
+                                if ($status == "active") {
+                                    echo ' selected';
+                                }
+                                ?> value="active">Active</option>
+                                <option<?php
+                                if ($status == "inactive") {
+                                    echo ' selected';
+                                }
+                                ?> value="inactive">Inactive</option>
+                            </select>
+                            <br><br>
                     </div>
                     <div class="col m8">
                             <br>
@@ -167,7 +183,38 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                                 <input type="date" name="created" value="<?php echo $date ?> " disabled>
                             </div>
                             <br><br>
+                            <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button" onclick="saveConsultant()"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save
+                            </button>
+                            <script>
+                            function saveConsultant() {
+
+
+                                var form = document.createElement("form");
+                                form.setAttribute("method", "POST");
+                                form.setAttribute("hidden", "true");
+                                form.setAttribute("action", "Projects/SaveConsultants1.php");
+
+
+
+
+                                var conid = document.createElement("input");
+                                conid.setAttribute("type", "hidden");
+                                conid.setAttribute("name", "consulid");
+                                conid.setAttribute("value", "<?php echo $id ?>");
+
+
+                                form.appendChild(conid);
+
+
+
+                                form.appendChild(document.getElementById("status"));
+                                
+                                document.body.appendChild(form);
+                                form.submit();
+                            }
+
                             
+                        </script>
                     </div>
                 </div>
             </div>
