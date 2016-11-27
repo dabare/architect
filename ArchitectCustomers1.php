@@ -38,6 +38,90 @@ if ($result->num_rows > 0) {
 	<link rel="stylesheet" type="text/css" href="profcss/opensans.css">
 	<style>
 		html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+
+        /* The Modal (background) */
+            .modal {
+                display: none; 
+                position: fixed; 
+                z-index: 1; 
+                padding-top: 70px; 
+                left: 0;
+                top: 0;
+                width: 100%; 
+                height: 100%; 
+                overflow: auto; 
+                background-color: rgb(0,0,0); 
+                background-color: rgba(0,0,0,0.4); 
+            }
+
+            /* Modal Content */
+            .modal-content {
+                position: relative;
+                background-color: #fefefe;
+                margin: auto;
+                padding: 0;
+                border: 1px solid #888;
+                width: 40%;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+                -webkit-animation-name: animatetop;
+                -webkit-animation-duration: 0.4s;
+                animation-name: animatetop;
+                animation-duration: 0.4s
+            }
+
+            /* Animation */
+            @-webkit-keyframes animatetop {
+                from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+            }
+
+            @keyframes animatetop {
+                from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+            }
+
+            /* The Close Button */
+            .close {
+                color: white;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .close2 {
+                color: white;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close2:hover,
+            .close2:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            .modal-header {
+                padding: 2px 16px;
+                background-color: #5cb85c;
+                color: white;
+            }
+
+            .modal-body {padding: 2px 16px;}
+
+            .modal-footer {
+                padding: 2px 16px;
+                background-color: #5cb85c;
+                color: white;
+            }
+
 	</style>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -63,11 +147,12 @@ if ($result->num_rows > 0) {
             		<li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
             		<li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
             		<li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
+            		<li><a id="editItem" href="ArchitectAppointments.php">Appointments</a></li>
             		<li><a id="activeEdit" href="ArchitectCustomers.php">Customers</a></li>
             		<li><a id="editItem" href="ArchitectConsultants.php">Consultants</a></li>            
             		<li><a id="editItem" href="ArchitectReports.php">Reports</a></li>
             		<li><a id="editItem" href="ArchitectSettings.php">Settings</a></li>
-            		<li><a id="editItem" href="logout.php">Logout</a></li>
+            		<li><a id="editItem" href="index.php">Logout</a></li>
             	</ul>
             </div>
 
@@ -95,7 +180,7 @@ if ($result->num_rows > 0) {
             		<!--Customer Details-->
             		<div class="col-m2" style="margin-left: 300px;margin-top: -600px;">
                         <div class="row">
-                            <h2><center>Customer</center></h2><br><br>
+                            <center><h2>Customer</h2></center><br><br>
                         </div>
             			<div class="container">
             				<h4>Profile</h4>
@@ -166,12 +251,100 @@ if ($result->num_rows > 0) {
                             	Account created date:<br>
                             	<input type="date" name="created" value="<?php echo $date ?> " disabled>
                         	</div>
-            			</div>
-                    
-                    <div class="col-m2">
+                            <br>
+                            <br>
 
-                        <div id="saltbl" style="text-align: center ; margin-left:850px; margin-top:-460px; overflow: scroll ; height: 90vh;width: 200px;">
-                            <h4>Projects</h4><br><br>
+
+                            <!-- Open The Modal -->
+                                                            <button id="myBtn" class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button" onclick="onclick()"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Add New Project</button></center>
+
+                                                        <!-- Modal -->
+                                                        <div id="myModal" class="modal">
+
+                                                            <!-- Modal content -->
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <span class="close">x</span>
+                                                                    <h2>Add New Project</h2>
+
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <form name='register' method='post' action='Controllers/insertProject.php' >
+
+
+
+                                                                        <table>
+                                                                            <tr>
+                                                                                <td><label for="category">Category:</label></td>
+                                                                                <td><select class="form-control" id="category" name="category" required/>
+                                                                                    <option value="Industrial">Industrial</option>
+                                                                                    <option value="Community">Community</option>
+                                                                                    <option value="Residential">Residential</option>
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><b>Date:</b></td>
+                                                                                <td><input type='date' name='pdate' required/></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><b>Location:</b></td>
+                                                                                <td><input type='text' name='location' required/></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><b>Satus:</b></td>
+                                                                                <td><input type='text' name='status' required/></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><b>URL:</b></td>
+                                                                                <td><input type='text' name='url' required/></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><b>Description:</b></td>
+                                                                                <td><input type='text' name='description' required/></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><b>Progress:</b></td>
+                                                                                <td><input type='int' name='progress' required/></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><b>Estimated Duration:</b></td>
+                                                                                <td><input type='text' name='estimated_duration' required/></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><b>Estimated Cost:</b></td>
+                                                                                <td><input type="int" name="estimated_cost" required/></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><b>City:</b></td>
+                                                                                <td><input type='text' name='city' required/></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><b>Title:</b></td>
+                                                                                <td><input type='text' name='title' required/></td>
+                                                                            </tr>
+
+                                                                            
+
+                                                                            <tr>
+                                                                                <td colspan='2' align='center'> <input type="submit" name="submit" class="button" value="Register"/>
+                                                                                                                        
+                                                                                <input type="reset" class="button" value="Cancel"/> </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+            			</div>
+
+                    
+                        <div class="col-m2">
+
+                        <div id="saltbl" style="text-align: center ; margin-left:850px; margin-top:-535px; overflow: scroll ; height: 90vh;width: 200px;">
+                            <h4>Projects</h4>
                             <ul style="list-style: none">
                                 <?php
                                 $sql = "SELECT * FROM project;";
@@ -185,18 +358,61 @@ if ($result->num_rows > 0) {
                                     }
                                 ?>
                             </ul>
-                            
-                            <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button" onclick="addNewProject()"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Add New Project
-                            </button>
-                            
                         </div> 
-                            
+
+
+
                     </div>
             			
             	</div>
             </div>
         </div>
     </div>
+
+    <script>
+                // Get the modal
+                var modal = document.getElementById('myModal');
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks the button, open the modal
+                btn.onclick = function() {
+                    modal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+
+                var modal2 = document.getElementById('myModal2');
+                var btn2 = document.getElementById("myBtn2");
+                var span = document.getElementsByClassName("close2")[0];
+                btn2.onclick = function() {
+                    modal2.style.display = "block";
+                }
+                span.onclick = function() {
+                    modal2.style.display = "none";
+                }
+                window.onclick = function(event) {
+                    if (event.target == modal2) {
+                        modal2.style.display = "none";
+                    }
+                }
+
+            </script>
+
 </body>
 
 
