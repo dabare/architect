@@ -51,9 +51,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
             <table>
                 <tr>
-                    <th><h2>Industrial</h2></th>
-                    <th><h2>Residential</h2></th>
-                    <th><h2>Community</h2></th>
+                    <th style="background: #fd7567;width: 35%;"><h2><center>Industrial</center></h2></th>
+                    <th style="background: #00e64d;width: 35%;"><h2><center>Residential</center></h2></th>
+                    <th style="background: #6991fd;width: 35%;"><h2><center>Community</center></h2></th>
                 </tr>
                 <tr>
                     <td valign="top">

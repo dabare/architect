@@ -51,13 +51,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             </ul>
         <div style="margin-left:30%;padding:1px 16px;height:1000px;"><br><br>
 
-
+            <h1><b><center>Completed Projects</center></b></h1>
 
             <table>
                 <tr>
-                    <th><h1>Industrial</h1></th>
-                    <th><h1>Residential</h1></th>
-                    <th><h1>Community</h1></th>
+                    <th style="background: #fd7567;width: 35%;"><h2><center>Industrial</center></h2></th>
+                    <th style="background: #00e64d;width: 35%;"><h2><center>Residential</center></h2></th>
+                    <th style="background: #6991fd;width: 35%;"><h2><center>Community</center></h2></th>
                 </tr>
 
 

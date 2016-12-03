@@ -37,9 +37,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 		<!-- left panel -->
                 <ul id="navigationbarEdit">
             <li><a id="editItem" href="CustomerNotification.php">Notification</a></li>
-            <li><a id="editItem" href="CustomerEditProfile.php">Edit Profile</a></li>
-            <li><a id="editItem" href="CustomerMyProject.php">My Projects</a></li>
-            <li><a id="activeEdit" href="CustomerMakeAppointments.php">Make Appointment</a></li>
+            <li><a id="editItem" href="CustomerEditProfile1.php">My Profile</a></li>
+            
+            <li><a id="activeEdit" href="CustomerMakeAppointments.php">Consultants</a></li>
             <li><a id="editItem" href="logout.php">Logout</a></li>
             </ul>
                 

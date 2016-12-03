@@ -3,7 +3,7 @@
 include ('../db/dbConnection.php');
 
 
-
+$cusid = $_POST['cusid'];
 $category = $_POST['category'];
 $pdate = $_POST['pdate'];
 $location = $_POST['location'];
@@ -16,7 +16,7 @@ $estimated_cost = $_POST['estimated_cost'];
 $city = $_POST['city'];
 $title = $_POST['title'];
 
-$customer_id = 1;                              
+$customer_id = $cusid;                              
 $architect_id = 1;
 $id = 0;
 
@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
     //echo $count;
     if ($count[0] == 0) {
         //echo "test";
-        $sql = "INSERT INTO project (id, customer_id, architect_id, category, pdate, location, status, url, description, progress, estimated_duration, estimated_cost, city, title)VALUES ('$id', '$customer_id', '$architect_id', '$category', '$pdate', '$location', '$status', '$url', '$description', '$progress', '$estimated_duration', '$estimated_cost', '$city', '$title')";
+        $sql = "INSERT INTO project (id, customer_id, architect_id, category, pdate, location, status, url, description, progress, estimated_duration, estimated_cost, city, title)VALUES ('$id', '$customer_id', '$architect_id', '$category', '$pdate', '$location', 'Active', '$url', '$description', '2', '$estimated_duration', '$estimated_cost', '$city', '$title')";
         if (mysqli_query($conn, $sql)) {
             echo "<script> alert('New Project Inserted'); </script>";
             echo "<script> window.location.href='../ArchitectCustomers.php'; </script>";

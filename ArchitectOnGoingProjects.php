@@ -16,8 +16,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script  
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsvi-qzINUwnFIkDLm11VPdBOmAVH2oR4&callback=initMap">
+    </script>
 </head>
-
+ <style>
+      #map {
+        height: 600px;
+        width: 100%;
+       }
+    </style>
 <body bgcolor="grey" class="theme-15">
 
 <!--Navbar-->
@@ -41,12 +49,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
             <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
             <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
+            
+            <li><a id="editItem" href="ArchitectAppointments.php">Appointments</a></li>
             <li><a id="editItem" href="ArchitectCustomers.php">Customers</a></li>
             <li><a id="editItem" href="ArchitectConsultants.php">Consultants</a></li>
             
             <li><a id="editItem" href="ArchitectReports.php">Reports</a></li>
             <li><a id="editItem" href="ArchitectSettings.php">Settings</a></li>
-            <li><a id="editItem" href="logout.php">Logout</a></li>
+            <li><a id="editItem" href="index.php">Logout</a></li>
 
             </ul>
 
@@ -56,9 +66,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
             <table>
                 <tr>
-                    <th style="width: 35%;"><h2>Industrial</h2></th>
-                    <th style="width: 35%;"><h2>Residential</h2></th>
-                    <th style="width: 35%;"><h2>Community</h2></th>
+                    <th style="background: #fd7567;width: 35%;"><h2><center>Industrial</center></h2></th>
+                    <th style="background: #00e64d;width: 35%;"><h2><center>Residential</center></h2></th>
+                    <th style="background: #6991fd;width: 35%;"><h2><center>Community</center></h2></th>
                 </tr>
 
 
@@ -125,12 +135,110 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                     echo '</td>';
 
 
-                    $conn->close();
+                    
                     ?>
                 </tr>
             </table>
+			<p><h1><center>Map Locations</center></h1></p>
+			<div id="map"></div>
+			
+		
+							
+	<script>
+	var map;
 
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 12,
+			center: {lat: 6.934256, lng:  79.844078} 
+		  });
+		setMarkers(map);
+	    showLogarray();
+      }
+
+	var locations=[];
+	function createArray(cat,lat,lng){
+		console.log(cat+lat+lng);
+		var subarr = [];
+		subarr.push(cat);
+		subarr.push(lat);
+		subarr.push(lng);
+		locations.push(subarr);
+		
+	}
+
+	function showLogarray(){
+		console.log(locations);
+		
+	}
+ 
+
+	   
+function setMarkers(map) {
+
+  for (var i = 0; i < locations.length; i++) {
+    var beach = locations[i];
+	if(beach[0]== 'Industrial' ){
+		var marker = new google.maps.Marker({
+      position: {lat: beach[1], lng: beach[2]},
+      map: map,
+	   icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+      title: beach[0]
+    });
+	
+	} else if(beach[0]== 'Residential' ){
+		
+		var marker = new google.maps.Marker({
+      position: {lat: beach[1], lng: beach[2]},
+      map: map,
+	  icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+      title: beach[0]
+    });
+	
+	}else{
+		var marker = new google.maps.Marker({
+      position: {lat: beach[1], lng: beach[2]},
+      map: map,
+	   icon:'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+      title: beach[0]
+    });
+	
+	}	
+    console.log('cat:'+beach[0]+' lat '+beach[1]+' lng'+beach[2] );
+	
+  }
+}
+	  
+	  
+    </script>
+	 <?php
+							require_once './db/dbConnection.php';
+								$sql = "SELECT category,latitude,longitude FROM project ;";
+								$result = $conn->query($sql);
+
+								if ($result->num_rows > 0) {
+									// output data of each row
+									while ($row = $result->fetch_assoc()) {
+										//echo '<script type="text/javascript">addMarker('.$row["category"].')</script>';
+							?>
+										<script type="text/javascript">createArray( '<?php echo $row["category"].'' ?>',<?php echo $row["latitude"] ?>,<?php echo $row["longitude"] ?> )</script>
+							<?php	
+									}
+								
+								echo '<script type="text/javascript">initMap()</script> ';
+								
+								
+								
+								}
+							
+							$conn->close();
+                            ?>
+    
+			
+			
         </div>
+							
+							
 
     </body>
 </html> 

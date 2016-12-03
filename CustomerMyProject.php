@@ -1,9 +1,7 @@
 <?php
 require_once './db/dbConnection.php';
 
-
-$id = 1;
-
+$id=$_GET['id'];
 
 $sql = "SELECT * FROM project WHERE id=" . $id . ";";
 $result = $conn->query($sql);
@@ -51,49 +49,63 @@ if ($TotalPayment == "") {
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My Projects</title>
-
+        <title>Architect</title>
         <link rel="stylesheet" type="text/css" href="CSS/architectEdit.css">
-        <meta charset="utf-8">
-        <script src="JS/scorell.js"></script>
+        <link rel="stylesheet" type="text/css" href="profcss/style_theme.css">
+        <link rel="stylesheet" type="text/css" href="profcss/style.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="profcss/opensans.css">
         <style>
-            .l_sidebar{
-                width: 27%;
-                margin: 20px 0px 80px 50px;
-                background-color: whitesmoke;
-                padding: 6px;
-            }
-            #boddy{
-
-                margin-left:12%;
-                padding:1px 16px;
-            }
-
-            .margin{
-                width: 55%;
-                height: 1500px;
-                margin: -980px 0px 8% 42%;
-                background-color: transparent;
-            }
+            html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
-    <body id="bdy">
-        <ul id="navigationbarEdit">
-            <li><a id="editItem" href="CustomerNotification.php">Notification</a></li>
-            <li><a id="editItem" href="CustomerEditProfile.php">Edit Profile</a></li>
-            <li><a id="activeEdit" href="CustomerMyProject.php">My Projects</a></li>
-            <li><a id="editItem" href="CustomerMakeAppointments.php">Make Appointment</a></li>
-            <li><a id="editItem" href="logout.php">Logout</a></li>
-        </ul>
-        <div style="padding: 1px 16px; margin-left: 12%;"><center><h1><?php echo $title ?></h1></center></div>
 
-        <div id="boddy">
+    <body bgcolor="grey" class="theme-15">
 
-            <div class="l_sidebar">
+        <!--Navbar-->
+        <div class="top">
+            <ul class="navbar theme-d2 left-align large">
 
+                <li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Customer</a></li>
 
+            </ul>
+        </div>
 
+        <!--Page Container-->
+        <div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 10px">
+            <!--The Grid-->
+            <div class="row">
 
+                <!-- left panel -->
+                <ul id="navigationbarEdit" style="margin-top:0px">
+                    <li><a id="editItem" href="CustomerNotification.php">Notification</a></li>
+                    <li><a id="activeEdit" href="CustomerEditProfile1.php">My Profile</a></li>
+                    
+                    <li><a id="editItem" href="CustomerMakeAppointments.php">Consultants</a></li>
+                    <li><a id="editItem" href="logout.php">Logout</a></li>
+
+                </ul>
+            </div>
+        </div>
+            
+            <?php
+                $sql = "SELECT * FROM project WHERE id=" . $id . " ;";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        
+                        echo '<center><h1>' . $row["title"] . '</h1></center>';
+                        
+                    }
+                }
+                ?>
+                
+            <div class="l_sidebar" style="width:300px;margin-left: 20%;">
 
                 <h2>Payments Done:</h2>
                 <div style="height: 10px; background-color: green;"></div>
@@ -124,7 +136,7 @@ if ($TotalPayment == "") {
         </div>
 
 
-        <div class="margin">
+        <div  style="width:750px;margin-left: 550px;margin-top: -50px;">
             <div style="background-color: whitesmoke;">
                 <div style="align-content: center;text-align: left;padding: 2em;">
                     <center><h2>Project Progress</h2></center>
@@ -337,8 +349,8 @@ if ($TotalPayment == "") {
             </script>
 
 
-
-
+            </div>
+            </div>
         </div>
 <?php $conn->close(); ?>
     </body>

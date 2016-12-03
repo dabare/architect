@@ -328,9 +328,9 @@ require_once './db/dbConnection.php';
 
                             <div class="service-desc">
                                 <h3>History</h3>
-                                <p>Archt.Priyantha premathilake established his own practice in year 2005, having serving as a Consultant Architect at Design Consortium (DCL),over period of 15 years. Although the practice has a short 
+                                <font size="3"><p>Archt.Priyantha premathilake established his own practice in year 2005, having serving as a Consultant Architect at Design Consortium (DCL),over period of 15 years. Although the practice has a short 
                                 short history, it has completed many projects in various diciplines. The Company ispresetly involving in vast 
-                                range of projects in apartments, housing projects, commercial buildings, offices, interior designs and many personalized housing.</p>
+                                range of projects in apartments, housing projects, commercial buildings, offices, interior designs and many personalized housing.</p></font>
                             </div>
                         </div>
                     </div>
@@ -345,9 +345,9 @@ require_once './db/dbConnection.php';
 
                             <div class="service-desc">
                                 <h3>Philosophy</h3>
-                                <p>Our intension is to achieve the excellence in all aspects related to the architectural practice 
+                                <font size="3"><p>Our intension is to achieve the excellence in all aspects related to the architectural practice 
                                 by producing unique designs, through creativity and cost effectiveness. We list to our clients needs, analyze them systematically and would it suit social, cultural environment. 
-                                We believe in customer satisfaction as a mode of advertisement.</p>
+                                We believe in customer satisfaction as a mode of advertisement.</p></font>
                             </div>
                         </div>
                     </div>
@@ -385,7 +385,7 @@ require_once './db/dbConnection.php';
 
                             <div class="service-desc">
                                 <h3>Awards</h3>
-                                <p>
+                                <font style="color:black;"><p>
                                     <?php
                                     $sql = "SELECT * FROM award WHERE category='Awards';";
                                     $result = $conn->query($sql);
@@ -401,7 +401,7 @@ require_once './db/dbConnection.php';
                                         }
                                     }
                                     ?>
-                                </p>
+                                </p></font>
                             </div>
                         </div>
                     </div>
@@ -427,7 +427,7 @@ require_once './db/dbConnection.php';
 
                             <div class="service-desc">
                                 <h3>Academic qualifications</h3>
-                                <p>
+                                <font style="color:black;"><p>
                                     <?php
                                     $sql = "SELECT * FROM award WHERE category='Academic Qualifications';";
                                     $result = $conn->query($sql);
@@ -443,7 +443,7 @@ require_once './db/dbConnection.php';
                                         }
                                     }
                                     ?>
-                                </p>
+                                </p></font>
                             </div>
                         </div>
                     </div>
@@ -611,13 +611,13 @@ require_once './db/dbConnection.php';
                             </div>
 
                             <div class="service-desc">
-                                <p>Housing and Town Improvement Ordinance 1915<br><br>
+                                <font size="3"><p>Housing and Town Improvement Ordinance 1915<br><br>
                                     Town and Country Planning Ordinance 1945<br><br>
                                     Urban Development Authority Act 1978<br><br>
                                     UDA Planning and Building Regulations<br><br>
                                     Urban Development Authority (Special Provision) Act<br><br>
                                     Draft Regulations for Low Income Settlements<br><br>
-                                    Community Building Guidelines by National Housing Development Authority (NHDA)<br><br></p>
+                                    Community Building Guidelines by National Housing Development Authority (NHDA)<br></p></font>
                             </div>
                         </div>
                     </div>
@@ -677,7 +677,7 @@ Some fun facts
                         <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
                             <div class="counters-item">
                                 <i class="fa fa-rocket fa-3x"></i>
-                                <strong data-to="270">0</strong>
+                                <strong data-to="475">0</strong>
                                 <!-- Set Your Number here. i,e. data-to="56" -->
                                 <p> Projects Delivered </p>
                             </div>
@@ -685,7 +685,7 @@ Some fun facts
                         <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
                             <div class="counters-item">
                                 <i class="fa fa-trophy fa-3x"></i>
-                                <strong data-to="6454">0</strong>
+                                <strong data-to="58">0</strong>
                                 <!-- Set Your Number here. i,e. data-to="56" -->
                                 <p>Awards Won</p>
                             </div>
@@ -723,13 +723,13 @@ Contact Us
                     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 wow fadeInLeft animated" data-wow-duration="500ms">
                         <div class="contact-address">
                             <h3>Our Address </h3>
-                            <p>No.240/17E<br>
+                            <font style="color:black;"><p>No.240/17E<br>
                             Mahawatte,<br>
                             Kadawala Road,<br>
                             Battaramulla
-                            </p>
+                            </p></font>
                             
-                            <p>Phone:0112868652,0718223366</p>
+                            <font style="color:black;"><p>Phone:0112868652,0718223366</p></font>
                             
                         </div>
                     </div>
@@ -739,8 +739,8 @@ Contact Us
                     <!-- footer social links -->
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 wow fadeInRight animated" data-wow-duration="500ms" data-wow-delay="600ms">
                         <ul class="footer-social">
-                            <li>email: priyantha@sltnet.lk</li>
-                            <li>email: ppremathilake@gmail.com</li>
+                            <font style="color:black;"><li>email: priyantha@sltnet.lk</li></font>
+                            <font style="color:black;"><li>email: ppremathilake@gmail.com</li></font>
                             <li></li>
                             <li></li>
                         </ul>
@@ -872,8 +872,8 @@ Register
                                                                             
 
                                                                             <tr>
-                                                                                <td colspan='2' align='center'> <input type="submit" name="submit" class="button" value="Register"
-                                                                                                                       /> 
+                                                                                <td colspan='2' align='center'> <input type="submit" name="submit" class="button" value="Register" />
+                                                                                                                        
                                                                                     <input type="reset" class="button" value="Cancel"/> </td>
                                                                             </tr>
                                                                         </table>

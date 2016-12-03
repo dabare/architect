@@ -76,9 +76,9 @@ if ($TotalPayment == "") {
         </div>
 
         <!--Page Container-->
-        <div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 10px">
+        <div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 0.8%">
             <!--The Grid-->
-            <div class="row">
+            <div class="row" style="width: 1000%;">
 
                 <!-- left panel -->
                 <ul id="navigationbarEdit" style="margin-top:0px">
@@ -95,12 +95,15 @@ if ($TotalPayment == "") {
 
                 </ul>
             </div>
-            <div style="margin-left:200px">
 
-                <div class="l_sidebar" style="width:300px;">
+            <div style="margin-left:18%">
+                <center>
+                    <h1><?php echo $title ?></h1>
+                </center>
+                <div style="width:32%;">
 
                     <form action="Projects/SaveProjectTitle.php"  method="POST">
-                        <h1>Title:</h1>
+                        <h3>Title:</h3>
                         <input type="text" style="width: 90%;"name="title" value="<?php echo $title ?>"><br><br>
                         <input type="text" style="visibility:hidden;"name="id" value="<?php echo $id; ?>">
 
@@ -156,97 +159,97 @@ if ($TotalPayment == "") {
                                 <button type="button" style="width:100px;" onclick="getNewInvoiceNo()">New</button> 
                                 <script>
 
-                                    document.getElementById("date").valueAsDate = new Date();
-                                    getNewInvoiceNo();
+                                document.getElementById("date").valueAsDate = new Date();
+                                getNewInvoiceNo();
 
-                                    function deleteInvoice(inid) {
-                                        if (confirm("Confirm delete invoice IN" + inid) == true) {
-
-
-                                            var form = document.createElement("form");
-                                            form.setAttribute("method", "post");
-                                            form.setAttribute("action", "Projects/DeleteProjectPaymentRecord.php");
+                                function deleteInvoice(inid) {
+                                    if (confirm("Confirm delete invoice IN" + inid) == true) {
 
 
-
-                                            var pid = document.createElement("input");
-                                            pid.setAttribute("type", "hidden");
-                                            pid.setAttribute("name", "prid");
-                                            pid.setAttribute("value", <?php echo $id ?>);
-
-
-                                            form.appendChild(pid);
-
-                                            var iid = document.createElement("input");
-                                            iid.setAttribute("type", "hidden");
-                                            iid.setAttribute("name", "inid");
-                                            iid.setAttribute("value", inid);
-
-
-                                            form.appendChild(iid);
+                                        var form = document.createElement("form");
+                                        form.setAttribute("method", "post");
+                                        form.setAttribute("action", "Projects/DeleteProjectPaymentRecord.php");
 
 
 
-                                            document.body.appendChild(form);
-                                            form.submit();
-                                        } else {
+                                        var pid = document.createElement("input");
+                                        pid.setAttribute("type", "hidden");
+                                        pid.setAttribute("name", "prid");
+                                        pid.setAttribute("value", <?php echo $id ?>);
 
-                                        }
+
+                                        form.appendChild(pid);
+
+                                        var iid = document.createElement("input");
+                                        iid.setAttribute("type", "hidden");
+                                        iid.setAttribute("name", "inid");
+                                        iid.setAttribute("value", inid);
+
+
+                                        form.appendChild(iid);
+
+
+
+                                        document.body.appendChild(form);
+                                        form.submit();
+                                    } else {
 
                                     }
 
-
-                                    function setPayementDetails(inv, des, typ, cn, amount, date) {
-
-                                        $('html,body').animate({
-                                            scrollTop: $("#paymentform").offset().top},
-                                                'slow');
-                                        document.getElementById("invoicenum").value = inv;
-                                        document.getElementById("descriptio").value = des;
-                                        document.getElementById("paymenttype").value = typ;
-                                        document.getElementById("chequeno").value = cn;
-                                        document.getElementById("amount").value = amount;
-                                        document.getElementById("date").value = date;
-                                        changePayment(document.getElementById("paymenttype"));
-                                    }
+                                }
 
 
+                                function setPayementDetails(inv, des, typ, cn, amount, date) {
 
-                                    function getNewInvoiceNo() {
+                                    $('html,body').animate({
+                                        scrollTop: $("#paymentform").offset().top},
+                                    'slow');
+                                    document.getElementById("invoicenum").value = inv;
+                                    document.getElementById("descriptio").value = des;
+                                    document.getElementById("paymenttype").value = typ;
+                                    document.getElementById("chequeno").value = cn;
+                                    document.getElementById("amount").value = amount;
+                                    document.getElementById("date").value = date;
+                                    changePayment(document.getElementById("paymenttype"));
+                                }
 
-                                        var xmlhttp = new XMLHttpRequest();
-                                        xmlhttp.onreadystatechange = function () {
-                                            if (this.readyState == 4 && this.status == 200) {
-                                                document.getElementById("invoicenum").value = this.responseText;
-                                                document.getElementById("descriptio").value = "";
-                                                document.getElementById("chequeno").value = "";
-                                                document.getElementById("amount").value = "";
-                                                document.getElementById("date").valueAsDate = new Date();
-                                            }
-                                        };
-                                        xmlhttp.open("GET", "Projects/GetNewInvoiceNo.php", true);
-                                        xmlhttp.send();
 
-                                    }
 
-                                    document.getElementById("chequeno").required = true;
-                                    function changePayment(element)
-                                    {
-                                        if (element.value == "Cheque") {
-                                            document.getElementById("chequeno").disabled = false;
-                                            document.getElementById("chequeno").required = true;
-                                        } else {
-                                            document.getElementById("chequeno").disabled = true;
-                                            document.getElementById("chequeno").required = false;
+                                function getNewInvoiceNo() {
+
+                                    var xmlhttp = new XMLHttpRequest();
+                                    xmlhttp.onreadystatechange = function() {
+                                        if (this.readyState == 4 && this.status == 200) {
+                                            document.getElementById("invoicenum").value = this.responseText;
+                                            document.getElementById("descriptio").value = "";
                                             document.getElementById("chequeno").value = "";
+                                            document.getElementById("amount").value = "";
+                                            document.getElementById("date").valueAsDate = new Date();
                                         }
-                                    }
+                                    };
+                                    xmlhttp.open("GET", "Projects/GetNewInvoiceNo.php", true);
+                                    xmlhttp.send();
 
-                                    function PaymetnValidateForm() {
+                                }
 
-                                        document.getElementById("invoicenum").disabled = false;
-                                        return true;
+                                document.getElementById("chequeno").required = true;
+                                function changePayment(element)
+                                {
+                                    if (element.value == "Cheque") {
+                                        document.getElementById("chequeno").disabled = false;
+                                        document.getElementById("chequeno").required = true;
+                                    } else {
+                                        document.getElementById("chequeno").disabled = true;
+                                        document.getElementById("chequeno").required = false;
+                                        document.getElementById("chequeno").value = "";
                                     }
+                                }
+
+                                function PaymetnValidateForm() {
+
+                                    document.getElementById("invoicenum").disabled = false;
+                                    return true;
+                                }
                                 </script>
                                 <input style="float: right;width: 40%;"type="submit" value="Save"><br>
 
@@ -312,7 +315,7 @@ if ($TotalPayment == "") {
                     ?>
                 </div>
 
-                <div class="margin" style="width:1100px;">
+                <div class="margin" style="width:115%;">
                     <div style="background-color: whitesmoke;margin-left: 300px;margin-top: -1150px;">
                         <div style="align-content: center;text-align: left;padding: 2em;">
                             <center><h2>Project Progress</h2></center>
@@ -565,41 +568,41 @@ if ($TotalPayment == "") {
                     </div>
                     <script>
 
-                        document.getElementById("postfile").hidden = true;
-                        document.getElementById("postdescription").required = true;
-                        function changePoost(element)
-                        {
-                            if (element.value == "Post") {
-                                document.getElementById("postfile").value = "";
                                 document.getElementById("postfile").hidden = true;
                                 document.getElementById("postdescription").required = true;
+                                function changePoost(element)
+                                {
+                                    if (element.value == "Post") {
+                                        document.getElementById("postfile").value = "";
+                                        document.getElementById("postfile").hidden = true;
+                                        document.getElementById("postdescription").required = true;
 
-                            } else {
-                                document.getElementById("postfile").value = "";
-                                document.getElementById("postfile").hidden = false;
-                                document.getElementById("postdescription").required = false;
-                            }
+                                    } else {
+                                        document.getElementById("postfile").value = "";
+                                        document.getElementById("postfile").hidden = false;
+                                        document.getElementById("postdescription").required = false;
+                                    }
 
-                            if (element.value == "Image") {
-                                document.getElementById("postfile").accept = "image/*";
-                            }
+                                    if (element.value == "Image") {
+                                        document.getElementById("postfile").accept = "image/*";
+                                    }
 
-                            if (element.value == "Document") {
-                                document.getElementById("postfile").accept = ".pdf";
-                            }
+                                    if (element.value == "Document") {
+                                        document.getElementById("postfile").accept = ".pdf";
+                                    }
 
-                        }
-
-                        function PostValidateForm() {
-                            if (document.getElementById("posttype").value != "Post") {
-                                if (document.getElementById("postfile").value == "") {
-                                    alert("Select an attachmen");
-                                    return false;
                                 }
 
-                            }
-                            return true;
-                        }
+                                function PostValidateForm() {
+                                    if (document.getElementById("posttype").value != "Post") {
+                                        if (document.getElementById("postfile").value == "") {
+                                            alert("Select an attachmen");
+                                            return false;
+                                        }
+
+                                    }
+                                    return true;
+                                }
                     </script>
                     <div style="height: 20px;"></div>
 
@@ -649,7 +652,7 @@ if ($TotalPayment == "") {
                             echo '<br>
 
                         <textarea id="description" rows="4" style="font-size: 20px;position: center; width: 100%" disabled="true">' . $postdescription . '</textarea><br><br>'
-                        .'ID:'.$postid.' <font style="margin-left:5em;" size="2" color="blue">Data:' . $postdate . '</font>';
+                            . 'ID:' . $postid . ' <font style="margin-left:5em;" size="2" color="blue">Data:' . $postdate . '</font>';
 
                             if ($row["seen"] == 1 && $postby == "Architect") {
 
@@ -719,13 +722,14 @@ if ($TotalPayment == "") {
                     <div style="background-color: whitesmoke; margin-left: 300px">
                         <center>
                             <br><br>
-                            <button type="button"  style="color: red;width: 500px;height: 30px;" onclick="deleteProject()">Delete This Project</button>
+                            <button type="button"  style="color: red;width: 80%;height: 30px;" onclick="deleteProject()">Delete This Project</button>
                         </center>
                     </div>
                 </div>
 
             </div>
             <?php $conn->close(); ?>
+        </div>
     </body>
 </html> 
 
