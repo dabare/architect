@@ -286,7 +286,7 @@ if ($TotalPayment == "") {
                     <div style="text-align: left;padding: 2em;">
                         <input type="text" hidden="true" name="postid" value="' . $postid . '">
                         <input type="text" hidden="true" name="proid" value="' . $id . '">
-                        <h3>ID:' . $postid . '</h3><h3>By:Architect</h3>';
+                        By:Architect<br>';
                     } else {
 
                         echo '<div style="background-color: lightgreen; ">
@@ -294,7 +294,7 @@ if ($TotalPayment == "") {
                     <div style="text-align: left;padding: 2em;">
                         <input type="text" hidden="true" name="postid" value="' . $postid . '">
                         <input type="text" hidden="true" name="proid" value="' . $id . '">
-                        <h3>ID:' . $postid . '</h3><h3>By:Me</h3>';
+                        By:Me<br>';
                     }
 
 
@@ -307,8 +307,8 @@ if ($TotalPayment == "") {
 
                     echo '<br>
 
-                        <textarea id="description" rows="4" style="font-size: 20px;position: center; width: 100%" disabled="true">' . $postdescription . '</textarea><br><br>
-                        <font size="2" color="blue">' . $postdate . '</font>';
+                        <br><h3>' . $postdescription . '</h3><br>'
+                        . 'ID:' . $postid . '<font style="margin-left:5em;" size="2" color="blue">' . $postdate . '</font>';
 
                     if ($row["seen"] == 1 && $postby == "Client") {
 

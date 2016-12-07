@@ -1,3 +1,44 @@
+<?php
+require_once './db/dbConnection.php';
+
+$sql = "SELECT * FROM settings WHERE id='1';";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        $id = $row["id"];
+        $name = $row["name"];
+        $value = $row["value"];
+        
+    }
+}
+
+$sql1 = "SELECT * FROM settings WHERE id='2';";
+$result1 = $conn->query($sql1);
+
+if ($result1->num_rows > 0) {
+    // output data of each row
+    while ($row1 = $result1->fetch_assoc()) {
+        $id1 = $row1["id"];
+        $name1 = $row1["name"];
+        $value1 = $row1["value"];
+        
+    }
+}
+$sql2 = "SELECT * FROM settings WHERE id='3';";
+$result2 = $conn->query($sql2);
+
+if ($result2->num_rows > 0) {
+    // output data of each row
+    while ($row2 = $result2->fetch_assoc()) {
+        $id2 = $row2["id"];
+        $name2 = $row2["name"];
+        $value2 = $row2["value"];
+        
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,27 +106,113 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                 
                 <div style="border-top: 0.1px solid black;">
                     <div style="display: inline-block;margin-left: 10px;">
-                        <h4>Websites</h4>
+                        <h4>Satisfied Clients</h4>
                     </div>
-                    <div style="display: inline-block;margin-left: 150px;">
-                        Empty
+                    <div style="display: inline-block;margin-left: 100px;">
+                        <br>
+                        <textarea id="setting" rows="1" name="setting" cols="30"><?php echo $value;?></textarea>
                     </div>
                     <div style="display: inline-block;margin-left: 600px;">
-                        <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit
-                </button>
+                        <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button" onclick="saveSettings1()"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save</button>
+                        <script>
+                            function saveSettings1() {
+
+
+                                var form = document.createElement("form");
+                                form.setAttribute("method", "post");
+                                form.setAttribute("hidden", "true");
+                                form.setAttribute("action", "Projects/SaveSettings1.php");
+                                
+                                var aid = document.createElement("input");
+                                aid.setAttribute("type", "hidden");
+                                aid.setAttribute("name", "stid");
+                                
+                                aid.setAttribute("value", <?php echo $id?>);
+
+
+                                form.appendChild(aid);
+                                form.appendChild(document.getElementById("setting"));
+
+
+                                document.body.appendChild(form);
+                                form.submit();
+                            }
+                            
+                        </script>
                     </div>
                 </div><br>
                 <div style="border-top: 0.1px solid black;">
                     <div style="display: inline-block;margin-left: 10px;">
-                        <h4>Language</h4>
+                        <h4>Projects Delivered</h4>
                     </div>
-                    <div style="display: inline-block;margin-left: 140px;">
-                        English
+                    <div style="display: inline-block;margin-left: 80px;">
+                        <br>
+                        <textarea id="project" rows="1" name="project" cols="30"><?php echo $value1;?></textarea>
                     </div>
-                    <div style="display: inline-block;margin-left: 575px;">
-                        <span style="padding-left: 23px;" class="uiIconText fbSettingsListItemEdit"><i class="img sp_iM44Ir4PJL9 sx_b37e75" style="top: -2px;"></i></span>
-						<button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button" ><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Edit</span>
-                
+                    <div style="display: inline-block;margin-left: 600px;"> 
+                        <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button" onclick="saveSett()"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save</button>
+                        <script>
+                            function saveSett() {
+
+
+                                var form = document.createElement("form");
+                                form.setAttribute("method", "post");
+                                form.setAttribute("hidden", "true");
+                                form.setAttribute("action", "Projects/SaveSettings2.php");
+                                
+                                var aid = document.createElement("input");
+                                aid.setAttribute("type", "hidden");
+                                aid.setAttribute("name", "setid");
+                                
+                                aid.setAttribute("value", <?php echo $id1?>);
+
+
+                                form.appendChild(aid);
+                                form.appendChild(document.getElementById("project"));
+
+
+                                document.body.appendChild(form);
+                                form.submit();
+                            }
+                            
+                        </script>
+                    </div>
+                </div><br>
+                <div style="border-top: 0.1px solid black;">
+                    <div style="display: inline-block;margin-left: 10px;">
+                        <h4>Awards Won</h4>
+                    </div>
+                    <div style="display: inline-block;margin-left: 130px;">
+                        <br>
+                        <textarea id="setaward" rows="1" name="setaward" cols="30"><?php echo $value2;?></textarea>
+                    </div>
+                    <div style="display: inline-block;margin-left: 600px;"> 
+                        <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button" onclick="upAward()"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save</button>
+                        <script>
+                            function upAward() {
+
+
+                                var form = document.createElement("form");
+                                form.setAttribute("method", "post");
+                                form.setAttribute("hidden", "true");
+                                form.setAttribute("action", "Projects/SaveSettings3.php");
+                                
+                                var aid = document.createElement("input");
+                                aid.setAttribute("type", "hidden");
+                                aid.setAttribute("name", "id");
+                                
+                                aid.setAttribute("value", <?php echo $id='3'?>);
+
+
+                                form.appendChild(aid);
+                                form.appendChild(document.getElementById("setaward"));
+
+
+                                document.body.appendChild(form);
+                                form.submit();
+                            }
+                            
+                        </script>
                     </div>
                 </div><br>
                 <div style="border-bottom: 2px solid black;">

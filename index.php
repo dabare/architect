@@ -661,32 +661,81 @@ Some fun facts
                         <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
                             <div class="counters-item">
                                 <i class="fa fa-clock-o fa-3x"></i>
-                                <strong data-to="3200">0</strong>
-                                <!-- Set Your Number here. i,e. data-to="56" -->
+                                <?php
+                                    $sql = "SELECT * FROM settings WHERE id='4';";
+                                    $result = $conn->query($sql);
+                                    if ($result->num_rows > 0) {
+                                        // output data of each row
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo '<strong data-to="'.$row['value'].'">0</strong>';
+                                            $x = $row["value"];
+                                        }
+                                    }
+                                    
+                                
+                                    $x = $x+1;
+                                    
+                                    $sql = "UPDATE settings SET value='".$x."' WHERE id='4';";
+                                    if (mysqli_query($conn, $sql)){
+                                        
+                                    }
+                                    
+                                ?>
                                 <p>Visitors Counter</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
                             <div class="counters-item">
                                 <i class="fa fa-users fa-3x"></i>
-                                <strong data-to="310">0</strong>
-                                <!-- Set Your Number here. i,e. data-to="56" -->
+                                <?php
+                                    $sql = "SELECT * FROM settings WHERE id='1';";
+                                    $result = $conn->query($sql);
+                                    if ($result->num_rows > 0) {
+                                        // output data of each row
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo '<strong data-to="'.$row['value'].'">0</strong>';
+                                        }
+                                    }
+                                
+                                
+                                ?>
                                 <p>Satisfied Clients</p>
+                                
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
                             <div class="counters-item">
                                 <i class="fa fa-rocket fa-3x"></i>
-                                <strong data-to="475">0</strong>
-                                <!-- Set Your Number here. i,e. data-to="56" -->
+                                <?php
+                                    $sql = "SELECT * FROM settings WHERE id='2';";
+                                    $result = $conn->query($sql);
+                                    if ($result->num_rows > 0) {
+                                        // output data of each row
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo '<strong data-to="'.$row['value'].'">0</strong>';
+                                        }
+                                    }
+                                
+                                
+                                ?>
                                 <p> Projects Delivered </p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
                             <div class="counters-item">
                                 <i class="fa fa-trophy fa-3x"></i>
-                                <strong data-to="58">0</strong>
-                                <!-- Set Your Number here. i,e. data-to="56" -->
+                                <?php
+                                    $sql = "SELECT * FROM settings WHERE id='3';";
+                                    $result = $conn->query($sql);
+                                    if ($result->num_rows > 0) {
+                                        // output data of each row
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo '<strong data-to="'.$row['value'].'">0</strong>';
+                                        }
+                                    }
+                                
+                                
+                                ?>
                                 <p>Awards Won</p>
                             </div>
                         </div>
