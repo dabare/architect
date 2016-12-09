@@ -1,3 +1,33 @@
+<?php
+require_once './db/dbConnection.php';
+
+$id = '1';
+
+
+$sql = "SELECT * FROM architect WHERE id=" . $id . ";";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        $id = $row["id"];
+        $fname=$row["fname"];
+	$mname=$row["mname"];
+	$lname=$row["lname"];
+	$age=$row["age"];
+	$add_no=$row["add_no"];
+	$add_street=$row["add_street"];
+	$add_city=$row["add_city"];
+	$email=$row["email"];
+	$mobile_no=$row["mobile_no"];
+	$land_no=$row["land_no"];
+	$nic=$row["nic"];
+	$date=$row["date"];
+        $reg = $row["reg_no"];
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +62,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 	<div class="row">
 
 		<!-- left panel -->
-                <ul id="navigationbarEdit">
+            <ul id="navigationbarEdit">
             <li><a id="editItem" href="ArchitectNotification.php">Notification</a></li>
             <li><a id="editItem" href="ArchitectOnGoingProjects.php">On Going Projects</a></li>
             <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
@@ -41,7 +71,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <li><a id="editItem" href="ArchitectCustomers.php">Customers</a></li>
             <li><a id="editItem" href="ArchitectConsultants.php">Consultants</a></li>
             <li><a id="editItem" href="ArchitectReports.php">Reports</a></li>
-            <li><a id="editItem" href="ArchitectSettings.php">Settings</a></li>
+            <li><a id="activeEdit" href="ArchitectSettings.php">Settings</a></li>
             <li><a id="editItem" href="logout.php">Logout</a></li>
 
             </ul>
@@ -67,24 +97,25 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                         <div style="text-align: left;">
                             <div style="display:inline-block;">
                                 First name:<br>
-                                <input type="text" size="15" name="firstname" value="" disabled>
+                                <input type="text" size="15" name="firstname" value="<?php echo $fname;?>" disabled>
                             </div>
                             <div style="display:inline-block;">
                                 Middle name:<br>
-                                <input type="text" size="15" name="middlename" value="" disabled>
+                                <input type="text" size="15" name="middlename" value="<?php echo $mname;?>" disabled>
                             </div>
                             <div style="display:inline-block;">
                                 Last name:<br>
-                                <input type="text" size="15" name="lastname" value="" disabled>
+                                <input type="text" size="15" name="lastname" value="<?php echo $lname;?>" disabled>
                             </div>
+                            
                         </div>  
                         <br>
                         <div style="text-align: left;">
                             <div style="display:inline-block;">
-                                Age:<br><input type="text" name="age" size="4" value="" disabled>
+                                Age:<br><input type="text" name="age" size="4" value="<?php echo $age;?>" disabled>
                             </div>
                             <div style="display:inline-block;">
-                                NIC:<br><input type="text" name="nic" size="15" value="" disabled>
+                                Reg No:<br><input type="text" name="nic" size="15" value="<?php echo $reg;?>" disabled>
                             </div>
                         </div>
                         
@@ -99,91 +130,79 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                         <div style=" padding-left: 2em;">
                         No:
                         <br>
-                        <input type="text" size="10" name="no" value="" disabled>
+                        <input type="text" size="10" name="no" value="<?php echo $add_no;?>" disabled>
                         <br>
                         Street:
                         <br>
-                        <input type="text" name="street" value="" disabled>
+                        <input type="text" name="street" value="<?php echo $add_street;?>" disabled>
                         <br>
                         City:
                         <br>
-                        <input type="text" name="city" value="" disabled>
-                        </div>
-                    </div>
-                    Google Location:
-                        <br>
-                        <input type="text" name="location" size="50">
+                        <input type="text" name="city" value="<?php echo $add_city;?>" disabled>
                         <br><br>
-                        <div >
+                        Google Location:
+                        <br>
+                        <input type="text" name="location" size="25">
+                        <br><br>
+                        <div>
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.5643649597737!2d79.89346104990712!3d7.060361918623994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2f737b5b05a09%3A0xd4ef00d25a3b354a!2sK+Zone+Ja-Ela!5e0!3m2!1sen!2slk!4v1471279498706" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
                         </div>
-                    <div class="col m8">
+                        </div>
+                    </div>
+                    <div class="col m4">
                             <br><br><br>
                             Email:<br>
                             <div style="text-align: left;">
-                                <input type="text" name="email" size="35" value="" disabled>
+                                <input type="text" name="email" size="35" value="<?php echo $email;?>" disabled>
                                 <br><br>
                             </div>
                             <div style="text-align: left;">
                                 <div style="display:inline-block;">
                                     Mobile No:
                                     <br>
-                                    <input type="text" name="mobile" size="10" value="" disabled>
+                                    <input type="text" name="mobile" size="10" value="<?php echo $mobile_no;?>" disabled>
                                 </div>
                                 <div style="display:inline-block;">
                                     Land No:
                                     <br>
-                                    <input type="text" name="land" size="10" value="" disabled>
+                                    <input type="text" name="land" size="10" value="<?php echo $land_no;?>" disabled>
                                 </div>
                             </div>
-                            Account created date:<br>
-                            <div style="text-align: left;">
-                                <input type="date" name="created" value="" disabled>
-                            </div>
+                            
                             <br><br>
-                <br><br>
-                Status:
-                <select name="cars">
-                    <option value="active">Active</option>
-                    <option value="inactive">Inactive</option>
-                </select>
-                <br><br>
-                User Name:
-                <br>
-                <input type="text" name="uname" size="15">
-                <br><br>
-                <div style="text-align: left;">
-                    <div style="display:inline-block;">
-                        New Password:
-                        <br>
-                        <input type="password" name="pass" size="25">
                     </div>
-                    <div style="display:inline-block;">
-                        Retype New Password:
-                        <br>
-                        <input type="password" name="retypepass" size="25">
+                    <div class="col m4">
+                        <br><br><br>
+                        Status:
+                        <select name="cars">
+                            <option <?php
+                                if ($status == "active") {
+                                    echo ' selected';
+                                }
+                                ?> value="active">Active</option>
+                            <option <?php
+                                if ($status == "active") {
+                                    echo ' selected';
+                                }
+                                ?> value="inactive">Inactive</option>
+                        </select>
+                        <br><br>
+                        Account created date:<br>
+                            <div style="text-align: left;">
+                                <input type="date" name="created" value="<?php echo $date;?>" disabled>
+                            </div>
+                        <div style="text-align: center;"><br><br>
+                            <a href="ArchitectEditProfile1.php"><button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Reset all Fields
+                            </button></a>
+                            
+                        </div>
                     </div>
-                </div>  
-                <br>
-                        
-                        
-                    </div>
-                </div>
                 </div>
                 
-            </form>
-
-
-                
-                <div style="text-align: center;">
-                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Reset all Fields
-                </button>
-                    <button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Save
-                </button>
                 </div>
-                <br><br>
-            </form>
+                
+            </form> 
         </div>
 
     </body>

@@ -14,6 +14,7 @@ $email = $_POST['email'];
 $mobile_no = $_POST['mobile_no'];
 $land_no = $_POST['land_no'];
 $psswd = $_POST['psswd'];
+$category = $_POST['cat'];
 
 $id = 0;
 
@@ -31,7 +32,7 @@ if (isset($_POST['submit'])) {
     //echo $count;
     if ($count[0] == 0) {
         //echo "test";
-        $sql = "INSERT INTO consultants (id,fname, mname, lname, age, nic, add_no, add_street, add_city, email, mobile_no, land_no, psswd, created, uname,status)VALUES ('$id','$fname', '$mname', '$lname', '$age', '$nic', '$add_no', '$add_street', '$add_city', '$email', '$mobile_no', '$land_no', '$psswd',NOW(),'$email','inactive')";
+        $sql = "INSERT INTO consultants (id,fname, mname, lname, age, nic, add_no, add_street, add_city, email, mobile_no, land_no, psswd, created, uname,status,category)VALUES ('$id','$fname', '$mname', '$lname', '$age', '$nic', '$add_no', '$add_street', '$add_city', '$email', '$mobile_no', '$land_no', '$psswd',NOW(),'$email','inactive','$category')";
         if (mysqli_query($conn, $sql)) {
             echo "<script> alert('Consultant Details Inserted'); </script>";
             echo "<script> window.location.href='..'; </script>";

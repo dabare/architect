@@ -51,13 +51,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         <h2><center>Consultants</center></h2>
         
         <div style="margin-left:25%;padding:1px 16px;height:800px;width:400px;">
-                <h3>Registered</h3>
+                <h3>Registered Architects</h3>
                 <div id="border"><br><br>
-                <div id="saltbl" style="text-align: center ;  overflow: scroll ; height: 60vh;width: 300px;">
-                    <ul style="list-style: none">
+                    <div id="saltbl" style="text-align: center ;  overflow: scroll ; height: 20vh;width: 300px;">
+                        <ul style="list-style: none">
                     
                             <?php
-                                $sql = "SELECT * FROM consultants WHERE status='active';";
+                                $sql = "SELECT * FROM consultants WHERE status='active' and category='Architect';";
                                 $result = $conn->query($sql);
 
                                 if ($result->num_rows > 0) {
@@ -68,12 +68,72 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                                 }
                             ?>
                     
-                    </ul>                      
-                </div><br>
-            </div>
-            </div>
+                        </ul>                      
+                    </div><br>
+                </div>
+                <h3>Registered Engineers</h3>
+                <div id="border"><br><br>
+                    <div id="saltbl" style="text-align: center ;  overflow: scroll ; height: 20vh;width: 300px;">
+                        <ul style="list-style: none">
+                    
+                            <?php
+                                $sql = "SELECT * FROM consultants WHERE status='active' and category='Consultant' or category='Structural Consultant' or category='Services Consultant';";
+                                $result = $conn->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                // output data of each row
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo '<li><a id="editItem" href="ArchitectConsultants1.php?id=' . $row["id"] . '">' . $row["fname"] . ''. " " .'' . $row["lname"] . '</a></li><br>';
+                                    }
+                                }
+                            ?>
+                    
+                        </ul>                      
+                    </div><br>
+                </div>
+                <h3>Registered Design Developers</h3>
+                <div id="border"><br><br>
+                    <div id="saltbl" style="text-align: center ;  overflow: scroll ; height: 20vh;width: 300px;">
+                        <ul style="list-style: none">
+                    
+                            <?php
+                                $sql = "SELECT * FROM consultants WHERE status='active' and category='Design Developer';";
+                                $result = $conn->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                // output data of each row
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo '<li><a id="editItem" href="ArchitectConsultants1.php?id=' . $row["id"] . '">' . $row["fname"] . ''. " " .'' . $row["lname"] . '</a></li><br>';
+                                    }
+                                }
+                            ?>
+                    
+                        </ul>                      
+                    </div><br>
+                </div>
+                <h3>Registered Draftman</h3>
+                <div id="border"><br><br>
+                    <div id="saltbl" style="text-align: center ;  overflow: scroll ; height: 20vh;width: 300px;">
+                        <ul style="list-style: none">
+                    
+                            <?php
+                                $sql = "SELECT * FROM consultants WHERE status='active' and category='Draftman';";
+                                $result = $conn->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                // output data of each row
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo '<li><a id="editItem" href="ArchitectConsultants1.php?id=' . $row["id"] . '">' . $row["fname"] . ''. " " .'' . $row["lname"] . '</a></li><br>';
+                                    }
+                                }
+                            ?>
+                    
+                        </ul>                      
+                    </div><br>
+                </div>
+        </div>
         <div style="margin-left:75%;margin-top:-800px;padding:1px 16px;height:800px;width:400px;">
-                <h3>Pending</h3>
+                <h3>Pending list of Consultants</h3>
                 <div id="border"><br><br>
                 <div id="saltbl" style="text-align: center ;  overflow: scroll ; height: 60vh;width: 300px;">
                     <ul style="list-style: none">

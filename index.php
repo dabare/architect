@@ -227,7 +227,11 @@ require_once './db/dbConnection.php';
                     </ul>
                 </nav>
                 <!-- /main nav -->
-
+                <nav class="collapse navbar-collapse navbar-left" role="navigation">
+                    <ul id="nav" class="nav navbar-nav">
+                        <li class="current"><a href="#body">Architect Priyantha Premathilaka</a></li>
+                    </ul>
+                </nav>
             </div>
         </header>
         <!--
@@ -254,7 +258,7 @@ require_once './db/dbConnection.php';
                 <div class="carousel-inner" role="listbox">
 
                     <!-- single slide -->
-                    <div class="item active" style="background-image: url(img/home.jpg);">
+                    <div class="col-md-12 col-sm-12 col-xs-12 item active img-responsive" style="background-image: url(img/home.jpg);">
                         <div class="carousel-caption">
 
                         </div>
@@ -263,7 +267,7 @@ require_once './db/dbConnection.php';
                     <!-- end single slide -->
 
                     <!-- single slide -->
-                    <div class="item" style="background-image: url(img/banner.jpg);">
+                    <div class="col-md-12 col-sm-12 col-xs-12 item item img-responsive" style="background-image: url(img/banner.jpg);">
                         <div class="carousel-caption">
                             <!--
                                     <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">Meet<span> Team</span>!</h2>
@@ -1011,6 +1015,17 @@ Register
                                                                             <tr>
                                                                                 <td><b>Land Number:</b></td>
                                                                                 <td><input type="text" name="land_no" required></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><b>Category:</b></td>
+                                                                                <td><select id="cat" name="cat">
+                                                                                        <option>Architect</option>
+                                                                                        <option>Structural Consultant</option>
+                                                                                        <option>Services Consultant</option>
+                                                                                        <option>Consultant</option>
+                                                                                        <option>Design Developer</option>
+                                                                                        <option>Draftman</option> 
+                                                                                    </select></td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>Password:</b></td>

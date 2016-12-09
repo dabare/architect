@@ -7,10 +7,10 @@ $cusid = $_POST['cusid'];
 $category = $_POST['category'];
 $pdate = $_POST['pdate'];
 $location = $_POST['location'];
-$status = $_POST['status'];
+
 $url = $_POST['url'];
 $description = $_POST['description'];
-$progress = $_POST['progress'];
+
 $estimated_duration = $_POST['estimated_duration'];
 $estimated_cost = $_POST['estimated_cost'];
 $city = $_POST['city'];

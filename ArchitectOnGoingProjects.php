@@ -49,14 +49,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
             <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
             <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
-            
-            <li><a id="editItem" href="ArchitectAppointments.php">Appointments</a></li>
             <li><a id="editItem" href="ArchitectCustomers.php">Customers</a></li>
             <li><a id="editItem" href="ArchitectConsultants.php">Consultants</a></li>
-            
             <li><a id="editItem" href="ArchitectReports.php">Reports</a></li>
             <li><a id="editItem" href="ArchitectSettings.php">Settings</a></li>
-            <li><a id="editItem" href="index.php">Logout</a></li>
+            <li><a id="editItem" href="logout.php">Logout</a></li>
 
             </ul>
 
@@ -86,8 +83,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                         // output data of each row
                         while ($row = $result->fetch_assoc()) {
 
-
-
                             echo '<li ><a id = "proj" href = "ArchitectViewProject.php?id=' . $row["id"] . '">' . $row["city"] . '<div>' . $row["det"] . '</div><br><meter style = "width: 100%;" value = "' . $row["prog"] . '"></meter></a></li>';
                             echo '<li class = "brk"></li>';
                         }
@@ -105,9 +100,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                     if ($result->num_rows > 0) {
                         // output data of each row
                         while ($row = $result->fetch_assoc()) {
-
-
-
                             echo '<li ><a id = "proj" href = "ArchitectViewProject.php?id=' . $row["id"] . '">' . $row["city"] . '<div>' . $row["det"] . '</div><br><meter style = "width: 100%;" value = "' . $row["prog"] . '"></meter></a></li>';
                             echo '<li class = "brk"></li>';
                         }
@@ -124,9 +116,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                     if ($result->num_rows > 0) {
                         // output data of each row
                         while ($row = $result->fetch_assoc()) {
-
-
-
                             echo '<li ><a id = "proj" href = "ArchitectViewProject.php?id=' . $row["id"] . '">' . $row["city"] . '<div>' . $row["det"] . '</div><br><meter style = "width: 100%;" value = "' . $row["prog"] . '"></meter></a></li>';
                             echo '<li class = "brk"></li>';
                         }
@@ -179,33 +168,46 @@ function setMarkers(map) {
   for (var i = 0; i < locations.length; i++) {
     var beach = locations[i];
 	if(beach[0]== 'Industrial' ){
-		var marker = new google.maps.Marker({
+
+	var marker1 = new google.maps.Marker({
       position: {lat: beach[1], lng: beach[2]},
       map: map,
 	   icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
       title: beach[0]
     });
+
+    marker1.addListener('click', function() {
+             window.open('/architect-master/ArchitectViewProject.php','_blank');
+    });
 	
 	} else if(beach[0]== 'Residential' ){
 		
-		var marker = new google.maps.Marker({
+	var marker2 = new google.maps.Marker({
       position: {lat: beach[1], lng: beach[2]},
       map: map,
 	  icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
       title: beach[0]
     });
+    
+    marker2.addListener('click', function() {
+           window.open('/architect-master/ArchitectViewProject.php','_blank');
+    });
 	
 	}else{
-		var marker = new google.maps.Marker({
-      position: {lat: beach[1], lng: beach[2]},
-      map: map,
-	   icon:'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-      title: beach[0]
+
+	var marker3 = new google.maps.Marker({
+        position: {lat: beach[1], lng: beach[2]},
+        map: map,
+	    icon:'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+        title: beach[0]
+    });
+
+    marker3.addListener('click', function() {
+       window.open('/architect-master/ArchitectViewProject.php','_blank');
     });
 	
 	}	
     console.log('cat:'+beach[0]+' lat '+beach[1]+' lng'+beach[2] );
-	
   }
 }
 	  

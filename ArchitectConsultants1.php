@@ -82,7 +82,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <div class="row">
                 <div class="col m12">
 			     <!--Profile-->
-			        <div class="card-2 round white">
+                            <div class="card-2 round white">
                         <div class="col m4">
 				            <div class="container">
 					           <h4>Profile</h4>

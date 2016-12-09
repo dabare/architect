@@ -53,9 +53,9 @@
                     
                     <h2><center>Graphs and Reports</center></h2><br><br>
                     <div id="border">
-                        <img src="graphs/mainGraph.php">
+                        <img src="./graphs/mainGraph.php">
                         <br><br>
-                        <form method="GET" action="graphs/fullSummary.php">
+                        <form method="GET" action="./graphs/fullSummary.php">
                         From:
                         <input type="number" name="from" value="2000">
                         To:
@@ -63,7 +63,7 @@
                         <input class="btn btn-primary dropdown-toggle theme-l1 left-align" type="submit" value="Get Income Summary">
                         </form>
                         <br><br>
-                        <form method="GET" action="graphs/projectsSummary.php">
+                        <form method="GET" action="./graphs/projectsSummary.php">
                         From:
                         <input type="number" name="from" value="2000">
                         To:

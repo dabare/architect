@@ -77,7 +77,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
 
 
-                            echo '<li ><a id = "proj" href = "ArchitectViewProject.php?id=' . $row["id"] . '">' . $row["city"] . '<div>' . $row["det"] . '</div><br></a></li>';
+                            echo '<li ><a id = "proj" href = "ArchitectViewProject1.php?id=' . $row["id"] . '">' . $row["city"] . '<div>' . $row["det"] . '</div><br></a></li>';
                             echo '<li class = "brk"></li>';
                         }
                     }
@@ -97,7 +97,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
 
 
-                            echo '<li ><a id = "proj" href = "ArchitectViewProject.php?id=' . $row["id"] . '">' . $row["city"] . '<div>' . $row["det"] . '</div><br></a></li>';
+                            echo '<li ><a id = "proj" href = "ArchitectViewProject1.php?id=' . $row["id"] . '">' . $row["city"] . '<div>' . $row["det"] . '</div><br></a></li>';
                             echo '<li class = "brk"></li>';
                         }
                     }
@@ -116,7 +116,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
 
 
-                            echo '<li ><a id = "proj" href = "ArchitectViewProject.php?id=' . $row["id"] . '">' . $row["city"] . '<div>' . $row["det"] . '</div><br></a></li>';
+                            echo '<li ><a id = "proj" href = "ArchitectViewProject1.php?id=' . $row["id"] . '">' . $row["city"] . '<div>' . $row["det"] . '</div><br></a></li>';
                             echo '<li class = "brk"></li>';
                         }
                     }

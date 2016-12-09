@@ -311,10 +311,7 @@ if ($result->num_rows > 0) {
                                                 <td><b>Location:</b></td>
                                                 <td><input type='text' name='location' required/></td>
                                             </tr>
-                                            <tr>
-                                                <td><b>Satus:</b></td>
-                                                <td><input type='text' name='status' required/></td>
-                                            </tr>
+                                            
                                             <tr>
                                                 <td><b>URL:</b></td>
                                                 <td><input type='text' name='url' required/></td>
@@ -323,10 +320,7 @@ if ($result->num_rows > 0) {
                                                 <td><b>Description:</b></td>
                                                 <td><input type='text' name='description' required/></td>
                                             </tr>
-                                            <tr>
-                                                <td><b>Progress:</b></td>
-                                                <td><input type='int' name='progress' required/></td>
-                                            </tr>
+                                            
                                             <tr>
                                                 <td><b>Estimated Duration:</b></td>
                                                 <td><input type='text' name='estimated_duration' required/></td>
@@ -373,7 +367,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
-        echo '<li><a id="editItem" href="ArchitectViewProject.php?id=' . $row["id"] . '">' . $row["title"] . '</a></li><br>';
+        echo '<li><a id="editItem" href="ArchitectCustomersViewProject.php?id=' . $row["id"] . '">' . $row["title"] . '</a></li><br>';
     }
 }
 ?>
