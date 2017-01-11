@@ -19,12 +19,12 @@ $sql = "INSERT INTO g_project(id,status) VALUES('" . $id . "','Active');";
 
 if (mysqli_query($conn, $sql)) {
     echo '<script>
-					window.location = "../ArchitectManageProjects1.php?id=' . $id . '";
+					window.location = "../gallery1.php?id=' . $id . '";
 				</script>';
 } else {
     echo '<script>
 					alert("Could not create new project");
-					window.location = "../ArchitectManageProjects.php";
+					window.location = "../gallery.php";
 				</script>';
 }
 

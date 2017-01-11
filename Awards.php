@@ -1,76 +1,207 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>architect</title>
-        <link rel="stylesheet" type="text/css" href="CSS/home.css">
-        <link rel="stylesheet" type="text/css" href="CSS/awards.css">
-        <meta charset="utf-8">
-        <meta name="description" content="We love playing with light, material, and shapes and driven with passion in making the client’s dream a reality beyond their expectations.">
-        <meta name="keywords" content="architecture,landscaping,interior designing,urban designs, kasu media lab, kml ,In SriLanka, sri lanka,bunglows, SLIA, CSA, houses">
 
-    </head>
-    <body id="container">
+<?php
+session_start();
+require_once './db/dbConnection.php';
+$_SESSION["id"] = 1;
+?>
+<head>
 
-        <div>
-            <ul id="mainMenue">
-                <li><a id="mainMenueA" href="index.php" style="float:left;">Home</a></li>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Architect WebSite | Gallery</title>
 
-                <li id="mainMenueLi" class="dropdown">
-                    <a  id="mainMenueA" href="#" class="dropbtn">Register   </a>
-                    <div class="dropdown-content">
-                            <a href="RegisterAsCustomer.php">Customer</a>
-                            <a href="RegisterAsConsultant.php">Consultant</a>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" style="width:55px;height:55px;" class="img-circle" src="uploads/architect/<?php echo $_SESSION["id"];?>.jpeg" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Priyantha Premathilake</strong>
+                             </span>  </span> </a>
+                        
                     </div>
                 </li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="Login.php">Login</a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="ContactUs.php">Contact Us</a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="LegalIssues.php">Legal Issues</a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="Projects.php">Projects</a></li>
-                <li id="mainMenueLi"><a class="active" id="mainMenueA" href="Awards.php">Awards</a></li>
-                <li id="mainMenueLi"><a id="mainMenueA" href="About.php">About</a></li>
+                <?php
+                $sql = "select COUNT(post.id) as count from post left join project on project.id = post.project_id where post.seen = 0 and project.architect_id = ".$_SESSION["id"]." and post.byy = \"Client\";";
+                $result = $conn->query($sql);
 
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        $count = $row["count"] ;
+                    }
+                }
+                ?>
+                
+                <li>
+                    <a href="notification.php"><i class="fa fa-globe"></i> <span class="nav-label">Notifications</span><span class="label label-warning pull-right"><?php echo $count;?></span></a>
+                    
+                </li>
+                <li>
+                    <a href="ongoingProjects.php"><i class="fa fa-flask"></i> <span class="nav-label">On Going Projects</span></a>
+                </li>
+                <li>
+                    <a href="gallery.php"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span></a>
+                    
+                </li>
+                <li class="active">
+                    <a href="awards.php"><i class="fa fa-trophy"></i> <span class="nav-label">Manage Awards Received</span></a>
+                    
+                </li>
+                <li>
+                    <a href="completedProjects.php"><i class="fa fa-diamond"></i> <span class="nav-label">Completed Projects</span>  </a>
+                </li>
+                <li>
+                    <a href="customer.php"><i class="fa fa-male"></i> <span class="nav-label">Customers</span></a>
+                </li>
+                <li>
+                    <a href="consultant.php"><i class="fa fa-male"></i> <span class="nav-label">Consultants</span></a>
+                </li>
+                <li>
+                    <a href="reports.php"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Statistics</span></a>
+                    
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Settings</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="ArchitectEditProfile.php">Edit Profile</a></li>
+                        <li><a href="settings.php">General Settings</a></li>
+                    </ul>
+                </li>
             </ul>
+
         </div>
+    </nav>
 
-        <div  >
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message"></span>
+                </li>
+                
 
+                <li>
+                    <a href="logout.php">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+            </ul>
 
-            <div style="background-color: lightgoldenrodyellow  ;">
-                <div id="r_content_area">
-                    <h3>Academic qualifications</h3>
-                    <p>B.Sc (Physical Science) University of Colombo - 1996<br><br>
+        </nav>
+        
+            
+            </div>
+            
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>Awards</h2>
+                    
+                </div>
+                <div class="col-lg-2">
 
-                        SLIA Part I<br>
-                        Sri Lanka Institute of Architects - 1998<br><br>
-
-                        SLIA Part II<br>
-                        Sri Lanka Institute of Architects - 2002<br><br>
-
-                        SLIA Part III<br>
-                        Sri Lanka Institute of Architects - 2004<br><br>
-                    </p>
-
-                    <h3>Awards</h3>
-                    <p>Geoffery Bawa Award for Excellence in Architecture 2008 - Commendation Prize for the Estate Bungalow in Ginigathhena<br><br>
-
-                        Sri Lanka Institute of Architects Excellent Design Award 2009 for Rathnayake House at Makola<br><br>
-
-                        19th Architect of the Year Award - under the category of focused countries Commendation Award for Avissawella Bunglow at Thalduwa, Avissawella.<br><br>
-
-                        SLIA Design Award 2010 - Award of Merit under the Commercial Category for Showroom for David Pieris Motor Company (Ltd) Ratnapura.<br><br>
-
-                        SLIA Design Award 2011 - Award of merit under the category of Personalized housing for Subasinghe house at Kiribathgoda.<br><br> 
-                    </p>
                 </div>
             </div>
-            <div id="l_content_area">
-
+            <br>
+            <div>
+                
+                <a  href="Projects/NewAwards.php">
+                <button type="button" class="btn btn-w-m btn-primary">Add New</button>
+                </a>
             </div>
+        <div class="wrapper wrapper-content animated fadeIn">
+            <div class="row">
+                <div class="col-lg-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Awards Received</h5>
+                        
+                    </div>
+                    <div class="ibox-content">
+                        <div class="alert alert-danger alert-dismissable">
+                           <?php
+                                require_once './db/dbConnection.php';
+                                $sql = "SELECT * FROM award WHERE category ='Awards' ORDER BY title ASC";
+                                $result = $conn->query($sql);
 
+                                if ($result->num_rows > 0) {
+                                    // output data of each row
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo '<ul><a id="editItem" href="ArchitectManageAwards1.php?id=' . $row["id"] . '">' . $row["title"] . '</a></ul><br>';
+                                    }
+                                }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="col-lg-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Academic Qualifications</h5>
+                        
+                    </div>
+                    <div class="ibox-content">
+                            
+                            <div class="alert alert-warning alert-dismissable">
+                               <?php
+                                    require_once './db/dbConnection.php';
+                                        $sql1 = "SELECT * FROM award WHERE category = 'Academic Qualifications' ORDER BY title ASC;";
+                                        $result1 = $conn->query($sql1);
+
+                                        if ($result1->num_rows > 0) {
+                                            // output data of each row
+                                            while ($row = $result1->fetch_assoc()) {
+                                                echo '<ul><a id="editItem" href="ArchitectManageAwards1.php?id=' . $row["id"] . '">' . $row["description"] . '</a></ul><br>';
+                                            }
+                                        }
+                                        ?>
+                            </div>
+                            
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+
+        </div>
         </div>
 
 
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-    </body>
-</html> 
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+
+</body>
+
+
+</html>

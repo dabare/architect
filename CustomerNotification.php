@@ -1,45 +1,274 @@
 <!DOCTYPE html>
 <html>
+
+<?php
+session_start();
+require_once './db/dbConnection.php';
+
+    
+    
+    $id = $_SESSION["id"];
+    $sql = "SELECT * FROM customer WHERE id=" . $id . ";";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        $id = $row["id"];
+        $fname=$row["fname"];
+	$mname=$row["mname"];
+	$lname=$row["lname"];
+	$age=$row["age"];
+	$add_no=$row["add_no"];
+	$add_street=$row["add_street"];
+	$add_city=$row["add_city"];
+	$email=$row["email"];
+	$mobile_no=$row["mobile_no"];
+	$land_no=$row["land_no"];
+	$nic=$row["nic"];
+	
+    
+    $uname = $row["uname"];
+    $location = $row["location"];
+        $password = $row["passwd"];
+    }
+}
+?>
 <head>
-<title>Customer</title>
-<link rel="stylesheet" type="text/css" href="CSS/architectEdit.css">
-<link rel="stylesheet" type="text/css" href="profcss/style_theme.css">
-<link rel="stylesheet" type="text/css" href="profcss/style.css">
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="profcss/opensans.css">
-<style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
-</style>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Architect WebSite | Customer Notification</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
 </head>
 
-<body bgcolor="grey" class="theme-15">
+<body>
 
-<!--Navbar-->
-<div class="top">
-	<ul class="navbar theme-d2 left-align large">
+    <div id="wrapper">
 
-		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Customer Profile</a></li>
-		
-	</ul>
-</div>
-
-<!--Page Container-->
-<div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 10px">
-	<!--The Grid-->
-	<div class="row">
-
-		<!-- left panel -->
-                <ul id="navigationbarEdit">
-            <li><a id="activeEdit" href="CustomerNotification.php">Notification</a></li>
-            <li><a id="editItem" href="CustomerEditProfile1.php">My Profile</a></li>
-            
-            <li><a id="editItem" href="CustomerMakeAppointments.php">Consultants</a></li>
-            <li><a id="editItem" href="logout.php">Logout</a></li>
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" style="width:55px;height:55px;" class="img-circle" src="uploads/customer/<?php echo $_SESSION["id"];?>.jpeg" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php echo $lname;?><?php echo '_';?><?php echo $fname;?></strong>
+                             </span>  </span> </a>
+                        
+                    </div>
+                </li>
+                <li class="active">
+                    <a href="CustomerNotification.php"><i class="fa fa-globe"></i> <span class="nav-label">Notifications</span></a>
+                </li>
+                <li>
+                    <a href="CustomerEditProfile.php"><i class="fa fa-edit"></i> <span class="nav-label">Edit Profile</span><span class="label label-warning pull-right"><?php echo $count;?></span></a>
+                    
+                </li>
+                
+                <li>
+                    <a href="CustomerConsultant.php"><i class="fa fa-male"></i> <span class="nav-label">Consultants</span></a>
+                </li>
+                <li>
+                    <a href="CustomerProject.php"><i class="fa fa-pie-chart"></i> <span class="nav-label">My Projects</span></a>
+                </li>
+                
             </ul>
+
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message"></span>
+                </li>
+                
+
+                <li>
+                    <a href="logout.php">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>Notifications</h2>
+                    
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+        <div class="wrapper wrapper-content animated fadeIn">
+            <div class="row">
+                <div class="col-lg-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Industrial</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <?php
+                            $sql = 'select  project.customer_id , project.id , project.title , project.city , project.category from post left join project on project.id = post.project_id where post.seen = 0 and project.customer_id = "'.$_SESSION["id"].'" and post.byy = "Architect" and project.category="Industrial";';
+                        
+                        
+                            $result = $conn->query($sql);
+
+                            if ($result->num_rows > 0) {
+                                // output data of each row
+                                while ($row = $result->fetch_assoc()) {
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    echo '
+                                    <div class="alert alert-success alert-dismissable">
+                                    <a class="alert-link" href="CustomerViewProject.php?id='.$row["id"].'">
+                                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                        '.Architect.' Posted in '.$row["title"].' at '.$row["city"].'.</a>
+                                    </div>
+                                    ';
+                                }
+                            }
+                            ?>
+                        
+                    </div>
+                </div>
+            </div>
+                <div class="col-lg-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Residential</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <?php
+                            $sql = 'select  project.customer_id , project.id , project.title , project.city , project.category from post left join project on project.id = post.project_id where post.seen = 0 and project.customer_id = "'.$_SESSION["id"].'" and post.byy = "Architect" and project.category="Residential";';
+                        
+                        
+                            $result = $conn->query($sql);
+
+                            if ($result->num_rows > 0) {
+                                // output data of each row
+                                while ($row = $result->fetch_assoc()) {
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    echo '
+                                    <div class="alert alert-info alert-dismissable">
+                                    <a class="alert-link" href="CustomerViewProject.php?id='.$row["id"].'">
+                                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                        '.Architect.' Posted in '.$row["title"].' at '.$row["city"].'.</a>
+                                    </div>
+                                    ';
+                                }
+                            }
+                            ?>
+                        
+                    </div>
+                </div>
+            </div>
+                <div class="col-lg-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Community</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="ibox-content">
+                        <?php
+                            $sql = 'select  project.customer_id , project.id , project.title , project.city , project.category from post left join project on project.id = post.project_id where post.seen = 0 and project.customer_id = "'.$_SESSION["id"].'" and post.byy = "Architect" and project.category="Community";';
+                        
+                        
+                            $result = $conn->query($sql);
+
+                            if ($result->num_rows > 0) {
+                                // output data of each row
+                                while ($row = $result->fetch_assoc()) {
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    echo '
+                                    <div class="alert alert-warning alert-dismissable">
+                                    <a class="alert-link" href="CustomerViewProject.php?id='.$row["id"].'">
+                                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                        '.Architect.' Posted in '.$row["title"].' at '.$row["city"].'.</a>
+                                    </div>
+                                    ';
+                                }
+                            }
+                            ?>
+                        
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+            </div>
+            <div>
+            </div>
+        </div>
+
         </div>
         </div>
-    </body>
-</html> 
+
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+
+</body>
+<?php
+    $conn->close();
+    ?>
+
+</html>

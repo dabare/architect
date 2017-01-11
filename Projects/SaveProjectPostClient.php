@@ -39,12 +39,12 @@ if ($type == "Post") {
     if (mysqli_query($conn, $sql)) {
         echo '<script>
 					alert("Post Success");
-					window.location = "../CustomerMyProject.php?id=' . $projectid . '";
+					window.location = "../CustomerViewProject.php?id=' . $projectid . '";
 				</script>';
     } else {
         echo '<script>
 					alert("Post Failed");
-					window.location = "../CustomerMyProject.php?id=' . $projectid . '";
+					window.location = "../CustomerViewProject.php?id=' . $projectid . '";
 				</script>';
     }
 } else {
@@ -52,7 +52,7 @@ if ($type == "Post") {
     if ($uploadOk == 0) {
         echo '<script>
 					alert("Post Failed");
-					window.location = "../CustomerMyProject.php?id=' . $projectid . '";
+					window.location = "../CustomerViewProject.php?id=' . $projectid . '";
 				</script>';
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
@@ -63,18 +63,18 @@ if ($type == "Post") {
             if (mysqli_query($conn, $sql)) {
                 echo '<script>
 					alert("Post Success");
-					window.location = "../CustomerMyProject.php?id=' . $projectid . '";
+					window.location = "../CustomerViewProject.php?id=' . $projectid . '";
 				</script>';
             } else {
                 echo '<script>
 					alert("Post Failed");
-					window.location = "../CustomerMyProject.php?id=' . $projectid . '";
+					window.location = "../CustomerViewProject.php?id=' . $projectid . '";
 				</script>';
             }
         } else {
             echo '<script>
 					alert("Post Failed");
-					window.location = "../CustomerMyProject.php?id=' . $projectid . '";
+					window.location = "../CustomerViewProject.php?id=' . $projectid . '";
 				</script>';
         }
     }

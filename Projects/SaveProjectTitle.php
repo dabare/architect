@@ -3,15 +3,15 @@
 require_once '../db/dbConnection.php';
 $id = $_POST['id'];
 $title = $_POST['title'];
+$priority = $_POST['priority'];
 
 
-
-$sql = "UPDATE project SET title='" . $title . "' WHERE id='" . $id . "'";
+$sql = "UPDATE project SET title='" . $title . "' , priority='" . $priority . "'  WHERE id='" . $id . "'";
 
 if (mysqli_query($conn, $sql)) {
 
     echo '<script>
-				alert("Title Updated to: ' . $title . '");
+				alert("Project Updated");
 				window.location = "../ArchitectViewProject.php?id=' . $id . '";
 			</script>';
 } else {

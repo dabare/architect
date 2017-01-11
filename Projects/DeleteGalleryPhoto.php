@@ -25,12 +25,12 @@ if (mysqli_query($conn, $sql)) {
 
     echo '<script>
 				alert("Photo Deleted");
-				window.location = "../ArchitectManageProjects1.php?id=' . $projectid . '";
+				window.location = "../gallery1.php?id=' . $projectid . '";
 			</script>';
 } else {
     echo '<script>
 				alert("Photo not Deleted");
-				window.location = "../ArchitectManageProjects1.php?id=' . $projectid . '";
+				window.location = "../gallery1.php?id=' . $projectid . '";
 			</script>';
 }
 mysqli_close($conn);

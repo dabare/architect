@@ -73,7 +73,7 @@ if (isset($_POST['login'])) {
         }
 
 
-        echo "<script>window.open('ArchitectOnGoingProjects.php','_self')</script>";
+        echo "<script>window.open('notification.php','_self')</script>";
     }
 
     //check consultant
@@ -88,7 +88,7 @@ if (isset($_POST['login'])) {
             }
         }
 
-        echo "<script>window.open('ConsultantEditProfile1.php','_self')</script>";
+        echo "<script>window.open('editConsultantProfile.php','_self')</script>";
     }
 
     //check employee
@@ -116,7 +116,7 @@ if (isset($_POST['login'])) {
                 $_SESSION['id'] = $row["id"];
             }
         }
-        echo "<script>window.open('CustomerEditProfile1.php','_self')</script>";
+        echo "<script>window.open('CustomerNotification.php','_self')</script>";
     } else {
 
         echo "<script>alert('Email or password is not correct, try again!')</script>";

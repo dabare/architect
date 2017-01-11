@@ -1,10 +1,14 @@
+<!DOCTYPE html>
+<html>
+
 <?php
+session_start();
 require_once './db/dbConnection.php';
-
-$id = '1';
-
-
-$sql = "SELECT * FROM architect WHERE id=" . $id . ";";
+$_SESSION["id"] = 1;
+    
+    
+    $id = $_SESSION["id"];
+    $sql = "SELECT * FROM architect WHERE id=" . $id . ";";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -23,187 +27,358 @@ if ($result->num_rows > 0) {
 	$land_no=$row["land_no"];
 	$nic=$row["nic"];
 	$date=$row["date"];
-        $reg = $row["reg_no"];
+    $reg_no = $row["reg_no"];
+    $uname = $row["uname"];
+    $location = $row["location"];
+        $password = $row["passwd"];
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html>
 <head>
-<title>Architect</title>
-<link rel="stylesheet" type="text/css" href="CSS/architectEdit.css">
-<link rel="stylesheet" type="text/css" href="profcss/style_theme.css">
-<link rel="stylesheet" type="text/css" href="profcss/style.css">
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="profcss/opensans.css">
-<style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
-</style>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Architect WebSite | Edit Profile</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- FooTable -->
+    <link href="css/plugins/footable/footable.core.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
 </head>
 
-<body bgcolor="grey" class="theme-15">
+<body>
 
-<!--Navbar-->
-<div class="top">
-	<ul class="navbar theme-d2 left-align large">
+    <div id="wrapper">
 
-		<li><a href="#" class="padding-large theme-d4"><i class="fa fa-home margin-right"></i>Architect</a></li>
-		
-	</ul>
-</div>
-
-<!--Page Container-->
-<div class="container content" style="max-width:1400px;margin-top:50px;margin-left: 10px">
-	<!--The Grid-->
-	<div class="row">
-
-		<!-- left panel -->
-            <ul id="navigationbarEdit">
-            <li><a id="editItem" href="ArchitectNotification.php">Notification</a></li>
-            <li><a id="editItem" href="ArchitectOnGoingProjects.php">On Going Projects</a></li>
-            <li><a id="editItem" href="ArchitectManageProjects.php">Gallery</a></li>
-            <li><a id="editItem" href="ArchitectManageAwards.php">Manage Awards</a></li>
-            <li><a id="editItem" href="ArchitectCompletedProjects.php">Completed Projects</a></li>
-            <li><a id="editItem" href="ArchitectCustomers.php">Customers</a></li>
-            <li><a id="editItem" href="ArchitectConsultants.php">Consultants</a></li>
-            <li><a id="editItem" href="ArchitectReports.php">Reports</a></li>
-            <li><a id="activeEdit" href="ArchitectSettings.php">Settings</a></li>
-            <li><a id="editItem" href="logout.php">Logout</a></li>
-
-            </ul>
-
-        <div style="margin-left:300px">
-
-            <br><br>
-            <form>
-               <!--Right Column-->
-               <div class="row">
-		<div class="col m12">
-			<!--Profile-->
-			<div class="card-2 round white">
-                <div class="col m4">
-				<div class="container">
-					<h4>Profile</h4>
-					<p><img src="profcss/prof.jpg" class="circle" style="height:106px;width:106px" alt="Profile"></p>
-					</div>
-				</div>
-			</div>
-			<br><br>
-                <div class="col m8">        
-                        <div style="text-align: left;">
-                            <div style="display:inline-block;">
-                                First name:<br>
-                                <input type="text" size="15" name="firstname" value="<?php echo $fname;?>" disabled>
-                            </div>
-                            <div style="display:inline-block;">
-                                Middle name:<br>
-                                <input type="text" size="15" name="middlename" value="<?php echo $mname;?>" disabled>
-                            </div>
-                            <div style="display:inline-block;">
-                                Last name:<br>
-                                <input type="text" size="15" name="lastname" value="<?php echo $lname;?>" disabled>
-                            </div>
-                            
-                        </div>  
-                        <br>
-                        <div style="text-align: left;">
-                            <div style="display:inline-block;">
-                                Age:<br><input type="text" name="age" size="4" value="<?php echo $age;?>" disabled>
-                            </div>
-                            <div style="display:inline-block;">
-                                Reg No:<br><input type="text" name="nic" size="15" value="<?php echo $reg;?>" disabled>
-                            </div>
-                        </div>
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" style="width:55px;height:55px;" class="img-circle" src="uploads/architect/<?php echo $_SESSION["id"];?>.jpeg" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Priyantha Premathilake</strong>
+                             </span>  </span> </a>
                         
                     </div>
+                </li>
+                <?php
+                $sql = "select COUNT(post.id) as count from post left join project on project.id = post.project_id where post.seen = 0 and project.architect_id = ".$_SESSION["id"]." and post.byy = \"Client\";";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        $count = $row["count"] ;
+                    }
+                }
+                ?>
+                
+                <li>
+                    <a href="notification.php"><i class="fa fa-globe"></i> <span class="nav-label">Notifications</span><span class="label label-warning pull-right"><?php echo $count;?></span></a>
+                    
+                </li>
+                <li>
+                    <a href="ongoingProjects.php"><i class="fa fa-flask"></i> <span class="nav-label">On Going Projects</span></a>
+                </li>
+                <li>
+                    <a href="gallery.php"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span></a>
+                    
+                </li>
+                <li>
+                    <a href="awards.php"><i class="fa fa-trophy"></i> <span class="nav-label">Manage Awards Received</span></a>
+                    
+                </li>
+                <li>
+                    <a href="completedProjects.php"><i class="fa fa-diamond"></i> <span class="nav-label">Completed Projects</span>  </a>
+                </li>
+                <li>
+                    <a href="customer.php"><i class="fa fa-male"></i> <span class="nav-label">Customers</span></a>
+                </li>
+                <li>
+                    <a href="consultant.php"><i class="fa fa-male"></i> <span class="nav-label">Consultants</span></a>
+                </li>
+                <li>
+                    <a href="reports.php"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Statistics</span></a>
+                    
+                </li>
+                <li class="active">
+                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Settings</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li  class="active"><a href="ArchitectEditProfile.php">Edit Profile</a></li>
+                        <li><a href="settings.php">General Settings</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message"></span>
+                </li>
+                
+
+                <li>
+                    <a href="logout.php">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        
+            
+            </div>
+            
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>Profile</h2>
+                    
+                </div>
+                <div class="col-lg-2">
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col m12">
-                    <div class="col m4">
-                        <br><br><br>
-                        Address:<br>
-                        <div style=" padding-left: 2em;">
-                        No:
-                        <br>
-                        <input type="text" size="10" name="no" value="<?php echo $add_no;?>" disabled>
-                        <br>
-                        Street:
-                        <br>
-                        <input type="text" name="street" value="<?php echo $add_street;?>" disabled>
-                        <br>
-                        City:
-                        <br>
-                        <input type="text" name="city" value="<?php echo $add_city;?>" disabled>
-                        <br><br>
-                        Google Location:
-                        <br>
-                        <input type="text" name="location" size="25">
-                        <br><br>
-                        <div>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.5643649597737!2d79.89346104990712!3d7.060361918623994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2f737b5b05a09%3A0xd4ef00d25a3b354a!2sK+Zone+Ja-Ela!5e0!3m2!1sen!2slk!4v1471279498706" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <br>
+         <div class="wrapper wrapper-content animated fadeInRight ecommerce">
 
-                        </div>
-                        </div>
+            <div class="row">
+                <div class="ibox-content">
+                <form enctype="multipart/form-data" action="Projects/SaveArchitectProfile.php" method="post" class="form-horizontal">
+                    <div class="row">
+                    <div class="col-sm-9">
+                    <div class="form-group"><label class="col-sm-3 control-label">First Name:</label>
+
+                        <div class="col-sm-7"><input type="text" class="form-control" name="fname" value="<?php echo $fname;?>"></div>
                     </div>
-                    <div class="col m4">
-                            <br><br><br>
-                            Email:<br>
-                            <div style="text-align: left;">
-                                <input type="text" name="email" size="35" value="<?php echo $email;?>" disabled>
-                                <br><br>
-                            </div>
-                            <div style="text-align: left;">
-                                <div style="display:inline-block;">
-                                    Mobile No:
-                                    <br>
-                                    <input type="text" name="mobile" size="10" value="<?php echo $mobile_no;?>" disabled>
-                                </div>
-                                <div style="display:inline-block;">
-                                    Land No:
-                                    <br>
-                                    <input type="text" name="land" size="10" value="<?php echo $land_no;?>" disabled>
-                                </div>
-                            </div>
-                            
-                            <br><br>
+                    <!-- <div class="hr-line-dashed"></div> -->
+                    <div class="form-group"><label class="col-sm-3 control-label">Middle Name:</label>
+
+                        <div class="col-sm-7"><input type="text" class="form-control" name="mname" value="<?php echo $mname;?>"></div>
                     </div>
-                    <div class="col m4">
-                        <br><br><br>
-                        Status:
-                        <select name="cars">
-                            <option <?php
-                                if ($status == "active") {
-                                    echo ' selected';
-                                }
-                                ?> value="active">Active</option>
-                            <option <?php
-                                if ($status == "active") {
-                                    echo ' selected';
-                                }
-                                ?> value="inactive">Inactive</option>
-                        </select>
-                        <br><br>
-                        Account created date:<br>
-                            <div style="text-align: left;">
-                                <input type="date" name="created" value="<?php echo $date;?>" disabled>
+                    <!-- <div class="hr-line-dashed"></div> -->
+                    <div class="form-group"><label class="col-sm-3 control-label">Last Name:</label>
+
+                        <div class="col-sm-7"><input type="text" class="form-control" name="lname" value="<?php echo $lname;?>"></div>
+                    </div>
+                    </div>
+                    <div class="col-sm-3"><img src="uploads/architect/<?php echo $id;?>.jpeg" class="circle" style="height:106px;width:106px" alt="Profile">
+                        
+                        <div class="pull-right btn-group">
+                                   <center> <label title="Upload image file" for="inputImage" class="btn btn-info">
+                                        <input type="file" accept="image/*" name="image" id="inputImage" class="hide">
+                                        Upload New Image
+                                    </label>
+                            <br>
+                            <br>
+                            <br>
+                            <button class="btn btn-primary" type="submit">Save changes</button>
+                                       </center>
                             </div>
-                        <div style="text-align: center;"><br><br>
-                            <a href="ArchitectEditProfile1.php"><button class="btn btn-primary dropdown-toggle theme-l1 left-align" type="button"><i class="fa fa-circle-o-notch fa-fw margin-right"></i>Reset all Fields
-                            </button></a>
-                            
                         </div>
                     </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group"><label class="col-sm-2 control-label">Age:</label>
+
+                        <div class="col-sm-10"><input type="text" class="form-control" name="age" value="<?php echo $age;?>"></div>
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group"><label class="col-sm-2 control-label">NIC:</label>
+
+                        <div class="col-sm-10"><input type="text" class="form-control" name="nic" value="<?php echo $nic;?>"></div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group"><label class="col-sm-2 control-label">Address No:</label>
+
+                        <div class="col-sm-10"><input type="text" class="form-control" name="add_no" value="<?php echo $add_no;?>"></div>
+                    </div>
+                    
+                    <div class="form-group"><label class="col-sm-2 control-label">Street:</label>
+
+                        <div class="col-sm-10"><input type="text" class="form-control" name="add_street" value="<?php echo $add_street;?>"></div>
+                    </div>
+                    <div class="form-group"><label class="col-sm-2 control-label">City:</label>
+                        <div class="col-sm-10"><input type="text" class="form-control" name="add_city" value="<?php echo $add_city;?>"></div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group"><label class="col-sm-2 control-label">Email:</label>
+
+                        <div class="col-sm-10"><input type="text" class="form-control" name="email" value="<?php echo $email;?>"></div>
+                    </div>
+                    <div class="form-group"><label class="col-sm-2 control-label">Mobile Number:</label>
+                        <div class="col-sm-10"><input type="text" class="form-control" name="mobile_no"  value="<?php echo $mobile_no;?>"></div>
+                    </div>
+                    <div class="form-group"><label class="col-sm-2 control-label">Land Number:</label>
+                        <div class="col-sm-10"><input type="text" class="form-control" name="land_no" value="<?php echo $land_no;?>"></div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group"><label class="col-sm-2 control-label">Registration Number:</label>
+                        <div class="col-sm-10"><input type="text" required class="form-control" name="reg_no"  value="<?php echo $reg_no;?>"></div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="col-lg-5">
+                    <div class="form-group"><label class="col-sm-5 control-label">Location:</label>
+                        <div class="col-sm-5"><input id="end" type="text" class="form-control" name="location"  value="<?php echo $location;?>"></div>
+                        <div class="col-sm-1"><input type="button" class="btn btn-xs" value="Drop Pin" onclick="dropPin()"></div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group"><label class="col-sm-5 control-label">User Name:</label>
+                        <div class="col-sm-7"><input name="uname" required type="text" class="form-control"   value="<?php echo $uname;?>"></div>
+                    </div>
+                    <div class="form-group"><label class="col-sm-5 control-label">Password:</label>
+                        <div class="col-sm-7"><input type="password" value="<?php echo $password;?>" class="form-control" name="pass1"></div>
+                    </div>
+                    <div class="form-group"><label class="col-sm-5 control-label">Retype Password:</label>
+                        <div class="col-sm-7"><input type="password" required class="form-control" name="pass2"></div>
+                    </div>
+                    <div class="form-group">
+                        <center>
+                            <button class="btn btn-warning" type="reset">Cancel</button>
+                            <button class="btn btn-primary" type="submit">Save changes</button>
+                        </center>
+                    </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="google-map" id="map" style="width:100%;height:300px"></div>
+                    </div>
+                    <div class="form-group"></div>
+                </form>
                 </div>
                 
-                </div>
-                
-            </form> 
+                    
+
+             </div>
+
+
+        </div>
+        
+
+        </div>
         </div>
 
-    </body>
-</html> 
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- FooTable -->
+    <script src="js/plugins/footable/footable.all.min.js"></script>
+
+    <!-- Page-Level Scripts -->
+    <script>
+        $(document).ready(function() {
+
+            $('.footable').footable();
+
+        });
+
+    </script>
+<script>
+    
+        
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
+var map;
+var endMarker;
+var input ;
+var searchBox ;
+var markers = [];  
+    
+function initMap() {
+directionsDisplay = new google.maps.DirectionsRenderer();
+  var myCenter = new google.maps.LatLng(<?php echo $location;?>);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {
+        panControl: false,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: false,
+        streetViewControl: false,
+        overviewMapControl: false,
+        rotateControl: false,
+        center: myCenter, 
+        zoom: 10,
+      mapTypeId: 'roadmap'
+  };
+    map = new google.maps.Map(mapCanvas, mapOptions);
+  endMarker = new google.maps.Marker({position:myCenter});
+  endMarker.setMap(map);
+    directionsDisplay.setMap(map);
+    
+
+    
+    
+    
+}
+
+function dropPin() {
+  // if any previous marker exists, let's first remove it from the map
+  if (endMarker) {
+    endMarker.setMap(null);
+  }
+  // create the marker
+  endMarker = new google.maps.Marker({
+    position: map.getCenter(),
+    map: map,
+    draggable: true,
+  });
+  copyMarkerpositionToInput();
+  // add an event "onDrag"
+  google.maps.event.addListener(endMarker, 'dragend', function() {
+    copyMarkerpositionToInput();
+  });
+}
+
+function copyMarkerpositionToInput() {
+  // get the position of the marker, and set it as the value of input
+  document.getElementById("end").value = endMarker.getPosition().lat() +','+  endMarker.getPosition().lng();
+}
+
+function calcRoute() {
+  var start = document.getElementById("start").value;
+  var end = document.getElementById("end").value;
+  var request = {
+    origin:start,
+    destination:end,
+    travelMode: google.maps.TravelMode.DRIVING
+  };
+  directionsService.route(request, function(result, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(result);
+    }
+  });
+}
+    
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoS2uHtXLrjmwYWnUmWnFRUSV2BIrsW9g&libraries=places&callback=initMap"
+    async defer></script>
+</body>
+<?php
+    $conn->close();
+    ?>
+
+</html>

@@ -21,21 +21,21 @@ require_once './db/dbConnection.php';
 
         <!-- CSS
         ================================================== -->
-        <!-- Fontawesome Icon font -->
-        <link rel="stylesheet" href="CSS/font-awesome.min.css">
-        <!-- Twitter Bootstrap css -->
-        <link rel="stylesheet" href="CSS/bootstrap.min.css">
-        <!-- jquery.fancybox  -->
-        <link rel="stylesheet" href="CSS/jquery.fancybox.css">
-        <!-- animate -->
-        <link rel="stylesheet" href="CSS/animate.css">
-        <!-- Main Stylesheet -->
-        <link rel="stylesheet" href="CSS/main.css">
-        <!-- media-queries -->
-        <link rel="stylesheet" href="CSS/media-queries.css">
+		<!-- Fontawesome Icon font -->
+        <link rel="stylesheet" href="indexcss/font-awesome.min.css">
+		<!-- Twitter Bootstrap css -->
+        <link rel="stylesheet" href="indexcss/bootstrap.min.css">
+		<!-- jquery.fancybox  -->
+        <link rel="stylesheet" href="indexcss/jquery.fancybox.css">
+		<!-- animate -->
+        <link rel="stylesheet" href="indexcss/animate.css">
+		<!-- Main Stylesheet -->
+        <link rel="stylesheet" href="indexcss/main.css">
+		<!-- media-queries -->
+        <link rel="stylesheet" href="indexcss/media-queries.css">
 
-        <!-- Modernizer Script for old Browsers -->
-        <script src="JS/modernizr-2.6.2.min.js"></script>
+		<!-- Modernizer Script for old Browsers -->
+        <script src="indexjs/modernizr-2.6.2.min.js"></script>
         <style>
             #loginDiv{
                 height: 200px; 
@@ -314,7 +314,7 @@ require_once './db/dbConnection.php';
                     <div class="col-md-4 wow fadeInLeft" data-wow-duration="500ms">
                         <div class="service-item">
                             <div class="service-desc">
-                                <div style="background-image: url(img/pic.jpg); width: 250px; height: 300px;">
+                                <div style="background-image: url(uploads/architect/1.jpeg); width: 250px; height: 300px;">
 
                                 </div>
 
@@ -759,6 +759,25 @@ Some fun facts
 Contact Us
 ==================================== -->		
 
+        <?php
+        
+    $sql = "SELECT * FROM architect WHERE id=1;";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+	$add_no=$row["add_no"];
+	$add_street=$row["add_street"];
+	$add_city=$row["add_city"];
+	$email=$row["email"];
+	$mobile_no=$row["mobile_no"];
+	$land_no=$row["land_no"];
+        $location=$row["location"];
+    }
+}
+        
+        ?>
+        
         <section id="contact" class="contact">
             <div class="container">
                 <div class="row mb50">
@@ -776,13 +795,12 @@ Contact Us
                     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 wow fadeInLeft animated" data-wow-duration="500ms">
                         <div class="contact-address">
                             <h3>Our Address </h3>
-                            <font style="color:black;"><p>No.240/17E<br>
-                            Mahawatte,<br>
-                            Kadawala Road,<br>
-                            Battaramulla
+                            <font style="color:black;"><p>No.<?php echo $add_no;?><br>
+                            <?php echo $add_street;?>,<br>
+                            <?php echo $add_city;?>
                             </p></font>
-                            
-                            <font style="color:black;"><p>Phone:0112868652,0718223366</p></font>
+                            <br>
+                            <font style="color:black;"><p><?php echo $land_no;?> , <?php echo $mobile_no;?></p></font>
                             
                         </div>
                     </div>
@@ -792,8 +810,7 @@ Contact Us
                     <!-- footer social links -->
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 wow fadeInRight animated" data-wow-duration="500ms" data-wow-delay="600ms">
                         <ul class="footer-social">
-                            <font style="color:black;"><li>email: priyantha@sltnet.lk</li></font>
-                            <font style="color:black;"><li>email: ppremathilake@gmail.com</li></font>
+                            <font style="color:black;"><li>email: <?php echo $email;?></li></font>
                             <li></li>
                             <li></li>
                         </ul>
@@ -842,7 +859,7 @@ Register
                                 <div class="col-lg-6 col-md-12 text-center">
                                     <div class="service-box">
                                         <div style="display:inline-block;">
-                                            <img src="images/customer.jpg" style="height: 200px; width: 200px;border: 5px solid white;  border-radius:200px;" />
+                                            <img src="img/customer.jpg" style="height: 200px; width: 200px;border: 5px solid white;  border-radius:200px;" />
 
                                             <h1 style="color: black; font-size: 20px;">As a customer</h1><br>
                                             <div style="color: black; text-align: left; margin-left: 0px; width: 250px;height: 250px;">
@@ -948,7 +965,7 @@ Register
                                 <div class="col-lg-6 col-md-12 text-center">
                                     <div class="service-box">
                                         <div style="display:inline-block; ">
-                                            <img src="images/consultant.jpg" style="height: 200px; width: 200px;border: 5px solid white;  border-radius:200px;" />
+                                            <img src="img/consultant.jpg" style="height: 200px; width: 200px;border: 5px solid white;  border-radius:200px;" />
 
                                             <h1 style="color: black; font-size: 20px;">As a consultant</h1><br>
                                             <div style="color: black; text-align: left; margin-left: 0px; width: 250px; height: 250px;">
@@ -1114,34 +1131,34 @@ Register
 
             <!--
             End Login
-            ==================================== -->
-            <!-- Essential jQuery Plugins
-            ================================================== -->
-            <!-- Main jQuery -->
-            <script src="js/jquery-1.11.1.min.js"></script>
-            <!-- Single Page Nav -->
-            <script src="js/jquery.singlePageNav.min.js"></script>
-            <!-- Twitter Bootstrap -->
-            <script src="js/bootstrap.min.js"></script>
-            <!-- jquery.fancybox.pack -->
-            <script src="js/jquery.fancybox.pack.js"></script>
-            <!-- jquery.mixitup.min -->
-            <script src="js/jquery.mixitup.min.js"></script>
-            <!-- jquery.parallax -->
-            <script src="js/jquery.parallax-1.1.3.js"></script>
-            <!-- jquery.countTo -->
-            <script src="js/jquery-countTo.js"></script>
-            <!-- jquery.appear -->
-            <script src="js/jquery.appear.js"></script>
-            <!-- Contact form validation -->
-            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
-            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
-            <!-- Google Map -->
-            <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-            <!-- jquery easing -->
-            <script src="js/jquery.easing.min.js"></script>
-            <!-- jquery easing -->
-            <script src="js/wow.min.js"></script>
+        ==================================== -->
+		<!-- Essential jQuery Plugins
+		================================================== -->
+		<!-- Main jQuery -->
+        <script src="indexjs/jquery-1.11.1.min.js"></script>
+		<!-- Single Page Nav -->
+        <script src="indexjs/jquery.singlePageNav.min.js"></script>
+		<!-- Twitter Bootstrap -->
+        <script src="indexjs/bootstrap.min.js"></script>
+		<!-- jquery.fancybox.pack -->
+        <script src="indexjs/jquery.fancybox.pack.js"></script>
+		<!-- jquery.mixitup.min -->
+        <script src="indexjs/jquery.mixitup.min.js"></script>
+		<!-- jquery.parallax -->
+        <script src="indexjs/jquery.parallax-1.1.3.js"></script>
+		<!-- jquery.countTo -->
+        <script src="indexjs/jquery-countTo.js"></script>
+		<!-- jquery.appear -->
+        <script src="indexjs/jquery.appear.js"></script>
+		<!-- Contact form validation -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
+		<!-- Google Map -->
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<!-- jquery easing -->
+        <script src="indexjs/jquery.easing.min.js"></script>
+		<!-- jquery easing -->
+        <script src="indexjs/wow.min.js"></script>
             <script>
                 var wow = new WOW({
                     boxClass: 'wow', // animated element css class (default is wow)
@@ -1154,8 +1171,45 @@ Register
                 wow.init();
             </script> 
             <!-- Custom Functions -->
-            <script src="js/custom.js"></script>
+            <script src="indexjs/custom.js"></script>
+            <script>
+        
+        // ==========  START GOOGLE MAP ========== //
+function initialize() {
+    var myLatLng = new google.maps.LatLng(<?php echo $location;?>);
 
+    var mapOptions = {
+        zoom: 14,
+        center: myLatLng,
+        disableDefaultUI: false,
+        scrollwheel: false,
+        navigationControl: false,
+        mapTypeControl: false,
+        scaleControl: false,
+        draggable: true,
+        mapTypeControlOptions: {
+            mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'roadatlas']
+        }
+    };
+
+    var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        icon: 'img/location-icon.png',
+        title: '',
+    });
+
+}
+
+google.maps.event.addDomListener(window, "load", initialize);
+// ========== END GOOGLE MAP ========== //
+        
+        </script>    
+        
+        
             <script type="text/javascript">
                 $(function() {
                     /* ========================================================================= */
@@ -1256,6 +1310,8 @@ Register
                 }
 
             </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoS2uHtXLrjmwYWnUmWnFRUSV2BIrsW9g&callback=initMap"
+    async defer></script>
             <?php $conn->close(); ?>
     </body>
 </html>

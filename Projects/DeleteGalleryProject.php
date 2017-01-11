@@ -9,13 +9,13 @@ if (mysqli_query($conn, $sql)) {
 
     echo '<script>
 				alert("Project Deleted");
-				window.location = "../ArchitectManageProjects.php";
+				window.location = "../gallery.php";
 				
 			</script>';
 } else {
     echo '<script>
 				alert("Project not Deleted");
-                                window.location = "../ArchitectManageProjects1.php?id=' . $projectid . '";
+                                window.location = "../gallery1.php?id=' . $projectid . '";
 			</script>';
 }
 mysqli_close($conn);

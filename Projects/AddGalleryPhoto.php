@@ -41,12 +41,12 @@ if ($uploadOk == 0) {
         if (mysqli_query($conn, $sql)) {
             echo '<script>
 					alert("Sucessfully uploaded the photo");
-					window.location = "../ArchitectManageProjects1.php?id=' . $projectid . '";
+					window.location = "../gallery1.php?id=' . $projectid . '";
 				</script>';
         } else {
             echo '<script>
 					alert("Photo uploading failed");
-					window.location = "../ArchitectManageProjects1.php?id=' . $projectid . '";
+					window.location = "../gallery1.php?id=' . $projectid . '";
 				</script>';
         }
     } else {

@@ -25,7 +25,7 @@ if (mysqli_query($conn, $sql)) {
 } else {
     echo '<script>
 					alert("Could not add new award");
-					window.location = "../ArchitectManageAwards.php";
+					window.location = "../awards.php";
 				</script>';
 }
 

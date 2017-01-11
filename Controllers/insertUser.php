@@ -1,6 +1,7 @@
 <?php
 
-include ('../db/dbConnection.php');
+require_once '../db/dbConnection.php';
+
 
 $fname = $_POST['fname'];
 $mname = $_POST['mname'];
@@ -17,7 +18,7 @@ $psswd = $_POST['psswd'];
 
 $id = 0;
 
-$userId = mysqli_query($conn, "SELECT max(`id`) as x FROM `consultants`");
+$userId = mysqli_query($conn, "SELECT max(`id`) as x FROM `customer`");
 
 while ($rw = mysqli_fetch_assoc($userId)) {
     $id = $rw["x"];

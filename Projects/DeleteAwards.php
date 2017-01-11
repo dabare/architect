@@ -10,7 +10,7 @@ if (mysqli_query($conn, $sql)) {
 
     echo '<script>
 				alert("Award Deleted");
-				window.location = "../ArchitectManageAwards.php";
+				window.location = "../awards.php";
 				
 			</script>';
 } else {
