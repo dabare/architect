@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
 	$mobile_no=$row["mobile_no"];
 	$land_no=$row["land_no"];
 	$nic=$row["nic"];
-	
+	$status=$row["status"];
     
     $uname = $row["uname"];
     $location = $row["location"];
@@ -75,6 +75,10 @@ if ($result->num_rows > 0) {
                     <a href="editConsultantProfile.php"><i class="fa fa-edit"></i> <span class="nav-label">Edit Profile</span><span class="label label-warning pull-right"><?php echo $count;?></span></a>
                     
                 </li>
+                <li>
+                    <a href="ConsultantsAssignedProjects.php"><i class="fa fa-flask"></i> <span class="nav-label">Assigned Projects</span><span class="label label-warning pull-right"><?php echo $count;?></span></a>
+                    
+                </li>
                 
                 
             </ul>
@@ -109,7 +113,16 @@ if ($result->num_rows > 0) {
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
                     <h2>Profile</h2>
-                    
+                    <div class="pull-right">
+                        <?php
+                        if($status=="active"){
+                            echo '<input class="btn btn-primary" type="submit" value="Active" disabled="disabled" />';
+                        } else {
+                            echo '<input class="btn btn-danger" type="submit" value="Inctive" disabled="disabled" />';
+                        }
+                        ?>
+                        
+                    </div>
                 </div>
                 <div class="col-lg-2">
 

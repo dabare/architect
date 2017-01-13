@@ -67,41 +67,41 @@ $result = $conn->query($sql);
             <h5> <h5>Income Report for <?=$year?> <?=date("F",strtotime($year."-".$month."-01"))?></h5></h5> 
         </div>
         <div class="ibox-content">
-            <div class="col-lg-6">
-                <div class="col-lg-3">
-                    <strong>Industrial</strong>
-                </div>
-                <div class="col-lg-3">
-                    RS. <?=$iTotal?> /=
-                </div>
-            </div>
-            <br>
-            <div class="col-lg-6">
-                <div class="col-lg-3">
-                    <strong>Residential</strong>
-                </div>
-                <div class="col-lg-3">
-                    RS. <?=$rTotal?> /=
-                </div>
-            </div>
-            <br>
-            <div class="col-lg-6">
-                <div class="col-lg-3">
-                    <strong>Community</strong>
-                </div>
-                <div class="col-lg-3">
-                    RS. <?=$cTotal?> /=
-                </div>
-            </div>
-            <br><br>
-            <div class="col-lg-6">
-                <div class="col-lg-3">
-                    <strong>TOTAL</strong>
-                </div>
-                <div class="col-lg-3">
-                    <strong> RS. <?=$cTotal+$rTotal+$iTotal?> /=</strong>
-                </div>
-            </div>
+            <table class="table">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Amount</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                
+                                
+                            <tr>
+                                <td><strong>Industrial</strong></td>
+                                <td>RS. <?=number_format($iTotal)?> /=</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Residential</strong></td>
+                                <td> RS. <?=number_format($rTotal)?> /=</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Community</strong></td>
+                                <td> RS. <?=number_format($cTotal)?> /=</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>TOTAL</strong></td>
+                                <td><strong> RS. <?=number_format($cTotal+$rTotal+$iTotal)?> /=</strong></td>
+                            </tr>
+                           
+                            </tbody>
+                        </table>
+
+            
             <br>
         </div>
     </div>
@@ -133,7 +133,7 @@ $result = $conn->query($sql);
                                 
                             <tr>
                                 <td><?=$row["id"]?></td>
-                                <td>RS. <?=$row["amount"]?> /=</td>
+                                <td>RS. <?=number_format($row["amount"])?> /=</td>
                                 <td><?=$row["date"]?></td>
                                 <td><?=$row["title"]?></td>
                             </tr>
@@ -176,7 +176,7 @@ $result = $conn->query($sql);
                                 
                             <tr>
                                 <td><?=$row["id"]?></td>
-                                <td>RS. <?=$row["amount"]?> /=</td>
+                                <td>RS. <?=number_format($row["amount"])?> /=</td>
                                 <td><?=$row["date"]?></td>
                                 <td><?=$row["title"]?></td>
                             </tr>
@@ -219,7 +219,7 @@ $result = $conn->query($sql);
                                 
                             <tr>
                                 <td><?=$row["id"]?></td>
-                                <td>RS. <?=$row["amount"]?> /=</td>
+                                <td>RS. <?=number_format($row["amount"])?> /=</td>
                                 <td><?=$row["date"]?></td>
                                 <td><?=$row["title"]?></td>
                             </tr>

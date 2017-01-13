@@ -136,7 +136,6 @@ $_SESSION["id"] = 1;
                     <div class="ibox-content" style="height: 65vh;">
                         <div class="full-height-scroll" >
                         <?php
-                            require_once './db/dbConnection.php';
                             
                             
                             $sql = "SELECT CONCAT (customer.fname , '_', customer.lname ) AS det , project.priority AS priority , project.city AS city , project.progress as prog , project.title as title , project.id as id FROM project INNER JOIN customer ON project.customer_id=customer.id WHERE project.category='Industrial' AND project.progress!=100 AND project.architect_id='1' AND project.status='Active' ORDER BY priority DESC , city ASC;";

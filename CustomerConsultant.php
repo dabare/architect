@@ -67,11 +67,22 @@ if ($result->num_rows > 0) {
                         
                     </div>
                 </li>
+                <?php
+                $sql = "select COUNT(post.id) as count from post left join project on project.id = post.project_id where post.seen = 0 and project.customer_id = ".$_SESSION["id"]." and post.byy = \"Architect\";";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        $count = $row["count"] ;
+                    }
+                }
+                ?>
                 <li>
-                    <a href="CustomerNotification.php"><i class="fa fa-globe"></i> <span class="nav-label">Notifications</span></a>
+                    <a href="CustomerNotification.php"><i class="fa fa-globe"></i> <span class="nav-label">Notifications</span><span class="label label-warning pull-right"><?php echo $count;?></span></a>
                 </li>
                <li>
-                    <a href="CustomerEditProfile.php"><i class="fa fa-edit"></i> <span class="nav-label">Edit Profile</span><span class="label label-warning pull-right"><?php echo $count;?></span></a>
+                    <a href="CustomerEditProfile.php"><i class="fa fa-edit"></i> <span class="nav-label">Edit Profile</span></a>
                     
                 </li>
                 
@@ -143,7 +154,7 @@ if ($result->num_rows > 0) {
                                 <?php
                             
                             
-                            $sql = "SELECT COUNT(id) as count FROM consultants WHERE status='active';";
+                            $sql = "SELECT COUNT(id) as count FROM (select *  from consultants WHERE status='active') as t1 where lname like '%$search%' or fname like '%$search%' or email like '%$search%' or mobile_no like '%$search%' or add_city like '%$search%' or category like '%$search%' ORDER BY status ASC , lname ASC ;;";
                             $result = $conn->query($sql);
                             
                             
@@ -172,7 +183,7 @@ if ($result->num_rows > 0) {
                                                     <?php
                             
                             
-                            $sql = "SELECT * FROM consultants WHERE status='active' ORDER BY lname;";
+                            $sql = "SELECT * FROM  (select *  from consultants WHERE status='active') as t1 where lname like '%$search%' or fname like '%$search%' or email like '%$search%' or mobile_no like '%$search%' or add_city like '%$search%' or category like '%$search%'  ORDER BY status ASC , lname ASC ;;";
                             $result = $conn->query($sql);
                             
                             
@@ -237,7 +248,8 @@ if ($result->num_rows > 0) {
                                 <?php
                             
                             $active = "active";
-                            $sql = "SELECT * FROM consultants ORDER BY lname;";
+                            $sql = "SELECT * FROM  (select *  from consultants WHERE status='active') as t1 where lname like '%$search%' or fname like '%$search%' or email like '%$search%' or mobile_no like '%$search%' or add_city like '%$search%' or category like '%$search%'  ORDER BY status ASC , lname ASC ;;";
+                            
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
                         

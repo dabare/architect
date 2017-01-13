@@ -4,15 +4,11 @@
 <?php
 session_start();
 require_once './db/dbConnection.php';
-
-    
-    
     $id = $_SESSION["id"];
-    $sql = "SELECT * FROM customer WHERE id=" . $id . ";";
+     $sql = "SELECT * FROM customer WHERE id=" . $id . ";";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
     while ($row = $result->fetch_assoc()) {
         $id = $row["id"];
         $fname=$row["fname"];
@@ -66,11 +62,22 @@ if ($result->num_rows > 0) {
                         
                     </div>
                 </li>
+                <?php
+                $sql = "select COUNT(post.id) as count from post left join project on project.id = post.project_id where post.seen = 0 and project.customer_id = ".$_SESSION["id"]." and post.byy = \"Architect\";";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        $count = $row["count"] ;
+                    }
+                }
+                ?>
                 <li class="active">
-                    <a href="CustomerNotification.php"><i class="fa fa-globe"></i> <span class="nav-label">Notifications</span></a>
+                    <a href="CustomerNotification.php"><i class="fa fa-globe"></i> <span class="nav-label">Notifications</span><span class="label label-warning pull-right"><?php echo $count;?></span></a>
                 </li>
                 <li>
-                    <a href="CustomerEditProfile.php"><i class="fa fa-edit"></i> <span class="nav-label">Edit Profile</span><span class="label label-warning pull-right"><?php echo $count;?></span></a>
+                    <a href="CustomerEditProfile.php"><i class="fa fa-edit"></i> <span class="nav-label">Edit Profile</span></a>
                     
                 </li>
                 
@@ -128,9 +135,10 @@ if ($result->num_rows > 0) {
                             </a>
                         </div>
                     </div>
-                    <div class="ibox-content">
-                        <?php
-                            $sql = 'select  project.customer_id , project.id , project.title , project.city , project.category from post left join project on project.id = post.project_id where post.seen = 0 and project.customer_id = "'.$_SESSION["id"].'" and post.byy = "Architect" and project.category="Industrial";';
+                        <div class="ibox-content" style="height: 65vh;">
+                        <div class="full-height-scroll" >
+                         <?php
+                            $sql = 'select project.id , project.title , project.priority as priority, project.city , project.category from post left join project on project.id = post.project_id where post.seen = 0 and project.customer_id = "'.$_SESSION["id"].'" and post.byy = "Architect" and project.category="Industrial" order by progress ASC ;';
                         
                         
                             $result = $conn->query($sql);
@@ -140,20 +148,28 @@ if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
                                     
                                     
+                                    $sql = "SELECT * FROM architect WHERE id=1;";
+                                    $resultt = $conn->query($sql);
+
+                                    if ($resultt->num_rows > 0) {
+                                        while ($roww = $resultt->fetch_assoc()) {
+                                            $Name = $roww["lname"] . "_" . $roww["fname"];
+                                        }
+                                    }
                                     
                                     
                                     
                                     echo '
                                     <div class="alert alert-success alert-dismissable">
-                                    <a class="alert-link" href="CustomerViewProject.php?id='.$row["id"].'">
+                                     <a class="alert-link" href="CustomerViewProject.php?id='.$row["id"].'">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                                        '.Architect.' Posted in '.$row["title"].' at '.$row["city"].'.</a>
+                                        '.$Name.' Posted in '.$row["title"].' at '.$row["city"].'.</a>
                                     </div>
                                     ';
                                 }
                             }
                             ?>
-                        
+                            </div>
                     </div>
                 </div>
             </div>
@@ -167,9 +183,10 @@ if ($result->num_rows > 0) {
                             </a>
                         </div>
                     </div>
-                    <div class="ibox-content">
-                        <?php
-                            $sql = 'select  project.customer_id , project.id , project.title , project.city , project.category from post left join project on project.id = post.project_id where post.seen = 0 and project.customer_id = "'.$_SESSION["id"].'" and post.byy = "Architect" and project.category="Residential";';
+                    <div class="ibox-content" style="height: 65vh;">
+                        <div class="full-height-scroll" >
+                       <?php
+                            $sql = 'select project.id , project.title , project.priority as priority, project.city , project.category from post left join project on project.id = post.project_id where post.seen = 0 and project.customer_id = "'.$_SESSION["id"].'" and post.byy = "Architect" and project.category="Residential" order by progress ASC ;';
                         
                         
                             $result = $conn->query($sql);
@@ -179,6 +196,14 @@ if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
                                     
                                     
+                                    $sql = "SELECT * FROM architect WHERE id=1;";
+                                    $resultt = $conn->query($sql);
+
+                                    if ($resultt->num_rows > 0) {
+                                        while ($roww = $resultt->fetch_assoc()) {
+                                            $Name = $roww["lname"] . "_" . $roww["fname"];
+                                        }
+                                    }
                                     
                                     
                                     
@@ -186,13 +211,13 @@ if ($result->num_rows > 0) {
                                     <div class="alert alert-info alert-dismissable">
                                     <a class="alert-link" href="CustomerViewProject.php?id='.$row["id"].'">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                                        '.Architect.' Posted in '.$row["title"].' at '.$row["city"].'.</a>
+                                        '.$Name.' Posted in '.$row["title"].' at '.$row["city"].'.</a>
                                     </div>
                                     ';
                                 }
                             }
                             ?>
-                        
+                        </div>
                     </div>
                 </div>
             </div>
@@ -206,10 +231,10 @@ if ($result->num_rows > 0) {
                             </a>
                         </div>
                     </div>
-                    
-                    <div class="ibox-content">
+                    <div class="ibox-content" style="height: 65vh;">
+                        <div class="full-height-scroll" >
                         <?php
-                            $sql = 'select  project.customer_id , project.id , project.title , project.city , project.category from post left join project on project.id = post.project_id where post.seen = 0 and project.customer_id = "'.$_SESSION["id"].'" and post.byy = "Architect" and project.category="Community";';
+                            $sql = 'select project.id , project.title , project.priority as priority, project.city , project.category from post left join project on project.id = post.project_id where post.seen = 0 and project.customer_id = "'.$_SESSION["id"].'" and post.byy = "Architect" and project.category="Community" order by progress ASC ;';
                         
                         
                             $result = $conn->query($sql);
@@ -219,14 +244,21 @@ if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
                                     
                                     
-                                    
+                                    $sql = "SELECT * FROM architect WHERE id=1;";
+                                    $resultt = $conn->query($sql);
+
+                                    if ($resultt->num_rows > 0) {
+                                        while ($roww = $resultt->fetch_assoc()) {
+                                            $Name = $roww["lname"] . "_" . $roww["fname"];
+                                        }
+                                    }
                                     
                                     
                                     echo '
                                     <div class="alert alert-warning alert-dismissable">
                                     <a class="alert-link" href="CustomerViewProject.php?id='.$row["id"].'">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                                        '.Architect.' Posted in '.$row["title"].' at '.$row["city"].'.</a>
+                                        '.$Name.' Posted in '.$row["title"].' at '.$row["city"].'.</a>
                                     </div>
                                     ';
                                 }
@@ -236,7 +268,7 @@ if ($result->num_rows > 0) {
                     </div>
                     
                     
-                    
+                    </div>
                     
                     
                     

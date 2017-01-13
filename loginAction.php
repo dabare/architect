@@ -49,7 +49,7 @@ if (isset($_POST['login'])) {
 
     //search customer
 
-    $sel_customer = "select * from customer where uname='$username' AND passwd='$password'";
+    $sel_customer = "select * from customer where uname='$username' AND passwd='$password' AND (status != 'inactive' or status is null);";
 
     $run_customer = mysqli_query($conn, $sel_customer);
 

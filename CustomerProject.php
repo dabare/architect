@@ -4,15 +4,11 @@
 <?php
 session_start();
 require_once './db/dbConnection.php';
-
-    
-    
-    $id = $_SESSION["id"];
-    $sql = "SELECT * FROM customer WHERE id=" . $id . ";";
+$id = $_SESSION["id"];
+ $sql = "SELECT * FROM customer WHERE id=" . $id . ";";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
     while ($row = $result->fetch_assoc()) {
         $id = $row["id"];
         $fname=$row["fname"];
@@ -34,6 +30,7 @@ if ($result->num_rows > 0) {
     }
 }
 ?>
+
 <head>
 
     <meta charset="utf-8">
@@ -66,11 +63,22 @@ if ($result->num_rows > 0) {
                         
                     </div>
                 </li>
+                  <?php
+                $sql = "select COUNT(post.id) as count from post left join project on project.id = post.project_id where post.seen = 0 and project.customer_id = ".$_SESSION["id"]." and post.byy = \"Architect\";";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        $count = $row["count"] ;
+                    }
+                }
+                ?>
                 <li>
-                    <a href="CustomerNotification.php"><i class="fa fa-globe"></i> <span class="nav-label">Notifications</span></a>
+                    <a href="CustomerNotification.php"><i class="fa fa-globe"></i> <span class="nav-label">Notifications</span><span class="label label-warning pull-right"><?php echo $count;?></span></a>
                 </li>
                 <li>
-                    <a href="CustomerEditProfile.php"><i class="fa fa-edit"></i> <span class="nav-label">Edit Profile</span><span class="label label-warning pull-right"><?php echo $count;?></span></a>
+                    <a href="CustomerEditProfile.php"><i class="fa fa-edit"></i> <span class="nav-label">Edit Profile</span></a>
                     
                 </li>
                 
@@ -125,12 +133,13 @@ if ($result->num_rows > 0) {
                         <h5>Industrial</h5>
                         
                     </div>
-                    <div class="ibox-content">
+                    <div class="ibox-content" style="height: 65vh;">
+                        <div class="full-height-scroll" >
                         <?php
                             require_once './db/dbConnection.php';
                             
                             
-                            $sql = "SELECT * FROM project WHERE category='Industrial' AND customer_id='$id';";
+                            $sql = "SELECT CONCAT (customer.fname , '_', customer.lname ) AS det , project.priority AS priority , project.city AS city , project.progress as prog , project.title as title , project.id as id FROM project INNER JOIN customer ON project.customer_id=customer.id WHERE project.category='Industrial' AND  project.customer_id='$id' AND project.status='Active' ORDER BY project.progress ASC;";
                             $result = $conn->query($sql);
                             
                             
@@ -138,7 +147,6 @@ if ($result->num_rows > 0) {
                             if ($result->num_rows > 0) {
                         
                                 while ($row = $result->fetch_assoc()) {
-                                    $x=$row["progress"];
                                     echo '<div class="alert alert-success alert-dismissable">';
                                     echo '<a  href = "CustomerViewProject.php?id=' . $row["id"] . '">
                                     <div class="pull-right"><div class="m-t-sm small">(' . $row["city"] . ')</div></div>
@@ -147,25 +155,24 @@ if ($result->num_rows > 0) {
                                     
                                     
                                     
-                                    <div class="m-t-sm small">' . $row["det"] . '</div>
+                                    <div class="m-t-sm small">' . $row["det"] . '</div>';
                                     
-                                    <div class="progress progress-mini">';
-                                    if($x!=100){
-                                        echo'<div style="width: ' . $row["progress"] . '%;" class="progress-bar progress-bar-danger"></div>';
+                                    if($row["prog"]!=100){
+                                   echo '<div class="progress progress-mini">
+                                    <div style="width: ' . $row["prog"] . '%;" class="progress-bar progress-bar-danger"></div>
+                                    </div>';
+                                    }else{
+                                        echo '<strong class="alert-danger">Completed</strong>';
                                     }
-                                    else{
-                                        echo '<div style="width: ' . $row["progress"] . '%;" class="progress-bar progress-bar-success"></div>';
-                                    }    
-                                    echo'</div>
                                     
-                                    </a>';
-                                    echo '</div>';
+                                    echo '</a></div>';
                                 }
                             }
                             
                             
                         ?> 
-                        
+                            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -176,12 +183,13 @@ if ($result->num_rows > 0) {
                         
                     </div>
                     
-                          <div class="ibox-content">
+                          <div class="ibox-content" style="height: 65vh;">
+                        <div class="full-height-scroll" >
                         <?php
                             require_once './db/dbConnection.php';
                             
                             
-                            $sql = "SELECT * FROM project WHERE category='Residential' AND customer_id='$id';";
+                            $sql = "SELECT CONCAT (customer.fname , '_', customer.lname ) AS det , project.priority AS priority , project.city AS city , project.progress as prog , project.title as title , project.id as id FROM project INNER JOIN customer ON project.customer_id=customer.id WHERE project.category='Residential' AND  project.customer_id='$id' AND project.status='Active' ORDER BY project.progress ASC;";
                             $result = $conn->query($sql);
                             
                             
@@ -189,8 +197,7 @@ if ($result->num_rows > 0) {
                             if ($result->num_rows > 0) {
                         
                                 while ($row = $result->fetch_assoc()) {
-                                    $x=$row["progress"];
-                                    echo '<div class="alert alert-success alert-dismissable">';
+                                    echo '<div class="alert alert-info alert-dismissable">';
                                     echo '<a  href = "CustomerViewProject.php?id=' . $row["id"] . '">
                                     <div class="pull-right"><div class="m-t-sm small">(' . $row["city"] . ')</div></div>
                                     
@@ -198,25 +205,23 @@ if ($result->num_rows > 0) {
                                     
                                     
                                     
-                                    <div class="m-t-sm small">' . $row["det"] . '</div>
+                                    <div class="m-t-sm small">' . $row["det"] . '</div>';
                                     
-                                    <div class="progress progress-mini">';
-                                    if($x!=100){
-                                        echo'<div style="width: ' . $row["progress"] . '%;" class="progress-bar progress-bar-danger"></div>';
+                                    if($row["prog"]!=100){
+                                   echo '<div class="progress progress-mini">
+                                    <div style="width: ' . $row["prog"] . '%;" class="progress-bar progress-bar-danger"></div>
+                                    </div>';
+                                    }else{
+                                        echo '<strong class="alert-danger">Completed</strong>';
                                     }
-                                    else{
-                                        echo '<div style="width: ' . $row["progress"] . '%;" class="progress-bar progress-bar-success"></div>';
-                                    }
-                                    echo'</div>
                                     
-                                    </a>';
-                                    echo '</div>';
+                                    echo '</a></div>';
                                 }
                             }
                             
                             
                         ?> 
-                        
+                              </div>
                     </div> 
                     
                 </div>
@@ -227,12 +232,13 @@ if ($result->num_rows > 0) {
                         <h5>Community</h5>
                         
                     </div>
-                    <div class="ibox-content">
+                    <div class="ibox-content" style="height: 65vh;">
+                        <div class="full-height-scroll" >
                         <?php
                             require_once './db/dbConnection.php';
                             
                             
-                            $sql = "SELECT * FROM project WHERE category='Community' AND customer_id='$id';";
+                            $sql = "SELECT CONCAT (customer.fname , '_', customer.lname ) AS det , project.priority AS priority , project.city AS city , project.progress as prog , project.title as title , project.id as id FROM project INNER JOIN customer ON project.customer_id=customer.id WHERE project.category='Community' AND  project.customer_id='$id' AND project.status='Active' ORDER BY project.progress ASC;";
                             $result = $conn->query($sql);
                             
                             
@@ -240,8 +246,7 @@ if ($result->num_rows > 0) {
                             if ($result->num_rows > 0) {
                         
                                 while ($row = $result->fetch_assoc()) {
-                                    $x=$row["progress"];
-                                    echo '<div class="alert alert-success alert-dismissable">';
+                                    echo '<div class="alert alert-warning alert-dismissable">';
                                     echo '<a  href = "CustomerViewProject.php?id=' . $row["id"] . '">
                                     <div class="pull-right"><div class="m-t-sm small">(' . $row["city"] . ')</div></div>
                                     
@@ -249,25 +254,23 @@ if ($result->num_rows > 0) {
                                     
                                     
                                     
-                                    <div class="m-t-sm small">' . $row["det"] . '</div>
+                                    <div class="m-t-sm small">' . $row["det"] . '</div>';
                                     
-                                    <div class="progress progress-mini">';
-                                    
-                                    if($x!=100){
-                                        echo'<div style="width: ' . $row["progress"] . '%;" class="progress-bar progress-bar-danger"></div>';
+                                    if($row["prog"]!=100){
+                                   echo '<div class="progress progress-mini">
+                                    <div style="width: ' . $row["prog"] . '%;" class="progress-bar progress-bar-danger"></div>
+                                    </div>';
+                                    }else{
+                                        echo '<strong class="alert-danger">Completed</strong>';
                                     }
-                                    else{
-                                        echo '<div style="width: ' . $row["progress"] . '%;" class="progress-bar progress-bar-success"></div>';
-                                    }
-                                    echo'</div>
                                     
-                                    </a>';
-                                    echo '</div>';
+                                    echo '</a></div>';
                                 }
                             }
                             
                             
                         ?> 
+                        </div>
                     </div>
                             
                     

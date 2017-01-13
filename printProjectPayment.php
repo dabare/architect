@@ -63,21 +63,21 @@ $sql = "SELECT title FROM project WHERE id=" . $id . ";";
                             <tbody>
                                 
                                 <?php
-                                
+                                $tot = 0;
 $sql = "SELECT * FROM invoice WHERE project_id=" . $id . " ORDER BY date DESC , id DESC;";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
                         
                         while ($row = $result->fetch_assoc()) {
-                           
+                           $tot += $row["amount"];
                             
                             ?>
                                 
                             <tr>
                                 <td><?=$row["id"]?></td>
                                 <td><?=$row["type"]." ".$row["chequeno"]?></td>
-                                <td><?=$row["amount"]?></td>
+                                <td><?="RS. ".number_format($row["amount"])."/="?></td>
                                 <td><?=$row["date"]?></td>
                                 <td><?=$row["description"]?></td>
                             </tr>
@@ -85,6 +85,13 @@ $sql = "SELECT * FROM invoice WHERE project_id=" . $id . " ORDER BY date DESC , 
                                 <?php
                         }
                     }
+                            echo "<tr>
+                                <td><strong>Total</strong></td>
+                                <td></td>
+                                <td><strong>RS. $tot/=</strong></td>
+                                <td></td>
+                                <td></td>
+                            </tr>";
                                 ?>
                             
                             </tbody>

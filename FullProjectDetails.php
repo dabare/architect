@@ -167,15 +167,8 @@ if ($result->num_rows > 0) {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Customer ID:</label>
-
-                                        <div class="col-sm-7"><input type='number'value="<?php echo $id;?>" disabled="disabled" class="form-control"></div>
-                                            
-                                            <input type="hidden" name="id" value="<?php echo $id;?>">
-                                        </div>                                    
-                                    </div>  
+                                    <input type="hidden" name="id" value="<?php echo $id;?>">
+                                     
                                     
                                     <div class="col-sm-6">
                                         <div class="form-group"><label class="col-sm-3 control-label">Title:</label>
@@ -188,11 +181,14 @@ if ($result->num_rows > 0) {
                                         <div class="col-sm-7"><input value="<?php echo date('Y-m-d',strtotime($pdate));?>" type="date" name="pdate" required class="form-control"></div>
                                             </div>
                                     </div>  
-                                    <div class="col-lg-6">
+                                    <div class="col-sm-6">
                                         <div class="form-group"><label class="col-sm-3 control-label">Priority:</label>
                                 
                                     <div class="col-sm-7"><input value="<?=$priority?>" placeholder="1-5" type="number" min="1" max="5" name="priority" required class="form-control"></div>
                                     </div>
+                                    </div> 
+                                    <div class="col-lg-6">
+                                        
                                         
                                         
                                 <div class="form-group"><label class="col-sm-3 control-label">Description:</label>

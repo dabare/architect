@@ -137,7 +137,7 @@ $_SESSION["id"] = 1;
                             $search = $_GET["search"];
                                 
                                 
-                            $sql = "SELECT COUNT(id) as count FROM (select * from customer) where lname like '%$search%' or fname like '%$search%' or email like '%$search%' or mobile_no like '%$search%' or add_city like '%$search%';";
+                            $sql = "SELECT COUNT(id) as count FROM (select * from customer where status != 'inactive' or status is null ) as t1 where lname like '%$search%' or fname like '%$search%' or email like '%$search%' or mobile_no like '%$search%' or add_city like '%$search%';";
                             $result = $conn->query($sql);
                             
                             
@@ -173,7 +173,7 @@ $_SESSION["id"] = 1;
                                                     
                                                     <?php
                                                     
-                            $sql = "SELECT * FROM customer where lname like '%$search%' or fname like '%$search%' or email like '%$search%' or mobile_no like '%$search%' or add_city like '%$search%' ORDER BY lname;";
+                            $sql = "SELECT * FROM (select * from customer where status != 'inactive' or status is null ) as t1 where lname like '%$search%' or fname like '%$search%' or email like '%$search%' or mobile_no like '%$search%' or add_city like '%$search%' ORDER BY lname;";
                             $result = $conn->query($sql);
                             
                             
@@ -230,7 +230,7 @@ $_SESSION["id"] = 1;
                                 
                                 
                                 <?php
-                            $sql = "SELECT * FROM customer where lname like '%$search%' or fname like '%$search%' or email like '%$search%' or mobile_no like '%$search%' or add_city like '%$search%' ORDER BY lname;";
+                            $sql = "SELECT * FROM (select * from customer where status != 'inactive' or status is null ) as t1 where lname like '%$search%' or fname like '%$search%' or email like '%$search%' or mobile_no like '%$search%' or add_city like '%$search%' ORDER BY lname;";
                                 
                             $active = "active";
                             $result = $conn->query($sql);

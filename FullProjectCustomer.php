@@ -127,7 +127,7 @@ if ($result->num_rows > 0) {
                                 Full Project Details
                             </p>
                             <div class="ibox-content">
-                            <form method="POST" name="register" action='Projects/updateProject.php' class="form-horizontal">
+                            <form method="POST" name="register" action='Projects/updateProjectLocation.php' class="form-horizontal">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
@@ -149,7 +149,7 @@ if ($result->num_rows > 0) {
 
                                         <div class="col-sm-7"><input type='number'value="<?php echo $id;?>" disabled="disabled" class="form-control"></div>
                                             
-                                            <input type="hidden" name="id" value="<?php echo $id;?>" disabled="disabled">
+                                            <input type="hidden" name="id" value="<?php echo $id;?>" >
                                         </div>                                    
                                     </div>  
                                     
@@ -165,10 +165,8 @@ if ($result->num_rows > 0) {
                                             </div>
                                     </div>  
                                     <div class="col-lg-6">
-                                        <div class="form-group"><label class="col-sm-3 control-label">Priority:</label>
-                                
-                                    <div class="col-sm-7"><input value="<?=$priority?>" placeholder="1-5" type="number" min="1" max="5" name="priority" disabled="disabled" required class="form-control"></div>
-                                    </div>
+                                        
+                                       
                                         
                                         
                                 <div class="form-group"><label class="col-sm-3 control-label">Description:</label>
@@ -199,7 +197,7 @@ if ($result->num_rows > 0) {
                                     
                                     
                                      <div class="col-sm-6">
-                            <div class="pull-right"></div>
+                            <div class="pull-right"> <div class="pull-right"><input type="submit" class="btn btn-primary" value="Save"></div></div>
                                     </div>
                                 </div>
                                     <div class="col-lg-6">
