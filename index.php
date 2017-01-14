@@ -796,11 +796,11 @@ if ($result->num_rows > 0) {
                         <div class="contact-address">
                             <h3>Our Address </h3>
                             <font style="color:black;"><p>No.<?php echo $add_no;?><br>
-                            <?php echo $add_street;?><br>
+                            <?php echo $add_street;?>,<br>
                             <?php echo $add_city;?>
                             </p></font>
                             <br>
-                            <font style="color:black;"><p><?php echo $land_no;?> <?php echo $mobile_no;?></p></font>
+                            <font style="color:black;"><p><?php echo $land_no;?> , <?php echo $mobile_no;?></p></font>
                             
                         </div>
                     </div>
@@ -860,9 +860,7 @@ Register
                                     <div class="service-box">
                                         <div style="display:inline-block;">
                                             <img src="img/customer.jpg" style="height: 200px; width: 200px;border: 5px solid white;  border-radius:200px;" />
-
-                                            <!-- <h1 style="color: black; font-size: 20px;">As a customer</h1> --><br><br>
-
+                                            <br><br> 
                                             <center>
                                                             <!-- Open The Modal -->
                                                             <button class="btn btn-success" id="myBtn"><b>As a Customer</b></button></center>
@@ -888,6 +886,7 @@ Register
                                                                             <tr>
                                                                                 <td><b>First Name:</b></td>
                                                                                 <td><input type='text' name='fname' required/></td>
+
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>Middle Name:</b></td>
@@ -951,16 +950,18 @@ Register
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <br>
-
-                                            <div style="color: black; text-center: left; margin-left: 0px; width: 250px;height: 250px;">
-                                                <b><i>Take few seconds to click here, you won't regret for it</b></i><br>
-                                                <!-- <b><a style="font-size: 18px; color: #4CAF50;"><br><br>
+                                            
+<!--                                            <h1 style="color: black; font-size: 20px;">As a customer</h1> -->
+                                            <br>
+                                           
+                                            <div style="color: black; text-align: center; margin-left: 0px; width: 250px;height: 250px;"><b><i>
+                                                        Take few seconds to click here, you won't regret for it</b></i><br>
+<!--                                                <b><a style="font-size: 18px; color: #4CAF50;"><br><br>
                                                          
 
 
 
-                                                    </a></b> -->
+                                                    </a></b>-->
                                             </div>
 
                                         </div>
@@ -972,13 +973,11 @@ Register
                                     <div class="service-box">
                                         <div style="display:inline-block; ">
                                             <img src="img/consultant.jpg" style="height: 200px; width: 200px;border: 5px solid white;  border-radius:200px;" />
-
-                                            <!-- <h1 style="color: black; font-size: 20px;">As a consultant</h1> --><br><br>
-
+                                            <br><br>
                                             <center>
 
                                                             <!-- Open The Modal -->
-                                                            <button class="btn btn-success btn-dark" id="myBtn2"><b>As a Consultant</b></button> </center>
+                                                            <button class="btn btn-success" id="myBtn2"><b>As a Consultant</b></button> </center>
 
                                                         <!-- Modal -->
                                                         <div id="myModal2" class="modal">
@@ -1067,15 +1066,16 @@ Register
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <br>
-
-
+                                            
+<!--                                            <h1 style="color: black; font-size: 20px;">As a consultant</h1>-->
+                                            <br>
+                                           
                                             <div style="color: black; text-align: center; margin-left: 0px; width: 250px; height: 250px;"><b><i>
-                                                If you are a specialist in construction field its your chance to become a member of our family.</b></i>
-                                                <!-- <b><a style="font-size: 18px; color: #4CAF50;"><br><br>
+                                                        If you are a specialist in construction field its your chance to become a member of our family.</b></i>
+<!--                                                <b><a style="font-size: 18px; color: #4CAF50;"><br><br>
                                                         
 
-                                                    </a></b> -->
+                                                    </a></b>-->
                                             </div>
 
                                         </div>
