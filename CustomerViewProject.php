@@ -549,7 +549,7 @@ if ($TotalPayment == "") {
                                 ';
 
                                         echo '
-                <form onsubmit="return PostDeleteConfirmeForm()" action="Projects/DeleteClientPost.php" method="post">
+                <form onsubmit="return PostDeleteConfirmeForm()" action="Projects/DeleteProjectPostClient.php" method="post">
                         <input type="text" hidden="true" name="postid" value="' . $postid . '">
                         <input type="text" hidden="true" name="proid" value="' . $id . '">';
                                     }

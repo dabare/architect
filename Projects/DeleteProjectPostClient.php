@@ -28,12 +28,12 @@ if (mysqli_query($conn, $sql)) {
 
     echo '<script>
 				alert("Post ' . $postid . ' Deleted");
-				window.location = "../CustomerMyProject.php?id=' . $projectid . '";
+				window.location = "../CustomerViewProject.php?id=' . $projectid . '";
 			</script>';
 } else {
     echo '<script>
 				alert("Post ' . $postid . ' not Deleted");
-				window.location = "../CustomerMyProject.php?id=' . $projectid . '";
+				window.location = "../CustomerViewProject.php?id=' . $projectid . '";
 			</script>';
 }
 ?>

@@ -10,7 +10,7 @@ if (mysqli_query($conn, $sql)) {
 
     echo '<script>
 				alert("Project Deleted");
-				window.location = "../ArchitectOnGoingProjects.php";
+				window.location = "../onGoingProjects.php";
 				
 			</script>';
 } else {

@@ -950,48 +950,6 @@ if ($TotalPayment == "") {
                             mysqli_query($conn, $sql);
                             ?>
 
-                            <script>
-                                function PostDeleteConfirmeForm() {
-                                    if (confirm("Confirm delete post") == true) {
-                                        return true;
-
-                                    } else {
-                                        return false;
-                                    }
-                                }
-
-
-                                function deleteProject() {
-                                    if (confirm("Confirm delete Project ") == true) {
-
-
-                                        var form = document.createElement("form");
-                                        form.setAttribute("method", "post");
-                                        form.setAttribute("action", "Projects/DeleteProject.php");
-
-
-
-
-                                        var pid = document.createElement("input");
-                                        pid.setAttribute("type", "hidden");
-                                        pid.setAttribute("name", "prid");
-                                        pid.setAttribute("value", <?php echo $id ?>);
-
-
-                                        form.appendChild(pid);
-
-
-
-
-                                        document.body.appendChild(form);
-                                        form.submit();
-                                    } else {
-
-                                    }
-
-                                }
-                            </script>
-
 
                         </div>
                     </div>

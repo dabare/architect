@@ -6,9 +6,6 @@ require_once '../db/dbConnection.php';
 
 $id = $_POST['id'];
 
-
-echo $id;
-
 $sql = "UPDATE  customer set status = 'inactive'  WHERE id='" . $id . "';";
 if (mysqli_query($conn, $sql)) {
 
