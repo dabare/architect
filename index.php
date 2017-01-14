@@ -256,9 +256,9 @@ require_once './db/dbConnection.php';
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
-
+                    
                     <!-- single slide -->
-                    <div class="col-xs-12 item active img-responsive" style="background-image: url(img/home.jpg);">
+                    <div class="item active" style="background-image: url(img/home.jpg); background-repeat: no-repeat; background-size:100% 100%;">
                         <div class="carousel-caption">
 
                         </div>
@@ -267,7 +267,7 @@ require_once './db/dbConnection.php';
                     <!-- end single slide -->
 
                     <!-- single slide -->
-                    <div class="col-xs-12 item img-responsive" style="background-image: url(img/banner.jpg);">
+                    <div class="item" style="background-image: url(img/banner.jpg);background-repeat: no-repeat; background-size:100% 100%;">
                         <div class="carousel-caption">
                             <!--
                                     <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">Meet<span> Team</span>!</h2>
