@@ -258,7 +258,7 @@ require_once './db/dbConnection.php';
                 <div class="carousel-inner" role="listbox">
 
                     <!-- single slide -->
-                    <div class="col-md-12 col-sm-12 col-xs-12 item active img-responsive" style="background-image: url(img/home.jpg);">
+                    <div class="col-xs-12 item active img-responsive" style="background-image: url(img/home.jpg);">
                         <div class="carousel-caption">
 
                         </div>
@@ -267,7 +267,7 @@ require_once './db/dbConnection.php';
                     <!-- end single slide -->
 
                     <!-- single slide -->
-                    <div class="col-md-12 col-sm-12 col-xs-12 item item img-responsive" style="background-image: url(img/banner.jpg);">
+                    <div class="col-xs-12 item img-responsive" style="background-image: url(img/banner.jpg);">
                         <div class="carousel-caption">
                             <!--
                                     <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">Meet<span> Team</span>!</h2>
@@ -510,7 +510,7 @@ require_once './db/dbConnection.php';
                             while ($row2 = $result2->fetch_assoc()) {
                                 echo '<img src="./uploads/' . $row2["url"] . '"  alt="" style="width:600px;height:200px">';
                                 echo '<figcaption class="overlay">';
-                                echo '<a class="fancybox" rel="works" title="Write Your Image Caption Here" href="./Projects/Fullproject.php?prid=' . $row["id"] . '"><i class="fa fa-eye fa-lg"></i></a>';
+                                echo '<a class="fancybox" rel="works" title="Write Your Image Caption Here" target=_blank href="Fullproject.php?prid=' . $row["id"] . '"><i class="fa fa-eye fa-lg"></i></a>';
                                 echo '<h4>' . $row["title"] . '</h4>';
                                 echo '</figcaption>';
                             }
@@ -537,7 +537,7 @@ require_once './db/dbConnection.php';
                             while ($row2 = $result2->fetch_assoc()) {
                                 echo '<img src="./uploads/' . $row2["url"] . '"  alt="" style="width:600px;height:200px">';
                                 echo '<figcaption class="overlay">';
-                                echo '<a class="fancybox" rel="works" title="Write Your Image Caption Here" href="./Projects/Fullproject.php?prid=' . $row["id"] . '"><i class="fa fa-eye fa-lg"></i></a>';
+                                echo '<a class="fancybox" rel="works" title="Write Your Image Caption Here" target=_blank href="Fullproject.php?prid=' . $row["id"] . '"><i class="fa fa-eye fa-lg"></i></a>';
                                 echo '<h4>' . $row["title"] . '</h4>';
                                 echo '</figcaption>';
                             }
@@ -563,7 +563,7 @@ require_once './db/dbConnection.php';
                             while ($row2 = $result2->fetch_assoc()) {
                                 echo '<img src="./uploads/' . $row2["url"] . '"  alt="" style="width:600px;height:200px">';
                                 echo '<figcaption class="overlay">';
-                                echo '<a class="fancybox" rel="works" title="Write Your Image Caption Here" href="./Projects/Fullproject.php?prid=' . $row["id"] . '"><i class="fa fa-eye fa-lg"></i></a>';
+                                echo '<a class="fancybox" rel="works" title="Write Your Image Caption Here" target=_blank href="Fullproject.php?prid=' . $row["id"] . '"><i class="fa fa-eye fa-lg"></i></a>';
                                 echo '<h4>' . $row["title"] . '</h4>';
                                 echo '</figcaption>';
                             }
@@ -861,13 +861,11 @@ Register
                                         <div style="display:inline-block;">
                                             <img src="img/customer.jpg" style="height: 200px; width: 200px;border: 5px solid white;  border-radius:200px;" />
 
-                                            <h1 style="color: black; font-size: 20px;">As a customer</h1><br>
-                                            <div style="color: black; text-align: left; margin-left: 0px; width: 250px;height: 250px;">
-                                                Take few seconds to click here you won't regret for it<br>
-                                                <b><a style="font-size: 18px; color: #4CAF50;"><br><br>
-                                                        <center>
+                                            <!-- <h1 style="color: black; font-size: 20px;">As a customer</h1> --><br><br>
+
+                                            <center>
                                                             <!-- Open The Modal -->
-                                                            <button id="myBtn">Register</button></center>
+                                                            <button class="btn btn-success" id="myBtn"><b>As a Customer</b></button></center>
 
                                                         <!-- Modal -->
                                                         <div id="myModal" class="modal">
@@ -880,7 +878,9 @@ Register
 
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <form name='register' method='post' action='Controllers/insertUser.php' >
+
+                                                                    <form name='register' method='post' action='Controllers/insertUser.php'>
+                                                                        
 
 
 
@@ -888,7 +888,6 @@ Register
                                                                             <tr>
                                                                                 <td><b>First Name:</b></td>
                                                                                 <td><input type='text' name='fname' required/></td>
-
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>Middle Name:</b></td>
@@ -920,16 +919,16 @@ Register
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>E-Mail Address:</b></td>
-                                                                                <td><input type="text" name="email" required/></td>
+                                                                                <td><input type="email" name="email" required/></td>
                                                                             </tr>
 
                                                                             <tr>
                                                                                 <td><b>Mobile Number:</b></td>
-                                                                                <td><input type="text" name="mobile_no" required/></td>
+                                                                                <td><input type="int" name="mobile_no" required/></td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>Land Number:</b></td>
-                                                                                <td><input type="text" name="land_no" required></td>
+                                                                                <td><input type="int" name="land_no" required></td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>Password:</b></td>
@@ -947,14 +946,21 @@ Register
                                                                                     <input type="reset" class="button" value="Cancel"/> </td>
                                                                             </tr>
                                                                         </table>
+                                                                    
                                                                     </form>
                                                                 </div>
                                                             </div>
-                                                        </div> 
+                                                        </div>
+                                                        <br>
+
+                                            <div style="color: black; text-center: left; margin-left: 0px; width: 250px;height: 250px;">
+                                                <b><i>Take few seconds to click here, you won't regret for it</b></i><br>
+                                                <!-- <b><a style="font-size: 18px; color: #4CAF50;"><br><br>
+                                                         
 
 
 
-                                                    </a></b>
+                                                    </a></b> -->
                                             </div>
 
                                         </div>
@@ -967,14 +973,12 @@ Register
                                         <div style="display:inline-block; ">
                                             <img src="img/consultant.jpg" style="height: 200px; width: 200px;border: 5px solid white;  border-radius:200px;" />
 
-                                            <h1 style="color: black; font-size: 20px;">As a consultant</h1><br>
-                                            <div style="color: black; text-align: left; margin-left: 0px; width: 250px; height: 250px;">
-                                                If you are a specialist in construction field its your tchance to become a member of our family.
-                                                <b><a style="font-size: 18px; color: #4CAF50;"><br><br>
-                                                        <center>
+                                            <!-- <h1 style="color: black; font-size: 20px;">As a consultant</h1> --><br><br>
+
+                                            <center>
 
                                                             <!-- Open The Modal -->
-                                                            <button id="myBtn2">Register</button> </center>
+                                                            <button class="btn btn-success btn-dark" id="myBtn2"><b>As a Consultant</b></button> </center>
 
                                                         <!-- Modal -->
                                                         <div id="myModal2" class="modal">
@@ -1022,16 +1026,16 @@ Register
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>E-Mail Address:</b></td>
-                                                                                <td><input type="text" name="email" required/></td>
+                                                                                <td><input type="email" name="email" required/></td>
                                                                             </tr>
 
                                                                             <tr>
                                                                                 <td><b>Mobile Number:</b></td>
-                                                                                <td><input type="text" name="mobile_no" required/></td>
+                                                                                <td><input type="int" name="mobile_no" required/></td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>Land Number:</b></td>
-                                                                                <td><input type="text" name="land_no" required></td>
+                                                                                <td><input type="int" name="land_no" required></td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>Category:</b></td>
@@ -1063,8 +1067,15 @@ Register
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <br>
 
-                                                    </a></b>
+
+                                            <div style="color: black; text-align: center; margin-left: 0px; width: 250px; height: 250px;"><b><i>
+                                                If you are a specialist in construction field its your chance to become a member of our family.</b></i>
+                                                <!-- <b><a style="font-size: 18px; color: #4CAF50;"><br><br>
+                                                        
+
+                                                    </a></b> -->
                                             </div>
 
                                         </div>

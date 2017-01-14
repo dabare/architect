@@ -27,25 +27,32 @@ $id = $id + 1;
 
 
 if (isset($_POST['submit'])) {
-    $res = mysqli_query($conn, "select count (*) from customer where email='" . $email . "'");
+   // $res = mysqli_query($conn, "select count (*) from customer where email='" . $email . "'");
     //echo $res;
-    $count = mysqli_fetch_array($conn, $res);
+   // $count = mysqli_fetch_array($conn, $res);
+
+    $sel_customer = "select * from customer where email='$email' AND nic='$nic' AND (status != 'inactive' or status is null);";
+
+    $run_customer = mysqli_query($conn, $sel_customer);
+
+    $check_customer = mysqli_num_rows($run_customer);
     //echo $count;
-    if ($count[0] == 0) {
+    if ($check_customer== 0) {
         //echo "test";
         $sql = "INSERT INTO customer (id,fname, mname, lname, age, nic, add_no, add_street, add_city, email, mobile_no, land_no, passwd, created, uname)VALUES ('$id','$fname', '$mname', '$lname', '$age', '$nic', '$add_no', '$add_street', '$add_city', '$email', '$mobile_no', '$land_no', '$psswd',NOW(),'$email')";
         if (mysqli_query($conn, $sql)) {
             echo "<script> alert('User Inserted'); </script>";
             echo "<script> window.location.href='..'; </script>";
         } else {
-            echo "<script> alert('user not inerted'); </script>";
+            echo "<script> alert('user not inserted'); </script>";
         }
         //header('Location: index.php');
         //$duplicate = false;
         echo "$sql";
     } else {
         //$duplicate = true;
-        echo "<script> alert('data not insert'); </script>";
+        echo "<script> alert('User Already Exist'); </script>";
+        echo "<script> window.location.href='..'; </script>";
     }
 }
 ?>
