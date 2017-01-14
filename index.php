@@ -796,11 +796,11 @@ if ($result->num_rows > 0) {
                         <div class="contact-address">
                             <h3>Our Address </h3>
                             <font style="color:black;"><p>No.<?php echo $add_no;?><br>
-                            <?php echo $add_street;?>,<br>
+                            <?php echo $add_street;?><br>
                             <?php echo $add_city;?>
                             </p></font>
                             <br>
-                            <font style="color:black;"><p><?php echo $land_no;?> , <?php echo $mobile_no;?></p></font>
+                            <font style="color:black;"><p><?php echo $land_no;?> <?php echo $mobile_no;?></p></font>
                             
                         </div>
                     </div>
