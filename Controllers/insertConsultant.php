@@ -24,6 +24,7 @@ while ($rw = mysqli_fetch_assoc($userId)) {
     $id = $rw["x"];
 }
 $id = $id + 1;
+$location = "6.932904, 79.851476";
 
 if (isset($_POST['submit'])) {
     //$res = mysqli_query($conn, "select count (*) from consultants where email='" . $email . "'");
@@ -39,7 +40,7 @@ if (isset($_POST['submit'])) {
 
     if ($check_consult  == 0) {
         //echo "test";
-        $sql = "INSERT INTO consultants (id,fname, mname, lname, age, nic, add_no, add_street, add_city, email, mobile_no, land_no, psswd, created, uname,status,category)VALUES ('$id','$fname', '$mname', '$lname', '$age', '$nic', '$add_no', '$add_street', '$add_city', '$email', '$mobile_no', '$land_no', '$psswd',NOW(),'$email','inactive','$category')";
+        $sql = "INSERT INTO consultants (id,fname, mname, lname, age, nic, add_no, add_street, add_city, email, mobile_no, land_no, psswd, created, uname,status,category,location)VALUES ('$id','$fname', '$mname', '$lname', '$age', '$nic', '$add_no', '$add_street', '$add_city', '$email', '$mobile_no', '$land_no', '$psswd',NOW(),'$email','inactive','$category','$location')";
         if (mysqli_query($conn, $sql)) {
             echo "<script> alert('Consultant Details Inserted'); </script>";
             echo "<script> window.location.href='..'; </script>";

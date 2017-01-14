@@ -16,7 +16,9 @@ $mobile_no = $_POST['mobile_no'];
 $land_no = $_POST['land_no'];
 $psswd = $_POST['psswd'];
 
+
 $id = 0;
+$location = "6.932904, 79.851476";
 
 $userId = mysqli_query($conn, "SELECT max(`id`) as x FROM `customer`");
 
@@ -39,7 +41,7 @@ if (isset($_POST['submit'])) {
     //echo $count;
     if ($check_customer== 0) {
         //echo "test";
-        $sql = "INSERT INTO customer (id,fname, mname, lname, age, nic, add_no, add_street, add_city, email, mobile_no, land_no, passwd, created, uname)VALUES ('$id','$fname', '$mname', '$lname', '$age', '$nic', '$add_no', '$add_street', '$add_city', '$email', '$mobile_no', '$land_no', '$psswd',NOW(),'$email')";
+        $sql = "INSERT INTO customer (id,fname, mname, lname, age, nic, add_no, add_street, add_city, email, mobile_no, land_no, passwd, created, uname, location)VALUES ('$id','$fname', '$mname', '$lname', '$age', '$nic', '$add_no', '$add_street', '$add_city', '$email', '$mobile_no', '$land_no', '$psswd',NOW(),'$email','$location' )";
         if (mysqli_query($conn, $sql)) {
             echo "<script> alert('User Inserted'); </script>";
             echo "<script> window.location.href='..'; </script>";
