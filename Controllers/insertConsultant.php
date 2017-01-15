@@ -31,14 +31,20 @@ if (isset($_POST['submit'])) {
     //echo $res;
     //$count = mysqli_fetch_array($conn, $res);
     //echo $count;
-    $sel_consult = "select * from consultants where email='$email' AND nic='$nic'";
+    $sel_consult = "select * from consultants where email='$email' OR nic='$nic'";
+    $sel_cus = "select * from customer where email='$email' OR nic='$nic' ;";
+    $sel_arch = "select * from architect where email='$email' OR nic='$nic' ;";
 
     $run_consult = mysqli_query($conn, $sel_consult);
+    $run_cus = mysqli_query($conn, $sel_cus);
+    $run_arch = mysqli_query($conn, $sel_arch);
 
     $check_consult = mysqli_num_rows($run_consult);
+    $check_cus = mysqli_num_rows($run_cus);
+    $check_arch = mysqli_num_rows($run_arch);
 
 
-    if ($check_consult  == 0) {
+    if ($check_cus== 0 && $check_consult== 0 && $check_arch== 0) {
         //echo "test";
         $sql = "INSERT INTO consultants (id,fname, mname, lname, age, nic, add_no, add_street, add_city, email, mobile_no, land_no, psswd, created, uname,status,category,location)VALUES ('$id','$fname', '$mname', '$lname', '$age', '$nic', '$add_no', '$add_street', '$add_city', '$email', '$mobile_no', '$land_no', '$psswd',NOW(),'$email','inactive','$category','$location')";
         if (mysqli_query($conn, $sql)) {

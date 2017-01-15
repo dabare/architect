@@ -221,7 +221,7 @@
                                                     $resultt = $conn->query($sql);
                                                     if ($resultt->num_rows > 0) {
                                                         while ($roww = $resultt->fetch_assoc()) {
-                                                            echo "<a href=ArchitectViewProject.php?id=".$roww["id"]." target='_blank'>(".$roww["category"].") ".$roww["title"]."</a><br>";
+                                                            echo "<a href=ArchitectViewProject.php?id=".$roww["id"].">(".$roww["category"].") ".$roww["title"]."</a><br>";
                                                         }
                                                     }
                                                     echo '

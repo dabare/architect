@@ -436,7 +436,7 @@ if ($TotalPayment == "") {
                                                             <h3 class="m-t-none m-b">Assign Consultant</h3>
 
                                                             <form role="form" method="POST" action="./Projects/SaveProjectConsultant.php">
-                                                                <input type="hidden" value="<?=$id?>" name="project_id">
+                                                                <input type="hidden" value="<?= $id ?>" name="project_id">
                                                                 <div class="form-group">
                                                                     <label>Select Consultant:</label>
                                                                     <select required="true" class="form-control m-b" name="consultant">
@@ -445,7 +445,7 @@ if ($TotalPayment == "") {
                                                                         $resultt = $conn->query($sqll);
                                                                         if ($resultt->num_rows > 0) {
                                                                             while ($roww = $resultt->fetch_assoc()) {
-                                                                                echo '<option>' . $roww["id"] . '_'. $roww["lname"].' '. $roww["fname"].'_'. $roww["category"].' </option>';
+                                                                                echo '<option>' . $roww["id"] . '_' . $roww["lname"] . ' ' . $roww["fname"] . '_' . $roww["category"] . ' </option>';
                                                                             }
                                                                         }
                                                                         ?>
@@ -468,7 +468,7 @@ if ($TotalPayment == "") {
                                     </div>
                                     <br>
                                     <div class="panel-group" id="accordion">
-                                        
+
                                         <?php
                                         $sql = "SELECT * FROM consultant_assign WHERE project_id=" . $id . ";";
                                         $result = $conn->query($sql);
@@ -480,11 +480,11 @@ if ($TotalPayment == "") {
                                                 echo '<div class="panel panel-default">';
                                                 echo '<div class="panel-heading">
                                             <h5 class="panel-title">';
-                                                if($row["status"] == "Done"){
-                                                    
+                                                if ($row["status"] == "Done") {
+
                                                     echo '<input type="button" class="btn btn-xs btn-danger" value="Done!">';
                                                 }
-                                            
+
                                                 echo '<a data-toggle="collapse" data-parent="#accordion" href="#collapseCon' . $x . '">' . $row["category"] . '<div class="pull-right">
                                                     ' . $row["name"] . '
                                                 </div></a>
@@ -494,12 +494,12 @@ if ($TotalPayment == "") {
                                                 echo '<div class="panel-body">';
                                                 echo '<div style = "display: inline-block;">';
                                                 echo '<textarea disabled = "true" id = "description" rows = "2" name = "des" style = "position: center; width: 100%">' . $row["description"] . '</textarea><br><br>';
-                                                echo '<a target="_blank" href="ArchitectViewConsultant.php?id='.$row["consultant_id"].'"><button class="btn btn-xs btn-info" >View</button></a>';
+                                                echo '<a target="_blank" href="ArchitectViewConsultant.php?id=' . $row["consultant_id"] . '"><button class="btn btn-xs btn-info" >View</button></a>';
                                                 echo '</div>';
                                                 echo '<div style = " display: inline-block; padding-left: 30%;">';
                                                 echo '<form onsubmit="return confirm(\'Do you really want to remove the Consultant?\');" action="Projects/DeleteProjectConsultant.php" method="POST">';
-                                                echo '<input type="hidden" name="consultant_id" value="'.$row["consultant_id"].'">';
-                                                echo '<input type="hidden" name="project_id" value="'.$row["project_id"].'">';
+                                                echo '<input type="hidden" name="consultant_id" value="' . $row["consultant_id"] . '">';
+                                                echo '<input type="hidden" name="project_id" value="' . $row["project_id"] . '">';
                                                 echo '<button class="btn btn-xs btn-danger" type = "submit" style = "width:100px; " >Remove</button>';
                                                 echo '</form>';
                                                 echo '</div>';
@@ -513,9 +513,9 @@ if ($TotalPayment == "") {
                                             }
                                         }
                                         ?>
-                                        
-                                        
-                                        
+
+
+
 
                                     </div>
                                 </div>
@@ -631,7 +631,7 @@ if ($TotalPayment == "") {
                                     </div>
                                     <br>
                                     <script>
-                                        document.getElementById("myMeter").value = "<?=$v?>";
+                                        document.getElementById("myMeter").value = "<?= $v ?>";
                                         function toggleCheckbox1(element)
                                         {
                                             if (element.checked) {
@@ -930,7 +930,7 @@ if ($TotalPayment == "") {
 
                                         echo '<font style="float: right;" size="2" color="red">Seen</font><br>';
                                     }
-                                    if ($postby == "Architect") {
+                                    if ($postby == "Architect" && $row["seen"] == 0) {
                                         echo '
                             <div class="btn-group">
                                         <input class="btn btn-warning btn-xs" type="submit" value="Remove"><br>

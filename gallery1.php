@@ -174,7 +174,7 @@ if ($result->num_rows > 0) {
                             <textarea name="title" id="protitle" rows="1" cols="40"><?php echo $title; ?></textarea>
                         </div>
                         <div class="col-lg-2">
-                        <button type="button" onclick="saveGalleryProj()">Save</button>
+                            <button type="button" class="btn btn-sm btn-success" onclick="saveGalleryProj()">Save</button>
                         </div>
                     </div><br><br> 
                 
@@ -288,7 +288,7 @@ if ($result->num_rows > 0) {
                             </div>
                             <div class="pull-right">
                                 <br>
-                                <input type="submit" style="width: 100px; height: 25px;"value="Add">
+                                <input type="submit" class="btn btn-sm btn-success" style="width: 100px; height: 25px;" value="Add">
                             </div>.
                         </form>
                             </div>
@@ -302,7 +302,7 @@ if ($result->num_rows > 0) {
                             <textarea id="prodisc" rows="5" name="desc" cols="50"><?php echo $description; ?></textarea>
                         
                         <div class="pull-right">
-                        <button type="button"  style="width: 100px;height: 30px;" onclick="saveGalleryProj()">Save</button>
+                            <button type="button"  class="btn btn-sm btn-success" style="width: 100px;height: 30px;" onclick="saveGalleryProj()">Save</button>
                         </div>
                         </div>
                 </div>

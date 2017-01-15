@@ -33,13 +33,20 @@ if (isset($_POST['submit'])) {
     //echo $res;
    // $count = mysqli_fetch_array($conn, $res);
 
-    $sel_customer = "select * from customer where email='$email' AND nic='$nic' AND (status != 'inactive' or status is null);";
+    $sel_customer = "select * from customer where email='$email' OR nic='$nic' ;";
+    $sel_consultant = "select * from consultants where email='$email' OR nic='$nic' ;";
+    $sel_architect = "select * from architect where email='$email' OR nic='$nic' ;";
+    // $sel_customer = "select * from customer inner join consultant on consultant.email=customer.email inner join architect on architect.email=customer.email where customer.email='$email' ;";
 
     $run_customer = mysqli_query($conn, $sel_customer);
+    $run_consultant = mysqli_query($conn, $sel_consultant);
+    $run_architect = mysqli_query($conn, $sel_architect);
 
     $check_customer = mysqli_num_rows($run_customer);
+    $check_consultant = mysqli_num_rows($run_consultant);
+    $check_architect = mysqli_num_rows($run_architect);
     //echo $count;
-    if ($check_customer== 0) {
+    if ($check_customer== 0 && $check_consultant== 0 && $check_architect== 0) {
         //echo "test";
         $sql = "INSERT INTO customer (id,fname, mname, lname, age, nic, add_no, add_street, add_city, email, mobile_no, land_no, passwd, created, uname, location)VALUES ('$id','$fname', '$mname', '$lname', '$age', '$nic', '$add_no', '$add_street', '$add_city', '$email', '$mobile_no', '$land_no', '$psswd',NOW(),'$email','$location' )";
         if (mysqli_query($conn, $sql)) {

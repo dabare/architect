@@ -71,14 +71,15 @@
                             </div>
 
                         </li>
-                        <li >
-                            <a href="editConsultantProfile.php"><i class="fa fa-edit"></i> <span class="nav-label">Edit Profile</span><span class="label label-warning pull-right"><?php echo $count; ?></span></a>
-
-                        </li>
                         <li class="active">
                             <a href="ConsultantsAssignedProjects.php"><i class="fa fa-flask"></i> <span class="nav-label">Assigned Projects</span><span class="label label-warning pull-right"><?php echo $count; ?></span></a>
 
                         </li>
+                        <li >
+                            <a href="editConsultantProfile.php"><i class="fa fa-edit"></i> <span class="nav-label">Edit Profile</span><span class="label label-warning pull-right"><?php echo $count; ?></span></a>
+
+                        </li>
+                        
 
 
                     </ul>

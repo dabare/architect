@@ -569,7 +569,7 @@ if ($TotalPayment == "") {
 
                                         echo '<font style="float: right;" size="2" color="red">Seen</font><br>';
                                     }
-                                    if ($postby == "Client") {
+                                    if ($postby == "Client" && $row["seen"] == 0) {
                                         echo '
                             <div class="btn-group">
                                         <input class="btn btn-warning btn-xs" type="submit" value="Remove"><br>
