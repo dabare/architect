@@ -441,7 +441,7 @@ if ($TotalPayment == "") {
                                                                     <label>Select Consultant:</label>
                                                                     <select required="true" class="form-control m-b" name="consultant">
                                                                         <?php
-                                                                        $sqll = "select * from consultants where id not in (select consultant_id from consultant_assign where project_id = $id);";
+                                                                        $sqll = "select * from consultants where id not in (select consultant_id from consultant_assign where project_id = $id) and status = 'active';";
                                                                         $resultt = $conn->query($sqll);
                                                                         if ($resultt->num_rows > 0) {
                                                                             while ($roww = $resultt->fetch_assoc()) {
@@ -631,6 +631,7 @@ if ($TotalPayment == "") {
                                     </div>
                                     <br>
                                     <script>
+                                        document.getElementById("myMeter").value = "<?=$v?>";
                                         function toggleCheckbox1(element)
                                         {
                                             if (element.checked) {

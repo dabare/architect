@@ -136,7 +136,7 @@ $_SESSION["id"] = 1;
              $comcount = 0;
              $oncount = 0;
              
-            $sql = "Select count(id) as count from project ;";
+            $sql = "Select count(id) as count from project where status='active';";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -146,7 +146,7 @@ $_SESSION["id"] = 1;
                 }
             }
              
-             $sql = "Select count(id) as count from project where progress = 100;";
+             $sql = "Select count(id) as count from project where progress = 100 and status='active';";
             $result = $conn->query($sql);
 
 
@@ -157,7 +157,7 @@ $_SESSION["id"] = 1;
                 }
             }
              
-             $sql = "Select count(id) as count from project where progress != 100 ;";
+             $sql = "Select count(id) as count from project where progress != 100 and status='active';";
             $result = $conn->query($sql);
 
 
@@ -227,7 +227,26 @@ $_SESSION["id"] = 1;
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <form  action="incomeReport.php" method="get">
+                            <form target="_blank" action="incomeReport.php" method="get">
+                                <div class="col-md-1"><strong>Year:</strong></div> 
+                            <div class="col-sm-2"><input name="year" required type="number" class="form-control" value="<?php echo date("Y");?>">
+                                </div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-1"></div> 
+                                <div class="col-sm-2"><input  name="month" required type="hidden" class="form-control" value="0">
+                                </div> 
+                                <div class="col-md-1"></div>
+                            <div class="col-sm-2"><input required type="submit" class="btn btn-success btn-sm" value="Show Income">
+                                </div>
+                            </form>
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <form  target="_blank" action="incomeReport.php" method="get">
                                 <div class="col-md-1"><strong>Year:</strong></div> 
                             <div class="col-sm-2"><input name="year" required type="number" class="form-control" value="<?php echo date("Y");?>">
                                 </div>
@@ -345,7 +364,7 @@ $_SESSION["id"] = 1;
     {
         <?php
         
-            $sql = "Select count(id) as count from project where category ='Industrial' ;";
+            $sql = "Select count(id) as count from project where category ='Industrial' and status='active';";
             $result = $conn->query($sql);
 
             $active = "";
@@ -364,7 +383,7 @@ $_SESSION["id"] = 1;
     }, {
         <?php
         
-            $sql = "Select count(id) as count from project where category ='Residential' ;";
+            $sql = "Select count(id) as count from project where category ='Residential' and status='active';";
             $result = $conn->query($sql);
 
             $active = "";
@@ -383,7 +402,7 @@ $_SESSION["id"] = 1;
     }, {
         <?php
         
-            $sql = "Select count(id) as count from project where category ='Community' ;";
+            $sql = "Select count(id) as count from project where category ='Community' and status='active';";
             $result = $conn->query($sql);
 
             $active = "";
@@ -433,7 +452,7 @@ $_SESSION["id"] = 1;
     {
         <?php
         
-            $sql = "Select count(id) as count from project where category ='Industrial' and progress = 100;";
+            $sql = "Select count(id) as count from project where category ='Industrial' and progress = 100 and status='active';";
             $result = $conn->query($sql);
 
             $active = "";
@@ -452,7 +471,7 @@ $_SESSION["id"] = 1;
     }, {
         <?php
         
-            $sql = "Select count(id) as count from project where category ='Residential' and progress = 100;";
+            $sql = "Select count(id) as count from project where category ='Residential' and progress = 100 and status='active';";
             $result = $conn->query($sql);
 
             $active = "";
@@ -471,7 +490,7 @@ $_SESSION["id"] = 1;
     }, {
         <?php
         
-            $sql = "Select count(id) as count from project where category ='Community' and progress = 100;";
+            $sql = "Select count(id) as count from project where category ='Community' and progress = 100 and status='active';";
             $result = $conn->query($sql);
 
             $active = "";
@@ -521,7 +540,7 @@ $_SESSION["id"] = 1;
     {
         <?php
         
-            $sql = "Select count(id) as count from project where category ='Industrial' and progress != 100;";
+            $sql = "Select count(id) as count from project where category ='Industrial' and progress != 100 and status='active';";
             $result = $conn->query($sql);
 
             $active = "";
@@ -540,7 +559,7 @@ $_SESSION["id"] = 1;
     }, {
         <?php
         
-            $sql = "Select count(id) as count from project where category ='Residential' and progress != 100;";
+            $sql = "Select count(id) as count from project where category ='Residential' and progress != 100 and status='active';";
             $result = $conn->query($sql);
 
             $active = "";
@@ -559,7 +578,7 @@ $_SESSION["id"] = 1;
     }, {
         <?php
         
-            $sql = "Select count(id) as count from project where category ='Community' and progress != 100;";
+            $sql = "Select count(id) as count from project where category ='Community' and progress != 100 and status='active';";
             $result = $conn->query($sql);
 
             $active = "";
@@ -610,13 +629,13 @@ $_SESSION["id"] = 1;
                                                 <?php
                 $id = $_SESSION["id"] ;
                 
-$sql = "select EXTRACT(YEAR FROM pdate) AS year from project where architect_id = '$id' AND architect_id = '$id' AND EXTRACT(YEAR FROM pdate)>='$from' AND EXTRACT(YEAR FROM pdate)<='$to' group by EXTRACT(YEAR FROM pdate) ORDER BY pdate;";
+$sql = "select EXTRACT(YEAR FROM pdate) AS year from project where  status='active' and architect_id = '$id' AND EXTRACT(YEAR FROM pdate)>='$from' AND EXTRACT(YEAR FROM pdate)<='$to' group by EXTRACT(YEAR FROM pdate) ORDER BY pdate;";
 $result = $conn->query($sql);
 
 while ($row = $result->fetch_object()) {
     $year = $row->year;
 
-    $sql2 = "select sum(invoice.amount) as tot from project right join invoice on project.id = invoice.project_id where EXTRACT(YEAR from project.pdate) = '$year' AND project.architect_id = '$id';";
+    $sql2 = "select sum(invoice.amount) as tot from project right join invoice on project.id = invoice.project_id where project.status = 'active' and EXTRACT(YEAR from project.pdate) = '$year' AND project.architect_id = '$id';";
     $result2 = $conn->query($sql2);
     
     while ($row2 = $result2->fetch_object()) {
@@ -646,7 +665,7 @@ while ($row = $result->fetch_object()) {
             <?php
                 $id = $_SESSION["id"] ;
                 
-$sql = "select EXTRACT(YEAR FROM pdate) AS year from project where architect_id = '$id' AND architect_id = '$id' AND EXTRACT(YEAR FROM pdate)>='$from' AND EXTRACT(YEAR FROM pdate)<='$to' group by EXTRACT(YEAR FROM pdate) ORDER BY pdate;";
+$sql = "select EXTRACT(YEAR FROM pdate) AS year from project where status = 'active' and architect_id = '$id' AND EXTRACT(YEAR FROM pdate)>='$from' AND EXTRACT(YEAR FROM pdate)<='$to' group by EXTRACT(YEAR FROM pdate) ORDER BY pdate;";
 $result = $conn->query($sql);
 
 while ($row = $result->fetch_object()) {
@@ -655,7 +674,7 @@ while ($row = $result->fetch_object()) {
     $community = 0;
     $industrial = 0;
 
-    $sql2 = "select sum(invoice.amount) as tot from project right join invoice on project.id = invoice.project_id where EXTRACT(YEAR from project.pdate) = '$year' AND project.category = 'Residential' AND project.architect_id = '$id';";
+    $sql2 = "select sum(invoice.amount) as tot from project right join invoice on project.id = invoice.project_id where project.status='active' and EXTRACT(YEAR from project.pdate) = '$year' AND project.category = 'Residential' AND project.architect_id = '$id';";
     $result2 = $conn->query($sql2);
     while ($row2 = $result2->fetch_object()) {
         $tot = $row2->tot;
@@ -665,7 +684,7 @@ while ($row = $result->fetch_object()) {
         $residential = $tot;
     }
     
-    $sql2 = "select sum(invoice.amount) as tot from project right join invoice on project.id = invoice.project_id where EXTRACT(YEAR from project.pdate) = '$year' AND project.category = 'Community' AND project.architect_id = '$id';";
+    $sql2 = "select sum(invoice.amount) as tot from project right join invoice on project.id = invoice.project_id where project.status='active' and EXTRACT(YEAR from project.pdate) = '$year' AND project.category = 'Community' AND project.architect_id = '$id';";
     $result2 = $conn->query($sql2);
     while ($row2 = $result2->fetch_object()) {
         $tot = $row2->tot;
@@ -675,7 +694,7 @@ while ($row = $result->fetch_object()) {
         $community = $tot;
     }
     
-     $sql2 = "select sum(invoice.amount) as tot from project right join invoice on project.id = invoice.project_id where EXTRACT(YEAR from project.pdate) = '$year' AND project.category = 'Industrial' AND project.architect_id = '$id';";
+     $sql2 = "select sum(invoice.amount) as tot from project right join invoice on project.id = invoice.project_id where project.status='active' and EXTRACT(YEAR from project.pdate) = '$year' AND project.category = 'Industrial' AND project.architect_id = '$id';";
     $result2 = $conn->query($sql2);
     while ($row2 = $result2->fetch_object()) {
         $tot = $row2->tot;

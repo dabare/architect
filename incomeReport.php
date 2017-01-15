@@ -7,7 +7,14 @@ require_once './db/dbConnection.php';
 $year = $_GET["year"];
 $month = $_GET["month"];
 
-$sql = "select sum(invoice.amount) as tot from invoice left join project on invoice.project_id=project.id where year(invoice.date) = $year and month(invoice.date) = $month and project.category='Industrial' ;";
+$titleMonth = "";
+$titleYear = $year;
+if($month!=0){
+    $titleMonth = date("F",strtotime($year."-".$month."-01"));
+    $year = "$year and month(invoice.date) = $month";
+}
+
+$sql = "select sum(invoice.amount) as tot from invoice left join project on invoice.project_id=project.id where year(invoice.date) = $year  and project.category='Industrial' and project.status='active';";
 
 $result = $conn->query($sql);
   if ($result->num_rows > 0) {
@@ -17,7 +24,7 @@ $result = $conn->query($sql);
         }
   }
 
-$sql = "select sum(invoice.amount) as tot from invoice left join project on invoice.project_id=project.id where year(invoice.date) = $year and month(invoice.date) = $month and project.category='Residential' ;";
+$sql = "select sum(invoice.amount) as tot from invoice left join project on invoice.project_id=project.id where year(invoice.date) = $year  and project.category='Residential' and project.status='active';";
 
 $result = $conn->query($sql);
   if ($result->num_rows > 0) {
@@ -27,7 +34,7 @@ $result = $conn->query($sql);
         }
   }
 
-$sql = "select sum(invoice.amount) as tot from invoice left join project on invoice.project_id=project.id where year(invoice.date) = $year and month(invoice.date) = $month and project.category='Community' ;";
+$sql = "select sum(invoice.amount) as tot from invoice left join project on invoice.project_id=project.id where year(invoice.date) = $year  and project.category='Community' and project.status='active';";
 
 $result = $conn->query($sql);
   if ($result->num_rows > 0) {
@@ -62,9 +69,9 @@ $result = $conn->query($sql);
 
 <body>
     <br>
-    <div class="ibox float-e-margins">
+    <div class="ibox float-e-margins ">
         <div class="ibox-title">
-            <h5> <h5>Income Report for <?=$year?> <?=date("F",strtotime($year."-".$month."-01"))?></h5></h5> 
+            <h5>Income Report for <?=$titleYear?> <?=$titleMonth?></h5> 
         </div>
         <div class="ibox-content">
             <table class="table">
@@ -123,7 +130,7 @@ $result = $conn->query($sql);
                             </thead>
                             <tbody>
                                 <?php
-                                $sql = "select invoice.id as id , invoice.amount as amount , invoice.date as date ,  project.title as title  from invoice left join project on invoice.project_id=project.id where year(invoice.date) = $year and month(invoice.date) = $month and project.category='Industrial' ;";
+                                $sql = "select invoice.id as id , invoice.amount as amount , invoice.date as date ,  project.title as title  from invoice left join project on invoice.project_id=project.id where year(invoice.date) = $year  and project.category='Industrial'  and project.status='active' order by invoice.date;";
 
                                 $result = $conn->query($sql);
                                   if ($result->num_rows > 0) {
@@ -166,7 +173,7 @@ $result = $conn->query($sql);
                             </thead>
                             <tbody>
                                 <?php
-                                $sql = "select invoice.id as id , invoice.amount as amount , invoice.date as date ,  project.title as title  from invoice left join project on invoice.project_id=project.id where year(invoice.date) = $year and month(invoice.date) = $month and project.category='Residential' ;";
+                                $sql = "select invoice.id as id , invoice.amount as amount , invoice.date as date ,  project.title as title  from invoice left join project on invoice.project_id=project.id where year(invoice.date) = $year  and project.category='Residential'  and project.status='active' order by invoice.date;";
 
                                 $result = $conn->query($sql);
                                   if ($result->num_rows > 0) {
@@ -209,7 +216,7 @@ $result = $conn->query($sql);
                             </thead>
                             <tbody>
                                 <?php
-                                $sql = "select invoice.id as id , invoice.amount as amount , invoice.date as date ,  project.title as title  from invoice left join project on invoice.project_id=project.id where year(invoice.date) = $year and month(invoice.date) = $month and project.category='Community' ;";
+                                $sql = "select invoice.id as id , invoice.amount as amount , invoice.date as date ,  project.title as title  from invoice left join project on invoice.project_id=project.id where year(invoice.date) = $year  and project.category='Community'  and project.status='active' order by invoice.date;";
 
                                 $result = $conn->query($sql);
                                   if ($result->num_rows > 0) {

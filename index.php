@@ -927,7 +927,7 @@ Register
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>Land Number:</b></td>
-                                                                                <td><input type="int" name="land_no" required></td>
+                                                                                <td><input type="int" name="land_no" /></td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>Password:</b></td>
@@ -1034,7 +1034,7 @@ Register
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>Land Number:</b></td>
-                                                                                <td><input type="int" name="land_no" required></td>
+                                                                                <td><input type="int" name="land_no" /></td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><b>Category:</b></td>
