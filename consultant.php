@@ -130,6 +130,13 @@
                             </div>
                         </a>
                     </div>
+                    <div class="col-lg-1">
+                        <br>
+                        <a href="consultantPaymentReport.php" target="_blank">
+                            <div class="col-sm-2 pull-right"><input required type="submit" class="btn btn-success btn-sm" value="Payment Report">
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <br>
                 <div class="wrapper wrapper-content animated fadeInRight ecommerce">
@@ -221,7 +228,7 @@
                                                     $resultt = $conn->query($sql);
                                                     if ($resultt->num_rows > 0) {
                                                         while ($roww = $resultt->fetch_assoc()) {
-                                                            echo "<a href=ArchitectViewProject.php?id=".$roww["id"].">(".$roww["category"].") ".$roww["title"]."</a><br>";
+                                                            echo "<a href=ArchitectViewProject.php?id=" . $roww["id"] . ">(" . $roww["category"] . ") " . $roww["title"] . "</a><br>";
                                                         }
                                                     }
                                                     echo '
