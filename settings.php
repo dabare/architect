@@ -60,7 +60,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Architect WebSite | Settings</title>
+        <title>Architect WebSite | Consultants</title>
 
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -169,7 +169,7 @@
 
                 <div class="row wrapper border-bottom white-bg page-heading">
                     <div class="col-lg-10">
-                        <h2>General Settings</h2>
+                        <h2>Consultants</h2>
 
                     </div>
                     <div class="col-lg-2">
@@ -249,25 +249,49 @@
                                         <label class="col-lg-4 control-label">Backups</label>
 
                                         <div class="col-lg-4">
-                                            <select name="file" class="form-control" required="true">
+                                            <select id="f" name="file" class="form-control" required="true">
                                                 <option ></option>
                                                 <?php
                                                 $directory = "./backup/";
                                                 $files = glob($directory . "*.sql");
 
                                                 foreach ($files as $file) {
-                                                    echo '<option value="'.$file.'">' . $file . '</option>';
+                                                    echo '<option value="' . $file . '">' . $file . '</option>';
                                                 }
                                                 ?>
                                             </select>
                                         </div>
                                         <div class="col-lg-offset-1 col-lg-2">
-                                            <button class="btn btn-sm btn-danger" type="submit">Restore</button>
-
-
+                                            <button class="btn btn-sm btn-danger" style="width: 100px;" name="submit" value="Restore" type="submit">Restore</button>
                                         </div>
                                     </div>
                                 </form>
+                                <form id="down" class="form-horizontal" action="Projects/restoreDB.php" method="post">
+                                    <div class="form-group">
+                                        <label class="col-lg-4 control-label"></label>
+
+                                        <div class="col-lg-4">
+
+                                        </div>
+                                        <div class="col-lg-offset-1 col-lg-2">
+                                            <input id="download" type="hidden" value="" name="file">
+
+                                            <button class="btn btn-sm btn-default" style="width: 100px;" onclick="setFile()" name="submit" value="Download">Download</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <script>
+                                    function setFile() {
+                                        var answer = document.getElementById("f");
+                                        var opt = answer[answer.selectedIndex].value;
+                                        if (opt) {
+                                            document.getElementById("download").value = opt;
+                                            document.getElementById("down").submit();
+                                        } else {
+                                            window.alert("Select a file");
+                                        }
+                                    }
+                                </script>
                                 <form class="form-horizontal" action="Projects/backupDB.php" method="post">
                                     <div class="form-group">
                                         <label class="col-lg-4 control-label"></label>
@@ -277,7 +301,7 @@
                                         </div>
                                         <div class="col-lg-offset-1 col-lg-2">
 
-                                            <button class="btn btn-sm btn-primary" type="submit">Backup</button>
+                                            <button class="btn btn-sm btn-primary" style="width: 100px;" type="submit">Backup</button>
 
                                         </div>
                                     </div>

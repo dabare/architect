@@ -36,7 +36,7 @@ require_once './db/dbConnection.php';
                             <th>Category</th>
                             <th>Tel.</th>
                             <th>Email</th>
-                            <th>Payment</th>
+                            <th>Payment(RS.)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,7 +54,7 @@ require_once './db/dbConnection.php';
                                     <td><?= $row["category"] ?></td>
                                     <td><?= $row["mobile_no"] . ", " . $row["land_no"] ?></td>
                                     <td><?= $row["email"] ?></td>
-                                    <td>RS. <?= number_format($row["payment"]) ?>/=</td>
+                                    <td><?= number_format($row["payment"]) ?>/=</td>
                                 </tr>
                                 <?php
                                 $total += $row["payment"];
@@ -67,7 +67,7 @@ require_once './db/dbConnection.php';
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><strong>RS. <?= number_format($total) ?>/=</strong></td>
+                            <td><strong><?= number_format($total) ?>/=</strong></td>
 
                         </tr>
                     </tbody>
