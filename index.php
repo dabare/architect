@@ -485,7 +485,6 @@ require_once './db/dbConnection.php';
                             <li><a href="javascript:;" data-filter=".residential" class="filter">Residential</a></li>
                             <li><a href="javascript:;" data-filter=".community" class="filter">Community</a></li>
                             <li><a href="javascript:;" data-filter=".industrial" class="filter">Industrial</a></li>
-
                         </ul>
                     </div>
 
@@ -510,7 +509,7 @@ require_once './db/dbConnection.php';
                             while ($row2 = $result2->fetch_assoc()) {
                                 echo '<img src="./uploads/' . $row2["url"] . '"  alt="" style="width:600px;height:200px">';
                                 echo '<figcaption class="overlay">';
-                                echo '<a class="fancybox" rel="works" title="Write Your Image Caption Here" target=_blank href="Fullproject.php?prid=' . $row["id"] . '"><i class="fa fa-eye fa-lg"></i></a>';
+                                echo '<a class="fancybox" rel="works" title="View" target=_blank href="Fullproject.php?prid=' . $row["id"] . '"><i class="fa fa-eye fa-lg"></i></a>';
                                 echo '<h4>' . $row["title"] . '</h4>';
                                 echo '</figcaption>';
                             }
@@ -537,7 +536,7 @@ require_once './db/dbConnection.php';
                             while ($row2 = $result2->fetch_assoc()) {
                                 echo '<img src="./uploads/' . $row2["url"] . '"  alt="" style="width:600px;height:200px">';
                                 echo '<figcaption class="overlay">';
-                                echo '<a class="fancybox" rel="works" title="Write Your Image Caption Here" target=_blank href="Fullproject.php?prid=' . $row["id"] . '"><i class="fa fa-eye fa-lg"></i></a>';
+                                echo '<a class="fancybox" rel="works" title="View" target=_blank href="Fullproject.php?prid=' . $row["id"] . '"><i class="fa fa-eye fa-lg"></i></a>';
                                 echo '<h4>' . $row["title"] . '</h4>';
                                 echo '</figcaption>';
                             }
@@ -563,7 +562,7 @@ require_once './db/dbConnection.php';
                             while ($row2 = $result2->fetch_assoc()) {
                                 echo '<img src="./uploads/' . $row2["url"] . '"  alt="" style="width:600px;height:200px">';
                                 echo '<figcaption class="overlay">';
-                                echo '<a class="fancybox" rel="works" title="Write Your Image Caption Here" target=_blank href="Fullproject.php?prid=' . $row["id"] . '"><i class="fa fa-eye fa-lg"></i></a>';
+                                echo '<a class="fancybox" rel="works" title="View" target=_blank href="Fullproject.php?prid=' . $row["id"] . '"><i class="fa fa-eye fa-lg"></i></a>';
                                 echo '<h4>' . $row["title"] . '</h4>';
                                 echo '</figcaption>';
                             }
@@ -573,6 +572,16 @@ require_once './db/dbConnection.php';
                 }
                 ?> 
 
+            </div>
+            <div class="col-md-12">
+                <br>
+                <br>
+
+                <center>
+                    <a href="printProjectMap.php" target="_blank">
+                        <button class="btn btn-lg btn-success">Projects Locations</button>
+                    </a>
+                </center>
             </div>
 
 
@@ -736,6 +745,8 @@ Some fun facts
                                 <p>Awards Won</p>
                             </div>
                         </div>
+
+
                         <!-- end first count item -->
 
                     </div>
@@ -833,131 +844,25 @@ Register
         <section id="register" class="login">
             <div class="container">
                 <div class="row mb50">
-
                     <div class="sec-title text-center mb50 wow fadeInDown animated" data-wow-duration="500ms">
                         <h2>Register</h2>
                         <div class="devider"><i class="fa fa-sign-in fa-lg"></i></div>
                     </div>
-
-
                     <div>
                         <center>
-
-
-
-
                             <div class="row">
                                 <div class="col-lg-6 col-md-12 text-center">
                                     <div class="service-box">
                                         <div style="display:inline-block;">
                                             <img src="img/customer.jpg" style="height: 200px; width: 200px;border: 5px solid white;  border-radius:200px;" />
-                                            <br><br> 
-                                            <center>
-                                                <!-- Open The Modal -->
-                                                <button class="btn btn-success" id="myBtn"><b>As a Customer</b></button></center>
-
-                                            <!-- Modal -->
-                                            <div id="myModal" class="modal">
-
-                                                <!-- Modal content -->
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <span class="close">x</span>
-                                                        <h2>Register as a Customer</h2>
-
-                                                    </div>
-                                                    <div class="modal-body">
-
-                                                        <form name='register' method='post' action='Controllers/insertUser.php'>
-
-
-
-
-                                                            <table>
-                                                                <tr>
-                                                                    <td><b>First Name:</b></td>
-                                                                    <td><input type='text' name='fname' required/></td>
-
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Middle Name:</b></td>
-                                                                    <td><input type='text' name='mname' /></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Last Name:</b></td>
-                                                                    <td><input type='text' name='lname' required/></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Age:</b></td>
-                                                                    <td><input type='int' name='age' required/></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>NIC Number:</b></td>
-                                                                    <td><input type='text' name='nic' required/></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Address No:</b></td>
-                                                                    <td><input type='text' name='add_no' required/></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Street:</b></td>
-                                                                    <td><input type='text' name='add_street' required/></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>City:</b></td>
-                                                                    <td><input type='text' name='add_city' required/></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>E-Mail Address:</b></td>
-                                                                    <td><input type="email" name="email" required/></td>
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <td><b>Mobile Number:</b></td>
-                                                                    <td><input type="int" name="mobile_no" required/></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Land Number:</b></td>
-                                                                    <td><input type="int" name="land_no" /></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Password:</b></td>
-                                                                    <td><input type="password" name="psswd" required></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Confirm Password:</b></td>
-                                                                    <td><input type="password" name="cnfrmpsswd" required></td>
-                                                                </tr>
-
-
-                                                                <tr>
-                                                                    <td colspan='2' align='center'> <input type="submit" name="submit" class="button" value="Register" />
-
-                                                                        <input type="reset" class="button" value="Cancel"/> </td>
-                                                                </tr>
-                                                            </table>
-
-                                                        </form>
-                                                    </div>
-                                                </div>
+                                            <br><br>
+                                            <center>                                                            
+                                                <a href="RegCustomer.php" class="btn btn-success" id="myBtn" ><b>As a Customer</b></a></center>                                                        
+                                                <br>
+                                            <div style="color: black; text-center: left; margin-left: 0px; width: 250px;height: 250px;">
+                                                <b><i>Take few seconds to click here, you won't regret for it</b></i><br>
                                             </div>
-
-                                            <!--                                            <h1 style="color: black; font-size: 20px;">As a customer</h1> -->
-                                            <br>
-
-                                            <div style="color: black; text-align: center; margin-left: 0px; width: 250px;height: 250px;"><b><i>
-                                                        Take few seconds to click here, you won't regret for it</b></i><br>
-                                                <!--                                                <b><a style="font-size: 18px; color: #4CAF50;"><br><br>
-                                                                                                         
-                                                
-                                                
-                                                
-                                                                                                    </a></b>-->
-                                            </div>
-
                                         </div>
-
-
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12 text-center">
@@ -965,124 +870,21 @@ Register
                                         <div style="display:inline-block; ">
                                             <img src="img/consultant.jpg" style="height: 200px; width: 200px;border: 5px solid white;  border-radius:200px;" />
                                             <br><br>
-                                            <center>
-
-                                                <!-- Open The Modal -->
-                                                <button class="btn btn-success" id="myBtn2"><b>As a Consultant</b></button> </center>
-
-                                            <!-- Modal -->
-                                            <div id="myModal2" class="modal">
-
-                                                <!-- Modal content -->
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <span class="close2">x</span>
-                                                        <h2>Register as a Consultant</h2>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form name='register' method='post' action='Controllers/insertConsultant.php'>
-                                                            <table>
-                                                                <tr>
-                                                                    <td><b>First Name:</b></td>
-                                                                    <td><input type='text' name='fname' required/></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Middle Name:</b></td>
-                                                                    <td><input type='text' name='mname' /></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Last Name:</b></td>
-                                                                    <td><input type='text' name='lname' required/></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Age:</b></td>
-                                                                    <td><input type='int' name='age' required/></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>NIC Number:</b></td>
-                                                                    <td><input type='text' name='nic' required/></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Address No:</b></td>
-                                                                    <td><input type='text' name='add_no' required/></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Street:</b></td>
-                                                                    <td><input type='text' name='add_street' required/></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>City:</b></td>
-                                                                    <td><input type='text' name='add_city' required/></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>E-Mail Address:</b></td>
-                                                                    <td><input type="email" name="email" required/></td>
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <td><b>Mobile Number:</b></td>
-                                                                    <td><input type="int" name="mobile_no" required/></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Land Number:</b></td>
-                                                                    <td><input type="int" name="land_no" /></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Category:</b></td>
-                                                                    <td><select id="cat" name="cat">
-                                                                            <option>Architect</option>
-                                                                            <option>Structural Consultant</option>
-                                                                            <option>Services Consultant</option>
-                                                                            <option>Consultant</option>
-                                                                            <option>Design Developer</option>
-                                                                            <option>Draftman</option> 
-                                                                        </select></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Password:</b></td>
-                                                                    <td><input type="password" name="psswd" required></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><b>Confirm Password:</b></td>
-                                                                    <td><input type="password" name="cnfrmpsswd" required></td>
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <td colspan='2' align='center'> <input type="submit" name="submit" class="button" value="Register"
-                                                                                                           /> 
-                                                                        <input type="reset" class="button" value="Cancel"/> </td>
-                                                                </tr>
-                                                            </table>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!--                                            <h1 style="color: black; font-size: 20px;">As a consultant</h1>-->
-                                            <br>
-
+                                            <center>                                                            
+                                                <a href="RegConsultant.php" class="btn btn-success btn-dark" id="myBtn2"><b>As a Consultant</b></a> </center>                                                        
+                                                <br>
                                             <div style="color: black; text-align: center; margin-left: 0px; width: 250px; height: 250px;"><b><i>
-                                                        If you are a specialist in construction field its your chance to become a member of our family.</b></i>
-                                                <!--                                                <b><a style="font-size: 18px; color: #4CAF50;"><br><br>
-                                                                                                        
-                                                
-                                                                                                    </a></b>-->
+                                                If you are a specialist in construction field its your chance to become a member of our family.</b></i>                                                
                                             </div>
-
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
                         </center>
                     </div>
-
-
                     <br>
                 </div>
             </div>
-
         </section>
 
         <!--

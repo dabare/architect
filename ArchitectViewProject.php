@@ -482,7 +482,7 @@ if ($TotalPayment == "") {
                                             <h5 class="panel-title">';
                                                 if ($row["status"] == "Done") {
 
-                                                    echo '<input type="button" class="btn btn-xs btn-danger" value="Done!">';
+                                                    echo '<input type="button" class="btn btn-xs btn-danger" value="Done">';
                                                 }
 
                                                 echo '<a data-toggle="collapse" data-parent="#accordion" href="#collapseCon' . $x . '">' . $row["category"] . '<div class="pull-right">

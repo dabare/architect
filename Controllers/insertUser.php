@@ -6,7 +6,7 @@ require_once '../db/dbConnection.php';
 $fname = $_POST['fname'];
 $mname = $_POST['mname'];
 $lname = $_POST['lname'];
-$age = $_POST['age'];
+
 $nic = $_POST['nic'];
 $add_no = $_POST['add_no'];
 $add_street = $_POST['add_street'];
@@ -14,7 +14,7 @@ $add_city = $_POST['add_city'];
 $email = $_POST['email'];
 $mobile_no = $_POST['mobile_no'];
 $land_no = $_POST['land_no'];
-$psswd = $_POST['psswd'];
+$passwd = $_POST['passwd'];
 
 
 $id = 0;
@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
     //echo $count;
     if ($check_customer== 0 && $check_consultant== 0 && $check_architect== 0) {
         //echo "test";
-        $sql = "INSERT INTO customer (id,fname, mname, lname, age, nic, add_no, add_street, add_city, email, mobile_no, land_no, passwd, created, uname, location)VALUES ('$id','$fname', '$mname', '$lname', '$age', '$nic', '$add_no', '$add_street', '$add_city', '$email', '$mobile_no', '$land_no', '$psswd',NOW(),'$email','$location' )";
+        $sql = "INSERT INTO customer (id,fname, mname, lname, nic, add_no, add_street, add_city, email, mobile_no, land_no, passwd, created, uname, location)VALUES ('$id','$fname', '$mname', '$lname', '$nic', '$add_no', '$add_street', '$add_city', '$email', '$mobile_no', '$land_no', '$passwd',NOW(),'$email','$location' )";
         if (mysqli_query($conn, $sql)) {
             echo "<script> alert('User Inserted'); </script>";
             echo "<script> window.location.href='..'; </script>";

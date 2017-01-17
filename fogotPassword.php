@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
         $lname = $row["lname"];
     }
 } else {
-    $sql = "select psswd , lname from consultants where uname = '$email' and status = 'active';";
+    $sql = "select psswd , lname from consultants where uname = '$email';";
 
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
